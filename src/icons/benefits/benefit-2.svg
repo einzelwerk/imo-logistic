@@ -1,0 +1,20 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_481_791)">
+<circle cx="15.5" cy="25.75" r="1.25" stroke="#1D1D1B" stroke-width="2"/>
+<circle cx="15.5" cy="34.25" r="1.25" stroke="#1D1D1B" stroke-width="2"/>
+<circle cx="24" cy="25.75" r="1.25" stroke="#1D1D1B" stroke-width="2"/>
+<circle cx="32.5" cy="34.25" r="1.25" stroke="#1D1D1B" stroke-width="2"/>
+<path d="M32 8.0625L32 3.0625" stroke="#1D1D1B" stroke-width="3" stroke-linecap="round"/>
+<path d="M16 8.0625L16 3.0625" stroke="#1D1D1B" stroke-width="3" stroke-linecap="round"/>
+<path d="M41 16.375L7 16.375" stroke="#1D1D1B" stroke-width="3" stroke-linecap="round"/>
+<rect x="5.5" y="5.5" width="37" height="37" rx="10.5" stroke="#1D1D1B" stroke-width="3"/>
+<path d="M44 36C44 36.64 43.92 37.26 43.76 37.86C43.58 38.66 43.26 39.44 42.84 40.12C41.46 42.44 38.92 44 36 44C33.94 44 32.08 43.2199 30.68 41.9399C30.08 41.4199 29.56 40.8 29.16 40.12C28.42 38.92 28 37.5 28 36C28 33.84 28.86 31.86 30.26 30.42C31.72 28.92 33.76 28 36 28C38.36 28 40.5 29.02 41.94 30.66C43.22 32.08 44 33.96 44 36Z" fill="#EAC956" stroke="#1D1D1B" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M33 36H39" stroke="#1D1D1B" stroke-width="3" stroke-linecap="round"/>
+<path d="M36 33L36 39" stroke="#1D1D1B" stroke-width="3" stroke-linecap="round"/>
+</g>
+<defs>
+<clipPath id="clip0_481_791">
+<rect width="48" height="48" fill="white"/>
+</clipPath>
+</defs>
+</svg>

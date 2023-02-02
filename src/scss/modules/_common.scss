@@ -1,0 +1,24 @@
+@use '../partials/mixins' as mix;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  font-family: Inter, serif;
+  font-weight: 400;
+  @include mix.p-18;
+  color: var(--headlines);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo {
+  width: 106px;
+  &__img {
+    vertical-align: middle;
+  }
+}
