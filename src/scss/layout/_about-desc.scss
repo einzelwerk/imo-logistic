@@ -1,0 +1,14 @@
+@use '../partials/variables'as vars;
+@use '../partials/mixins'as mix;
+
+.about-desc {
+  padding: 120px 0;
+  &__container {}
+
+  &__content {}
+
+  &__desc {
+    max-width: 1100px;
+    @include mix.h2;
+  }
+}

@@ -1,0 +1,41 @@
+include ../modules/mixins
+
+mixin about-accordeon
+  section.about-accordeon
+    .container.about-accordeon__container
+      -
+        accList = [
+          {
+            title: 'Annahme von Bestellungen',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+          {
+            title: 'Paketdienst',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+          {
+            title: 'Produktverpackung',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+          {
+            title: 'Postfrankierung',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+          {
+            title: 'Lieferung',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+          {
+            title: 'Retourenmanagement',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+        ];
+      ul.acc.about-accordeon__acc
+        each accItem, idx in accList
+          li.acc__item(data-image=`@/img/about-accordeon/acc-${idx+1}.jpg`)
+            button.acc__btn(type="button")
+              span.acc__title=accItem.title
+            .acc__panel
+              span=accItem.desc
+      .about-accordeon__img-block
+        img.about-accordeon__img(src="#", alt="")

@@ -6,7 +6,7 @@ export const markup = () => {
     .pipe(pug({
       pretty: app.isBuild ? false : true,
     }))
-    .pipe(app.plugins.replace(/@img\//g, 'img/'))
+    .pipe(app.plugins.replace(/@\//g, './'))
     .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
     .pipe(app.gulp.dest(app.path.build.markup))
     .pipe(app.plugins.browsersync.stream())

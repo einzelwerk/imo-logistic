@@ -1,0 +1,100 @@
+@use "../partials/variables"as vars;
+@use "../partials/mixins"as mix;
+
+.acc {
+  display: flex;
+  flex-direction: column;
+  counter-reset: accCounter;
+
+  &__item {
+    overflow: hidden;
+
+    &_active {
+      .acc__btn {
+        padding-bottom: 24px;
+
+        &::before {
+          color: vars.$yellow;
+        }
+
+        &::after {
+          border-color: transparent;
+        }
+      }
+
+      .acc__panel {
+        padding-bottom: 32px;
+        visibility: visible;
+      }
+    }
+  }
+
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    @include mix.h3;
+    width: 100%;
+    padding: 32px;
+    border-radius: 16px;
+    transition: background-color .5s ease-in-out,
+      padding-bottom 0.5s ease-in-out, ;
+
+    &::before {
+      counter-increment: accCounter;
+      content: counter(accCounter, decimal-leading-zero);
+      color: vars.$text-dark;
+      font-size: 14px;
+      line-height: 1.71;
+      transition: color .5s ease-in-out;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      margin: 0 32px;
+      height: 1px;
+      transition: border-color .3s ease-in-out;
+      border-bottom: 1px solid vars.$bg-light-divider;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background: vars.$bg-light;
+
+      &::before {
+        color: vars.$yellow;
+      }
+
+      &::after {
+        border-color: transparent;
+      }
+
+      .acc__title {
+        opacity: 1;
+      }
+    }
+
+
+  }
+
+  &__title {
+    transition: opacity .5s ease-in-out;
+    opacity: .6;
+  }
+
+  &__panel {
+    color: vars.$text-light;
+    max-height: 0;
+    padding: 0 32px;
+    visibility: hidden;
+    transition: max-height 0.5s ease-in-out, padding-bottom 0.5s ease-in-out,
+      visibility 0.5s ease-in-out;
+  }
+}

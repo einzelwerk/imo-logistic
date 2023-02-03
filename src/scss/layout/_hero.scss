@@ -1,0 +1,66 @@
+@use '../partials/mixins'as mix;
+@use '../partials/variables'as vars;
+
+.hero {
+  min-height: 100vh;
+  height: 100vh;
+  background: vars.$bg-light;
+  color: vars.$headlines;
+
+  &__video {
+    &-block {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: vars.$bg-light;
+        mix-blend-mode: color;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, vars.$bg-light 14.13%, rgba(vars.$bg-light, 0) 61.96%);
+      }
+    }
+    height: 100%;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+
+  &__content {
+    max-width: 680px;
+  }
+
+  &__title {
+    @include mix.h1;
+    margin-bottom: 30px;
+  }
+
+  &__desc {
+    color: vars.$text-light;
+    margin-bottom: 48px;
+    max-width: 500px;
+  }
+}

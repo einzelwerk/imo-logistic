@@ -1,0 +1,29 @@
+@use '../../partials/variables'as vars;
+
+.main-hero {
+  color: vars.$white;
+  background: vars.$bg-dark;
+
+  .hero {
+    &__content {
+      padding-top: 1.83vh;
+    }
+
+    &__video {
+      &-block {
+        &::before {
+          background: vars.$bg-dark;
+        }
+
+        &::after {
+          background: linear-gradient(90deg, vars.$bg-dark 14.13%, rgba(vars.$bg-dark, 0) 61.96%);
+        }
+
+      }
+    }
+
+    &__desc {
+      color: vars.$text-dark;
+    }
+  }
+}

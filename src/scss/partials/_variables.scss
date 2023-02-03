@@ -4,17 +4,19 @@ $lg: 991.98px;
 $md: 767.98px;
 $sm: 575.98px;
 
+// Colors
+$yellow: #eac956;
+$bg-dark: #151514;
+$bg-light: #f7f6f2;
+$headlines: #1d1d1b;
+$text-light: #55554f;
+$text-dark: #dbdbd0;
+$white: #fff;
+$bg-light-divider: #e4e4e1;
+$placeholder: #afafaa;
+
 :root {
   --container: 1300px;
-  --yellow: #eac956;
-  --bg-dark: #151514;
-  --bg-light: #f7f6f2;
-  --headlines: #1d1d1b;
-  --text-light: #55554f;
-  --text-dark: #dbdbd0;
-  --white: #fff;
-  --bg-divider-light: #e4e4e1;
-  --placeholder: #afafaa;
 
   @media(max-width: $xl) {
     --container: 960px;

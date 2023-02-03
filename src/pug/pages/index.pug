@@ -5,3 +5,16 @@ block vars
   - const pageName = 'home';
 
 block content
+  include ../layouts/hero
+  +hero(
+    'main',
+    'Smartes fulfillment für e-commerce untermehnen',
+    'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+    'Fulfillment Angebot',
+    '@/files/globus-video.mp4'
+  )
+  include ../layouts/mini-partners
+  include ../layouts/about-desc
+  +about-desc
+  include ../layouts/about-accordeon
+  +about-accordeon

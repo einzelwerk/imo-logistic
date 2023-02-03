@@ -1,0 +1,12 @@
+mixin benefits(Class, title, list)
+  section.benefits(class=Class)
+    .container.benefits__container
+      h2.benefits__title=title
+      ul.benefits__list
+        each item in list
+          li.benefits__item
+            .benefits__item-icon-block
+              svg.benefits__item-icon
+                use(xlink:href=`@img/sprite.svg#${list.icon}`)
+            h3.benefits__item-title=list.title
+            p.benefits__item-title=list.desc

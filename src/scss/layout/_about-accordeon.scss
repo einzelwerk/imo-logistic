@@ -1,0 +1,23 @@
+.about-accordeon {
+  &__container {
+    display: flex;
+    gap: 82px;
+  }
+  &__acc  {
+    margin-bottom: 92px;
+    max-width: 600px;
+  }
+  &__img {
+    &-block {
+      position: relative;
+      width: 100%;
+      padding-right: calc((100vw - var(--container)) / 2);
+      margin-right: calc((-100vw + var(--container)) / 2);
+    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

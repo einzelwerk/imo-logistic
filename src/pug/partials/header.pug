@@ -1,7 +1,7 @@
 include ../modules/mixins
 header.header
   .container.header__container
-    +logo('logo-white', 'header__logo')
+    +logo('header__logo', 'logo-white')
     nav.header__nav
       a.header__nav-link(href="#") Tariffs
       a.header__nav-link(href="#") Über uns
@@ -12,6 +12,10 @@ header.header
     .header__contact
       a.btn.header__contact-tel(href="tel:#") Call us
       button.btn.btn_white.header__contact-form(type="button") Angebot Anfordern
+      //- select.select-lang
+        option(value="en") En
+        option(value="ru") Ru
+        option(value="am") Am
 
 
 

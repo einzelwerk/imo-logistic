@@ -5,13 +5,25 @@
 @use './vendor/grid';
 
 // Libs
-// @use './libs/choices';
+@use 'swiper/swiper.scss';
+// Libs Custom Styles
+@use './libs/choices';
+// @use '../../node_modules/choices.js/src/styles/choices.scss';
+// @use '../../node_modules/choices.js/public/assets/styles/choices.min.css';
+// @use 'choices.js/public/assets/styles/choices.min.css';
 
 // Modules
 @use './modules/common';
 @use './modules/buttons';
 @use './modules/inputs';
+@use './modules/accordeon';
 
 // Layouts
 @use './layout/header';
 @use './layout/footer';
+@use './layout/hero';
+@use './layout/main/main-hero';
+@use './layout/mini-partners';
+@use './layout/about-desc';
+@use './layout/about-accordeon';
+

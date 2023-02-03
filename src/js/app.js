@@ -1,3 +1,13 @@
-// import {} from "./modules/functions.js";
+import {
+  iniMiniPartnersSwiper,
+  initAccordion,
+  associateAccordionWithImageSrc,
+  initLangSelects,
+} from "./modules/functions.js";
+
+iniMiniPartnersSwiper();
+initAccordion();
+associateAccordionWithImageSrc();
+// initLangSelects();
 
 window.onload = () => {};

@@ -1,5 +1,5 @@
 @use '../partials/mixins' as mix;
-@use '../partials/variables' as var;
+@use '../partials/variables' as vars;
 
 .btn {
   @include mix.btn-small;
@@ -12,20 +12,20 @@
   }
 
   &_white {
-    background: var(--white);
-    color: var(--headlines);
+    background: vars.$white;
+    color: vars.$headlines;
     border-radius: 12px;
   }
 
   &_black {
-    background: var(--headlines);
-    color: var(--white);
+    background: vars.$headlines;
+    color: vars.$white;
     border-radius: 12px;
   }
 
   &_yellow {
-    background: var(--yellow);
-    color: var(--headlines);
+    background: vars.$yellow;
+    color: vars.$headlines;
     border-radius: 12px;
   }
 }

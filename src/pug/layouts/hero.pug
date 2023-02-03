@@ -1,0 +1,11 @@
+mixin hero(pageName, title, desc, btn = false, videoSrc = false)
+  section.hero(class=`${pageName}-hero`)
+    if videoSrc
+      .hero__video-block
+        video.hero__video(src=videoSrc autoplay muted loop)
+    .container.hero__container
+      .hero__content
+        h1.hero__title=title
+        p.hero__desc=desc
+        if btn
+          button.btn.btn_yellow.hero__btn(type="button")=btn
