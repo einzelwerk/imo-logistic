@@ -57,15 +57,22 @@ export function initAccordion() {
 export function associateAccordionWithImageSrc() {
   const acc = document.querySelector(".about-accordeon__acc");
   const image = document.querySelector(".about-accordeon__img");
+  const picture = image.closest('picture')
   const accItemCol = acc.querySelectorAll(".acc__item");
   {
     const firstAccItem = accItemCol[0];
     const imagePath = firstAccItem.dataset.image;
     image.setAttribute("src", imagePath);
+    picture.querySelectorAll('source').forEach(source => {
+      source.setAttribute("srcset", imagePath);
+    })
   }
   accItemCol.forEach((accItem) => {
     accItem.addEventListener("click", () => {
       image.src = accItem.dataset.image;
+      picture.querySelectorAll('source').forEach(source => {
+        source.setAttribute("srcset", imagePath);
+      })
     });
   });
 }

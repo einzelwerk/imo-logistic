@@ -1,7 +1,7 @@
 @font-face {
   font-family: CircularStd;
   font-display: swap;
-  src: url("../fonts/CircularStd-Book.woff2") format("woff2"), url("../fonts/CircularStd-Book.woff") format("woff");
+  src: url("./fonts/CircularStd-Book.woff2") format("woff2"), url("./fonts/CircularStd-Book.woff") format("woff");
   font-weight: 450;
   font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
+  src: url("./fonts/Inter-Medium.woff2") format("woff2"), url("./fonts/Inter-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
@@ -17,7 +17,7 @@
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter-Regular.woff") format("woff");
+  src: url("./fonts/Inter-Regular.woff2") format("woff2"), url("./fonts/Inter-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
