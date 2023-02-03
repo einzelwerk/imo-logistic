@@ -71,7 +71,7 @@ export function associateAccordionWithImageSrc() {
     accItem.addEventListener("click", () => {
       image.src = accItem.dataset.image;
       picture.querySelectorAll('source').forEach(source => {
-        source.setAttribute("srcset", imagePath);
+        source.setAttribute("srcset", accItem.dataset.image);
       })
     });
   });
