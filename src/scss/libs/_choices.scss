@@ -1,1 +1,69 @@
-@use 'choices.js/src/styles/choices.scss'
+@use 'choices.js/src/styles/choices.scss';
+@use '../partials/mixins'as mix;
+@use '../partials/variables'as vars;
+
+// Reset
+.select-lang {
+  font-size: unset;
+  margin: 0;
+
+  &::after {
+    content: none !important;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform .3s ease-in-out;
+    // right: 16px;
+    // width: 12px;
+    // height: 12px;
+    // background: url('@/img/arrow-down.svg') no-repeat center / contain;
+  }
+
+  &.is-open {
+    &::before {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  .choices {
+    &__inner {
+      font-size: unset;
+      border: none;
+      min-height: unset;
+      background: none;
+
+      padding: 0 !important;
+    }
+
+    &__list {
+      padding: 0;
+      border: none !important;
+      &--dropdown {
+        background: unset;
+      }
+    }
+
+    &__item {
+      font-size: unset !important;
+
+      &--choice {
+        transition: background-color .2s ease;
+
+        padding: 0 !important;
+
+        &.is-highlighted {
+          background: unset;
+        }
+      }
+    }
+  }
+
+  .dropdown--up {
+    top: unset;
+    bottom: 100%;
+  }
+}

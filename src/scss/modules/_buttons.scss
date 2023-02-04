@@ -2,6 +2,7 @@
 @use '../partials/variables' as vars;
 
 .btn {
+  text-align: center;
   @include mix.btn-small;
   padding: 12px 24px;
 

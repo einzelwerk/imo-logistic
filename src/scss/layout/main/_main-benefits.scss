@@ -1,0 +1,11 @@
+@use '../../partials/variables'as vars;
+
+.main-benefits {
+  background: vars.$bg-light;
+
+  .benefits {
+    &__item {
+      background: vars.$white;
+    }
+  }
+}

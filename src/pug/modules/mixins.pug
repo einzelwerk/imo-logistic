@@ -2,11 +2,4 @@ mixin logo(Class, logoSrc)
   a.logo(href="#" class=name ? name : '')
     img.logo__img(src=`@/img/${logoSrc}.png`, alt="Logo IMO Logistics")
 
-mixin acc(Class,accList,data)
-  ul.acc(class=Class)
-    each accItem in accList
-      li.acc__item
-        button.acc__btn(type="button")
-          span.acc__title=accItem.title
-        .acc__panel
-          span=accItem.desc
+

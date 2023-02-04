@@ -1,13 +1,15 @@
 import {
-  iniMiniPartnersSwiper,
+  initMiniPartnersSwiper,
   initAccordion,
   associateAccordionWithImageSrc,
   initLangSelects,
+  setBenefitСolumns,
 } from "./modules/functions.js";
 
-iniMiniPartnersSwiper();
+initMiniPartnersSwiper();
 initAccordion();
 associateAccordionWithImageSrc();
-// initLangSelects();
+initLangSelects();
+setBenefitСolumns();
 
 window.onload = () => {};

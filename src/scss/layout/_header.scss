@@ -1,14 +1,15 @@
-@use '../partials/mixins' as mix;
-@use '../partials/variables' as vars;
+@use '../partials/mixins'as mix;
+@use '../partials/variables'as vars;
 
 .header {
-  position: fixed;
+  position: sticky;
   z-index: 15;
   top: 0;
   left: 0;
   width: 100%;
   height: 100px;
   background: vars.$headlines;
+  color: vars.$white;
   display: flex;
   align-items: center;
 
@@ -36,7 +37,7 @@
     display: flex;
     align-items: center;
     gap: 32px;
-    color: vars.$text-dark;
+    color: vars.$text-on-dark;
   }
 
   &__contact {
@@ -44,9 +45,38 @@
     display: flex;
     align-items: center;
     gap: 8px;
+  }
 
-    &-tel {
-      color: vars.$white;
+  &__select {
+    @include mix.p-16;
+
+    &::before {
+      right: 16px;
+      width: 12px;
+      height: 12px;
+      background: url('@/img/arrow-down-white.svg') no-repeat center / contain;
+    }
+
+    .choices {
+      &__inner {
+        padding: 12px 36px 12px 16px !important;
+      }
+
+      &__list {
+        &--dropdown {
+          background: vars.$bg-dark !important;
+        }
+      }
+
+      &__item {
+        &--choice {
+          padding: 12px 16px !important;
+
+          &.is-highlighted {
+            background: lighten(vars.$bg-dark, 20%) !important;
+          }
+        }
+      }
     }
   }
 }

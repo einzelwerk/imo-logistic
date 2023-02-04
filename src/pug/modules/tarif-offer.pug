@@ -1,0 +1,20 @@
+mixin tarif-offer()
+  .tarif-offer
+    .tarif-offer__content
+      .tarif-offer__text-block
+        h2.tarif-offer__title Sie möchten eine Beratung oder ein individuelles Angebot?
+        p.tarif-offer__desc Schreiben Sie mir eine E-Mail oder rufen Sie direkt an. Ich bin gerne für Sie da.
+      .tarif-offer__btns
+        button.btn.btn_big.btn_black(type="button") Book consultation
+        a.btn.btn_big.btn_white(href="mailto:#")
+          svg.tarif-offer__btn-icon
+            use(xlink:href="@/img/sprite.svg#inbox")
+        a.btn.btn_big.btn_white(href="tel:#")
+          svg.tarif-offer__btn-icon
+            use(xlink:href="@/img/sprite.svg#inbox")
+    .tarif-offer__img-wrpap
+      img.tarif-offer__img(src="@/img/tarif-offer.jpg", alt="")
+
+
+
+

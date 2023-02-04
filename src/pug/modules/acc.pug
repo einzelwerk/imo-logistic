@@ -1,0 +1,8 @@
+mixin acc(Class,accList,attr)
+  ul.acc(class=Class #{Object.keys(attr).map(key => ${key}=${JSON.stringify(attr[key])}).join(" ")})
+    each accItem in accList
+      li.acc__item
+        button.acc__btn(type="button")
+          span.acc__title=accItem.title
+        .acc__panel
+          span=accItem.desc

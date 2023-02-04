@@ -1,0 +1,17 @@
+mixin tarif-card(tag, item)
+  #{tag}.tarif-card
+    .tarif-card__text-block
+      h3.tarif-card__title=item.title
+      .tarif-card__additionally
+        span.tarif-card__price=item.price
+        span.tarif-card__desc=item.desc
+    hr.tarif-card__hr
+    ul.tarif-card__benefits
+      each benefit in item.benefits
+        li.tarif-card__benefits-item(class=benefit.isActive ? '' : 'tarif-card__benefits-item_inactive')
+          -
+            const iconName = benefit.isActive ? 'on' : 'off'
+          svg.tarif-card__benefits-icon
+            use(xlink:href=`@/img/sprite.svg#${iconName}`)
+          span.tarif-card__benefits-text=benefit.content
+    button.btn.btn_yellow.tarif-card__btn-choose(type="button") Choose

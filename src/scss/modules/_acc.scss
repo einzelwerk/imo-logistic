@@ -45,7 +45,7 @@
     &::before {
       counter-increment: accCounter;
       content: counter(accCounter, decimal-leading-zero);
-      color: vars.$text-dark;
+      color: vars.$text-on-dark;
       font-size: 14px;
       line-height: 1.71;
       transition: color .5s ease-in-out;
@@ -90,7 +90,7 @@
   }
 
   &__panel {
-    color: vars.$text-light;
+    color: vars.$text-on-light;
     max-height: 0;
     padding: 0 32px;
     visibility: hidden;

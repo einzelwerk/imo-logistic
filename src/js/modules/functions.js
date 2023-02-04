@@ -1,7 +1,7 @@
 import Swiper, { Autoplay } from "swiper";
 import Choices from "choices.js";
 
-export function iniMiniPartnersSwiper() {
+export function initMiniPartnersSwiper() {
   return new Swiper(".mini-partners__slider", {
     modules: [Autoplay],
     loop: true,
@@ -57,34 +57,65 @@ export function initAccordion() {
 export function associateAccordionWithImageSrc() {
   const acc = document.querySelector(".about-accordeon__acc");
   const image = document.querySelector(".about-accordeon__img");
-  const picture = image.closest('picture')
+  const picture = image.closest("picture");
   const accItemCol = acc.querySelectorAll(".acc__item");
   {
     const firstAccItem = accItemCol[0];
     const imagePath = firstAccItem.dataset.image;
     image.setAttribute("src", imagePath);
-    picture.querySelectorAll('source').forEach(source => {
-      source.setAttribute("srcset", imagePath);
-    })
+    if (picture) {
+      picture.querySelectorAll("source").forEach((source) => {
+        source.setAttribute("srcset", imagePath);
+      });
+    }
   }
   accItemCol.forEach((accItem) => {
     accItem.addEventListener("click", () => {
       image.src = accItem.dataset.image;
-      picture.querySelectorAll('source').forEach(source => {
-        source.setAttribute("srcset", accItem.dataset.image);
-      })
+      if (picture) {
+        picture.querySelectorAll("source").forEach((source) => {
+          source.setAttribute("srcset", accItem.dataset.image);
+        });
+      }
     });
   });
 }
 
 export function initLangSelects() {
   document.querySelectorAll(".select-lang").forEach((choicesEl) => {
-    const choice = new Choices(choicesEl, {
+    const select = new Choices(choicesEl, {
       searchEnabled: false,
       position: "bottom",
       itemSelectText: "",
       shouldSort: false,
       placeholder: true,
+      classNames: {
+        containerOuter: `choices ${choicesEl.className}`,
+      },
+    });
+
+    const dropdown = select.dropdown.element;
+    const containerOuter = select.containerOuter.element;
+    dropdown.classList.add("dropdown--up");
+
+    containerOuter.addEventListener("click", function () {
+      const rect = containerOuter.getBoundingClientRect();
+
+      if (rect.bottom + dropdown.scrollHeight > window.innerHeight) {
+        dropdown.classList.remove("dropdown--down");
+        dropdown.classList.add("dropdown--up");
+      } else {
+        dropdown.classList.remove("dropdown--up");
+        dropdown.classList.add("dropdown--down");
+      }
     });
   });
+}
+
+export function setBenefitСolumns() {
+  document.querySelectorAll('.benefits__list').forEach(list => {
+    const childrenCount = list.children.length
+    if (childrenCount <= 5) list.classList.add('benefits__list_few')
+    else if (childrenCount >= 8) list.classList.add('benefits__list_many')
+  })
 }

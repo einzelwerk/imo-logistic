@@ -32,7 +32,7 @@
 
   &__desc {
     margin-bottom: 24px;
-    color: vars.$text-light;
+    color: vars.$text-on-light;
   }
 
   &__btns {
@@ -86,7 +86,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    column-gap: 20px;
+    column-gap: 15px;
     @include mix.p-14;
 
     &-list {
@@ -99,5 +99,37 @@
 
   &__copyright {
     opacity: 0.5;
+  }
+
+  &__select {
+    @include mix.p-14;
+
+    &::before {
+      right: 0;
+      width: 12px;
+      height: 12px;
+      background: url('@/img/arrow-down-black.svg') no-repeat center / contain;
+    }
+
+    .choices {
+      &__inner {
+          padding: 0 24px 0 5px !important;
+      }
+
+      &__list {
+        &--dropdown {
+          background: vars.$bg-light !important;
+        }
+      }
+
+      &__item {
+        &--choice {
+          padding: 4px 5px !important;
+          &.is-highlighted {
+            background: darken(vars.$bg-light, 20%) !important;
+          }
+        }
+      }
+    }
   }
 }

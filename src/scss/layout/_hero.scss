@@ -2,6 +2,7 @@
 @use '../partials/variables'as vars;
 
 .hero {
+  position: relative;
   min-height: 100vh;
   height: 100vh;
   background: vars.$bg-light;
@@ -11,6 +12,7 @@
     &-block {
       position: absolute;
       z-index: 0;
+      width: 50vw;
       top: 0;
       right: 0;
       bottom: 0;
@@ -59,7 +61,7 @@
   }
 
   &__desc {
-    color: vars.$text-light;
+    color: vars.$text-on-light;
     margin-bottom: 48px;
     max-width: 500px;
   }

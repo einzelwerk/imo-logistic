@@ -1,0 +1,53 @@
+@use '../partials/variables'as vars;
+@use '../partials/mixins'as mix;
+
+.tarif-offer {
+  display: flex;
+  justify-content: space-between;
+  color: vars.$headlines;
+  background: vars.$yellow;
+  min-height: 420px;
+  border-radius: 24px;
+
+  &__content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text-block {
+    max-width: 490px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+  }
+
+  &__title {
+    @include mix.h2;
+  }
+
+  &__desc {
+    color: vars.$text-on-light;
+  }
+
+  &__btns {
+    margin-top: auto;
+    display: flex;
+    gap: 30px;
+  }
+
+  &__btn-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  &__img {
+    height: 100%;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+
+    &-wrap {
+      width: 50%;
+    }
+  }
+}

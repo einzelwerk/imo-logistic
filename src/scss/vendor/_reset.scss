@@ -8,8 +8,8 @@
   width: 0 !important;
 }
 
-html,
-body {
+main,
+footer {
   overflow-x: hidden;
 }
 
@@ -28,6 +28,7 @@ body *,
   color: inherit;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ul,
@@ -35,7 +36,10 @@ ol {
   list-style: none;
 }
 
-a,img,svg,strong {
+a,
+img,
+svg,
+strong {
   display: inline-block;
 }
 
@@ -70,7 +74,8 @@ textarea {
   resize: none;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
   max-height: 100%;
   height: auto;
@@ -86,7 +91,7 @@ input[type="password"] {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 input[type=text]::-ms-clear {
