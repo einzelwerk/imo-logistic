@@ -2,27 +2,27 @@
 @use '../partials/variables'as vars;
 
 .header {
-  position: sticky;
+  position: fixed;
   z-index: 15;
   top: 0;
   left: 0;
   width: 100%;
   height: 100px;
-  background: vars.$headlines;
   color: vars.$white;
   display: flex;
   align-items: center;
+  transition: background-color .3s ease-in-out,
+  backdrop-filter .3s ease-in-out,
+  transform .3s ease-in-out;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 150%;
-    background: linear-gradient(180deg, #151514 29.89%, rgba(21, 21, 20, 0) 100%);
-    opacity: 0.8;
+  &_blur {
+    background: rgba(vars.$headlines, 0.84);
+    backdrop-filter: blur(8px);
+
+  }
+
+  &_hide {
+    transform: translateY(-100%);
   }
 
   &__container {
@@ -38,6 +38,7 @@
     align-items: center;
     gap: 32px;
     color: vars.$text-on-dark;
+    @include mix.p-16;
   }
 
   &__contact {

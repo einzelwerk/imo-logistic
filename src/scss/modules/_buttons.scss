@@ -2,13 +2,22 @@
 @use '../partials/variables' as vars;
 
 .btn {
+  display: inline-flex;
+  justify-content: center;
+  gap: 12px;
   text-align: center;
   @include mix.btn-small;
   padding: 12px 24px;
+  width: fit-content;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
 
   &_big {
     border-radius: 12px;
-    @include mix.btn-small;
+    @include mix.btn-big;
     padding: 14px 32px;
   }
 

@@ -8,4 +8,4 @@ mixin hero(pageName, title, desc, btn = false, videoSrc = false)
         h1.hero__title=title
         p.hero__desc=desc
         if btn
-          button.btn.btn_yellow.hero__btn(type="button")=btn
+          button.btn.btn_big.btn_yellow.hero__btn(data-popup-btn="form" type="button")=btn

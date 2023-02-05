@@ -1,10 +1,13 @@
-extends ../layouts/main
+extends ../modules/main
 
 block vars
   - const title = 'Main';
   - const pageName = 'home';
 
 block content
+  include ../modules/popup-form
+  +popup-form
+
   include ../layouts/hero
   +hero(
     'main',
@@ -49,5 +52,10 @@ block content
   )
   include ../layouts/tarifs
   +tarifs
-
-
+  include ../layouts/half-blocks
+  section
+    +half-storage(true)
+    +half-delivery
+    +half-network(true)
+    +half-offer
+    +half-analysis(true)

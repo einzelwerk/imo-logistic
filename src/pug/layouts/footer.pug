@@ -3,9 +3,9 @@ footer.footer
     .footer__content
       .footer__main
         +logo('footer__logo', 'logo-black')
-        .footer__desc
+        .footer__desc Schreiben Sie mir eine E-Mail oder rufen Sie direkt an.
         .footer__btns
-          button.btn.btn_yellow.footer__proposal(type="button") IMO Angebote
+          button.btn.btn_yellow.footer__proposal(type="button" data-popup-btn="form") IMO Angebote
           button.footer__social(type="button")
             svg.footer__social-icon
               use(xlink:href="@/img/sprite.svg#linkedin")

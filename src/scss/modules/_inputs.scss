@@ -1,0 +1,51 @@
+@use '../partials/mixins'as mix;
+@use '../partials/variables'as vars;
+
+input,
+textarea {
+  border: 1px solid vars.$bg-light-divider;
+  border-radius: 8px;
+  @include mix.p-14;
+
+  &::placeholder {
+    color: vars.$placeholder;
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  @include mix.p-14;
+
+  &__flag {
+    &:checked {
+      &+span {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__custom {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid vars.$headlines;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      background: url('@/img/check.svg') no-repeat center / contain;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+    }
+  }
+}

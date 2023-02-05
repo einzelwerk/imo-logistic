@@ -16,16 +16,19 @@
 @use './modules/acc';
 @use './modules/tarif-card';
 @use './modules/tarif-offer';
+@use './modules/popups';
 
 // Layouts
 @use './layout/header';
 @use './layout/footer';
 @use './layout/hero';
-@use './layout/main/main-hero';
 @use './layout/mini-partners';
 @use './layout/about-desc';
 @use './layout/about-accordeon';
 @use './layout/benefits';
-@use './layout/main/main-benefits';
 @use './layout/tarifs';
+@use './layout/half-blocks';
 
+// Main Page
+@use './layout/main/main-hero';
+@use './layout/main/main-benefits';
