@@ -24,11 +24,25 @@ export function headerHide() {
   });
 }
 
+export function openPopup(popupName) {
+  document.querySelectorAll(`[data-popup-btn`).forEach((openBtn) => {
+    openBtn.addEventListener("click", () => {
+      const popupName = openBtn.dataset.popupBtn;
+      const popup = document.querySelector(`[data-popup="${popupName}"]`);
+      const overlay = popup.closest(".overlay");
+
+      popup.classList.add("popup_active");
+      overlay.classList.add("overlay_active");
+      document.body.style.overflow = "hidden";
+    });
+  });
+}
+
 export function closePopup() {
   document.addEventListener("click", (e) => {
     const overlay = e.target.closest(".overlay_active");
     const popup = e.target.closest(".popup_active");
-    const closeBtn = e.target.closest(".popup__close");
+    const closeBtn = e.target.closest("[data-popup-close]");
 
     if (!(closeBtn || (overlay && !popup))) return;
 
@@ -38,27 +52,81 @@ export function closePopup() {
     activePopup.classList.remove("popup_active");
     document.body.style.overflow = "auto";
 
-    if (activePopup.classList.contains("popup-form")) {
-      activePopup.querySelectorAll("form").forEach((form) => {
-        form.reset()
-      });
-    }
+    overlay.addEventListener('transitionend', function handler() {
+      resetPoups(activePopup)
+      overlay.removeEventListener('transitionend', handler);
+    });
   });
 }
 
-export function openPopup(popupName) {
-  document
-    .querySelectorAll(`[data-popup-btn="${popupName}"]`)
-    .forEach((openBtn) => {
-      openBtn.addEventListener("click", () => {
-        const popup = document.querySelector(`[data-popup="${popupName}"]`);
-        const overlay = popup.closest(".overlay");
+export function changeStepsQuizPopup() {
+  const quizPopup = document.querySelector(".popup-quiz");
 
-        popup.classList.add("popup_active");
-        overlay.classList.add("overlay_active");
-        document.body.style.overflow = "hidden";
-      });
-    });
+
+  const quizBtnBackCol = quizPopup.querySelectorAll("[data-quiz-step-back]");
+  const quizBtnNextCol = quizPopup.querySelectorAll("[data-quiz-step-next]");
+  const quizBtnSubmit = quizPopup.querySelector("[data-quiz-btn-submit]");
+
+  const quizBtnReset = quizPopup.querySelector("[data-quiz-btn-reset]");
+
+  const goTo = (e, increment) => {
+    e.preventDefault();
+
+    let currentStep = quizPopup.querySelector(".step_active");
+    let currentStepNum = currentStep.dataset.quizStep;
+
+    currentStep.classList.remove("step_active");
+    if (increment) currentStepNum++;
+    else currentStepNum--;
+    currentStep = quizPopup.querySelector(
+      `[data-quiz-step="${currentStepNum}"`
+      );
+    currentStep.classList.add("step_active");
+  };
+
+  quizBtnBackCol.forEach((quizBtnBack) => {
+    quizBtnBack.addEventListener("click", (e) => goTo(e, false));
+  });
+  quizBtnNextCol.forEach((quizBtnNext) => {
+    quizBtnNext.addEventListener("click", (e) => goTo(e, true));
+  });
+
+  quizBtnSubmit.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const currentStep = quizPopup.querySelector(".step_active");
+    currentStep.classList.remove("step_active");
+
+    const result = quizPopup.querySelector("[data-quiz-result]");
+    result.classList.add("popup-quiz__result_active");
+  });
+
+  // Previous Close
+  quizBtnReset.addEventListener("click", () => {
+    resetPoups(quizPopup);
+  });
+}
+
+function resetPoups(popup) {
+  popup.querySelectorAll("form").forEach((form) => {
+    form.reset();
+  });
+
+  if (!popup.classList.contains("popup-quiz")) return;
+
+  const quizResult = popup.querySelector(".popup-quiz__result");
+  let currentStep = popup.querySelector(".step_active");
+
+  if(quizResult.classList.contains("popup-quiz__result_active")) {
+    quizResult.classList.remove("popup-quiz__result_active");
+    currentStep = popup.querySelector('[data-quiz-step="1"]');
+    currentStep.classList.add("step_active");
+    return
+  }
+
+  currentStep.classList.remove("step_active");
+  currentStep = popup.querySelector('[data-quiz-step="1"]');
+  currentStep.classList.add("step_active");
 }
 
 export function initMiniPartnersSwiper() {
@@ -76,7 +144,7 @@ export function initMiniPartnersSwiper() {
   });
 }
 
-export function initAccordion() {
+export function initAccordeon() {
   const accCol = document.querySelectorAll(".acc");
   accCol.forEach((acc) => {
     const accItemCol = acc.querySelectorAll(".acc__item");
@@ -115,7 +183,7 @@ export function initAccordion() {
   });
 }
 
-export function associateAccordionWithImageSrc() {
+export function associateAccordeonWithImageSrc() {
   const acc = document.querySelector(".about-accordeon__acc");
   const image = document.querySelector(".about-accordeon__img");
   const picture = image.closest("picture");

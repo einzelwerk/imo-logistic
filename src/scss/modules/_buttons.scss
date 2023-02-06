@@ -33,6 +33,12 @@
     border-radius: 12px;
   }
 
+  &_light {
+    background: vars.$bg-light;
+    color: vars.$placeholder;
+    border-radius: 12px;
+  }
+
   &_yellow {
     background: vars.$yellow;
     color: vars.$headlines;

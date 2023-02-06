@@ -10,6 +10,10 @@
   color: vars.$headlines;
   border-radius: 24px;
 
+  &_gray {
+    background: vars.$bg-light;
+  }
+
   &__text-block {
     max-width: 180px;
   }
@@ -39,28 +43,12 @@
     border-bottom: 1px solid vars.$bg-light-divider;
   }
 
-  &__benefits {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 160px;
-    color: vars.$bg-dark;
-    @include mix.p-14;
-
-    &-item {
-      display: flex;
-      gap: 8px;
-      opacity: 1;
-
-      &_inactive {
-        opacity: .5;
+  &__benefit-list {
+    .benefit-list {
+      &__item {
+        max-width: 167px;
+        width: 167px;
       }
-    }
-
-    &-icon {
-      flex: none;
-      width: 20px;
-      height: 20px;
     }
   }
 

@@ -17,12 +17,14 @@ mixin half-delivery(isRight)
         h2.half-block__title Unsere Liefermöglichkeiten!
         .half-block__info
           p.half-block__desc Durch unsere langjährige Erfahrung in unterschiedlichsten Branchen haben wir heute den Prozess vom Bestelleingang, Lagerhaltung, Kommissionierung bis zur Versandabwicklung perfektioniert und decken ihn effizient, kostengünstig und professionell ab.
-          ul.half-block__benefits
-            each item in ['Overnight','Wunschtermin','Same-Day','Selbstabholung']
-              li.half-block__benefits-item
-                svg.half-block__benefits-icon
-                  use(xlink:href="@/img/sprite.svg#on")
-                span.half-block__benefits-text=item
+          -
+            const benefitList = [
+              {isActive: true, text: 'Overnight'},
+              {isActive: true, text: 'Wunschtermin'},
+              {isActive: true, text: 'Same-Day'},
+              {isActive: true, text: 'Selbstabholung'},
+            ];
+          +benefit-list(benefitList, 'half-block__benefit-list')
           button.btn.btn_yellow(type="button") Learn More
       .half-block__img-wrap
         img.half-block__img(src="@/img/half/half-2.jpg", alt="")

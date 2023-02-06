@@ -1,31 +1,30 @@
-mixin popup-form
-  .overlay
-    .popup.popup-form(data-popup="form")
-      .container.popup-form__container
-        button.popup__close(type="button")
-          svg.popup__close-icon
-            use(xlink:href="@/img/sprite.svg#close")
-        .popup-form__text-block
-          h2.popup-form__title Leave us a request
-          p.popup-form__desc Sind Sie an einer Zusammenarbeit interessiert? Schreiben Sie uns, wir werden Ihnen bald antworten!
-        form.popup-form__form(action="#")
-          .popup-form__field-block
-            label.visually-hidden(for="#name") Name
-            input#name.popup-form__field(type="text" name="name" placeholder="Name")
-            .popup-form__field-row
-              label.visually-hidden(for="#email") E-mail-Adresse
-              input#email.popup-form__field(type="email" name="email" placeholder="E-mail-Adresse")
-              label.visually-hidden(for="#tel") Telefon
-              input#tel.popup-form__field(type="tel" name="tel" placeholder="Telefon")
-            label.visually-hidden(for="#message") Nachricht
-            textarea.popup-form__field.popup-form__field_textarea#message(name="message", placeholder="Nachricht")
-          label.checkbox.checkbox__checkbox
-            input.visually-hidden.checkbox__flag(type="checkbox" name="rules")
-            span.checkbox__custom
-            span.checkbox__text
-              span.popup-form__checkbox-text Hiermit akzeptiere ich die&nbsp;
-              a.popup-form__checkbox-text.popup-form__checkbox-text_link(href="#") Datenschutzbedingungen
+mixin popup-form(isActive = false)
+  .popup.popup-form(class=isActive ? 'popup_active' : '' data-popup="form")
+    .popup-form__container
+      button.popup__close(type="button" data-popup-close)
+        svg.popup__close-icon
+          use(xlink:href="@/img/sprite.svg#close")
+      .popup-form__text-block
+        h2.popup-form__title Leave us a request
+        p.popup-form__desc Sind Sie an einer Zusammenarbeit interessiert? Schreiben Sie uns, wir werden Ihnen bald antworten!
+      form.popup-form__form(action="#")
+        .popup-form__field-block
+          label.visually-hidden(for="#name") Name
+          input#name.popup-form__field(type="text" name="name" placeholder="Name")
+          .popup-form__field-row
+            label.visually-hidden(for="#email") E-mail-Adresse
+            input#email.popup-form__field(type="email" name="email" placeholder="E-mail-Adresse")
+            label.visually-hidden(for="#tel") Telefon
+            input#tel.popup-form__field(type="tel" name="tel" placeholder="Telefon")
+          label.visually-hidden(for="#message") Nachricht
+          textarea.popup-form__field.popup-form__field_textarea#message(name="message", placeholder="Nachricht")
+        label.checkbox.checkbox__checkbox
+          input.visually-hidden.checkbox__flag(type="checkbox" name="rules")
+          span.checkbox__custom
+          span.checkbox__text
+            span.popup-form__checkbox-text Hiermit akzeptiere ich die&nbsp;
+            a.popup-form__checkbox-text.popup-form__checkbox-text_link(href="#") Datenschutzbedingungen
 
-          button.btn.btn_yellow.popup-form__btn(type="submit") Senden
+        button.btn.btn_yellow.popup-form__btn(type="submit") Senden
 
 

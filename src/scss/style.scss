@@ -15,8 +15,11 @@
 @use './modules/inputs';
 @use './modules/acc';
 @use './modules/tarif-card';
+@use './modules/benefit-list';
 @use './modules/tarif-offer';
-@use './modules/popups';
+@use './modules/popup';
+@use './modules/popup-form';
+@use './modules/popup-quiz';
 
 // Layouts
 @use './layout/header';

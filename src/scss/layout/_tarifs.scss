@@ -3,9 +3,13 @@
 
 .tarifs {
   padding: 120px 0;
-  padding-top: 117px;
   background: vars.$bg-dark;
   color: vars.$white;
+
+  &_white {
+    background: unset;
+    color: vars.$headlines;
+  }
 
   &__container {
     display: flex;

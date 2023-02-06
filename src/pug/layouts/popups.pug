@@ -1,0 +1,7 @@
+include ../modules/popup-form
+include ../modules/popup-quiz
+
+mixin popups(isActive, activePopupArr)
+  .overlay(class=isActive ? 'overlay_active' : '')
+    +popup-form(activePopupArr ? activePopupArr[0] : null)
+    +popup-quiz(activePopupArr ? activePopupArr[1] : null)

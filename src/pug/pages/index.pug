@@ -5,9 +5,6 @@ block vars
   - const pageName = 'home';
 
 block content
-  include ../modules/popup-form
-  +popup-form
-
   include ../layouts/hero
   +hero(
     'main',
@@ -51,7 +48,7 @@ block content
     ]
   )
   include ../layouts/tarifs
-  +tarifs
+  +tarifs(false)
   include ../layouts/half-blocks
   section
     +half-storage(true)

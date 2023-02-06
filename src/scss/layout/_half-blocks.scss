@@ -95,22 +95,23 @@
     color: vars.$text-on-light;
   }
 
-  &__benefits {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  &__benefit-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px 30px;
-    max-width: 390px;
+    width: fit-content;
+    @include mix.p-18;
 
-    &-item {
-      display: flex;
-      gap: 12px;
-      width: 180px;
-    }
+    .benefit-list {
+      &__item {
+        gap: 12px;
+        width: 180px;
+      }
 
-    &-icon {
-      width: 28px;
-      height: 28px;
+      &__icon {
+        width: 28px;
+        height: 28px;
+      }
     }
   }
 

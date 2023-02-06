@@ -1,14 +1,15 @@
 include ../modules/tarif-card
 include ../modules/tarif-offer
 
-mixin tarifs
-  section.tarifs
+mixin tarifs(isWhite = false)
+  section.tarifs(class=isWhite? 'tarifs_white' : '')
     .container.tarifs__container
       .tarifs__top
         h2.tarifs__title Unsere Tarife
         .tarifs__btns
-          button.btn.btn_big.btn_yellow(type="button") Tarifrechner
-          button.btn.btn_big.btn_white(type="button") Learn more
+          button.btn.btn_big.btn_yellow(type="button" data-popup-btn="quiz") Tarifrechner
+          if !isWhite
+            button.btn.btn_big.btn_white(type="button") Learn more
       ul.tarifs__list
         -
           const list = [
@@ -17,13 +18,13 @@ mixin tarifs
               price: 'ab 600€',
               desc: 'monatlich',
               benefits: [
-              {isActive: false, content: 'Set-Up IT (299€)'},
-              {isActive: false, content: 'Provision/Initial stocking (299€)'},
-              {isActive: true, content: 'Up to 5 working hours'},
-              {isActive: true, content: '200 picks'},
-              {isActive: true, content: '50 packs'},
-              {isActive: true, content: 'Up to 25 shleves included'},
-              {isActive: true, content: 'Up to 5 pallet spaces included'},
+              {isActive: false, text: 'Set-Up IT (299€)'},
+              {isActive: false, text: 'Provision/Initial stocking (299€)'},
+              {isActive: true, text: 'Up to 5 working hours'},
+              {isActive: true, text: '200 picks'},
+              {isActive: true, text: '50 packs'},
+              {isActive: true, text: 'Up to 25 shleves included'},
+              {isActive: true, text: 'Up to 5 pallet spaces included'},
               ],
             },
             {
@@ -31,13 +32,13 @@ mixin tarifs
               price: 'ab 1500€',
               desc: 'monatlich',
               benefits: [
-              {isActive: false, content: 'Set-Up IT (299€)'},
-              {isActive: false, content: 'Provision/Initial stocking (299€)'},
-              {isActive: true, content: 'Up to 10 working hours'},
-              {isActive: true, content: '500 picks'},
-              {isActive: true, content: '100 packs'},
-              {isActive: true, content: 'Up to 50 shleves included'},
-              {isActive: true, content: 'Up to 10 pallet spaces  included'},
+              {isActive: false, text: 'Set-Up IT (299€)'},
+              {isActive: false, text: 'Provision/Initial stocking (299€)'},
+              {isActive: true, text: 'Up to 10 working hours'},
+              {isActive: true, text: '500 picks'},
+              {isActive: true, text: '100 packs'},
+              {isActive: true, text: 'Up to 50 shleves included'},
+              {isActive: true, text: 'Up to 10 pallet spaces  included'},
               ],
             },
             {
@@ -45,13 +46,13 @@ mixin tarifs
               price: 'ab 2500€',
               desc: 'monatlich',
               benefits: [
-              {isActive: true, content: 'Set-Up IT'},
-              {isActive: true, content: 'Provision/Initial stocking'},
-              {isActive: true, content: 'Up to 30 working hours'},
-              {isActive: true, content: '1200 picks'},
-              {isActive: true, content: '240 packs'},
-              {isActive: true, content: 'Up to 100 shleves included'},
-              {isActive: true, content: 'Up to 20 pallet spaces  included'},
+              {isActive: true, text: 'Set-Up IT'},
+              {isActive: true, text: 'Provision/Initial stocking'},
+              {isActive: true, text: 'Up to 30 working hours'},
+              {isActive: true, text: '1200 picks'},
+              {isActive: true, text: '240 packs'},
+              {isActive: true, text: 'Up to 100 shleves included'},
+              {isActive: true, text: 'Up to 20 pallet spaces  included'},
               ],
             },
             {
@@ -59,16 +60,16 @@ mixin tarifs
               price: 'ab 5000€',
               desc: 'monatlich',
               benefits: [
-              {isActive: true, content: 'Set-Up IT'},
-              {isActive: true, content: 'Provision/Initial stocking'},
-              {isActive: true, content: 'Up to 80 working hours'},
-              {isActive: true, content: '2500 picks'},
-              {isActive: true, content: '500 packs'},
-              {isActive: true, content: 'Up to 200 shleves included'},
-              {isActive: true, content: 'Up to 50 pallet spaces  included'},
+              {isActive: true, text: 'Set-Up IT'},
+              {isActive: true, text: 'Provision/Initial stocking'},
+              {isActive: true, text: 'Up to 80 working hours'},
+              {isActive: true, text: '2500 picks'},
+              {isActive: true, text: '500 packs'},
+              {isActive: true, text: 'Up to 200 shleves included'},
+              {isActive: true, text: 'Up to 50 pallet spaces  included'},
               ],
             },
           ]
         each item in list
-          +tarif-card('li', item)
+          +tarif-card('li', item, isWhite ? true : false)
       +tarif-offer()

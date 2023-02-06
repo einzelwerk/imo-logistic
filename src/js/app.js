@@ -3,9 +3,10 @@ import {
   headerHide,
   closePopup,
   openPopup,
+  changeStepsQuizPopup,
   initMiniPartnersSwiper,
-  initAccordion,
-  associateAccordionWithImageSrc,
+  initAccordeon,
+  associateAccordeonWithImageSrc,
   initLangSelects,
   setBenefitСolumns,
 } from "./modules/functions.js";
@@ -16,11 +17,15 @@ headerHide()
 
 // Popup
 closePopup();
-openPopup('form')
+openPopup()
+changeStepsQuizPopup()
 
+// Swiper
 initMiniPartnersSwiper();
-initAccordion();
-associateAccordionWithImageSrc();
+
+// Accordeon
+initAccordeon();
+associateAccordeonWithImageSrc();
 initLangSelects();
 setBenefitСolumns();
 
