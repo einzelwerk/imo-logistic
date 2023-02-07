@@ -7,20 +7,22 @@ block vars
 block content
   include ../layouts/hero
   +hero(
-    'main',
     'Smartes fulfillment für e-commerce untermehnen',
     'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
     'Fulfillment Angebot',
     '@/files/globus-video.mp4'
   )
+
   include ../layouts/mini-partners
+
   include ../layouts/about-desc
   +about-desc
-  include ../layouts/about-accordeon
-  +about-accordeon
+
+  include ../layouts/acc-img
+  +acc-img
+
   include ../layouts/benefits
   +benefits(
-    'main-benefits',
     {
       title: 'Die unrealistischsten Vorteile unseres Unternehmens',
     },
@@ -47,8 +49,10 @@ block content
       },
     ]
   )
-  include ../layouts/tarifs
-  +tarifs(false)
+
+  include ../layouts/tariff-plans
+  +tariff-plans(false)
+
   include ../layouts/half-blocks
   section
     +half-storage(true)

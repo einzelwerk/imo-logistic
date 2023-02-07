@@ -1,16 +1,16 @@
 include ../modules/tarif-card
 include ../modules/tarif-offer
 
-mixin tarifs(isWhite = false)
-  section.tarifs(class=isWhite? 'tarifs_white' : '')
-    .container.tarifs__container
-      .tarifs__top
-        h2.tarifs__title Unsere Tarife
-        .tarifs__btns
-          button.btn.btn_big.btn_yellow(type="button" data-popup-btn="quiz") Tarifrechner
+mixin tariff-plans(isWhite = false)
+  section.tariff-plans(class=isWhite? 'tariff-plans_white' : '')
+    .container.tariff-plans__container
+      .tariff-plans__top
+        h2.tariff-plans__title Unsere Tarife
+        .tariff-plans__btns
+          button.btn.btn_big.btn_yellow(type="button" data-popup-open="quiz") Tarifrechner
           if !isWhite
             button.btn.btn_big.btn_white(type="button") Learn more
-      ul.tarifs__list
+      ul.tariff-plans__list
         -
           const list = [
             {

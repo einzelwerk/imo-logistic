@@ -1,67 +1,123 @@
+import { classNames } from "./classNames.js";
 import Swiper, { Autoplay } from "swiper";
 import Choices from "choices.js";
 
-export function headerBlur(selector) {
-  const header = document.querySelector(`${selector}.app .header`);
+// Header
+export function headerBlur() {
+  const classBlock = classNames.header.block;
+  const classBlur = classNames.header.blur;
+  const classApp = classNames.page.app;
+  const classHome = classNames.page.home;
+  const classTariffs = classNames.page.tariffs;
+
+  const header = document.querySelector(`.${classBlock}`);
   document.addEventListener("scroll", () => {
-    if (header.classList.contains("header_blur") && window.scrollY > 0) return;
-    if (window.scrollY > 0) header.classList.add("header_blur");
-    else header.classList.remove("header_blur");
+    if (header.classList.contains(classBlur) && window.scrollY > 0) return;
+    if (window.scrollY > 0) header.classList.add(classBlur);
+    else {
+      if (
+        header.closest(`.${classApp}.${classHome},.${classApp}.${classTariffs}`)
+      ) {
+        header.classList.remove(classBlur);
+      }
+    }
   });
 }
-
 export function headerHide() {
-  const header = document.querySelector(".header");
+  const classBlock = classNames.header.block;
+  const classHide = classNames.header.hide;
+
+  const header = document.querySelector(`.${classBlock}`);
   let lastScrollY = window.scrollY;
   document.addEventListener("scroll", () => {
     if (window.scrollY > lastScrollY && window.scrollY !== 0) {
-      header.classList.add("header_hide");
+      header.classList.add(classHide);
       lastScrollY = window.scrollY;
     } else {
-      header.classList.remove("header_hide");
+      header.classList.remove(classHide);
       lastScrollY = window.scrollY;
     }
   });
 }
 
-export function openPopup(popupName) {
-  document.querySelectorAll(`[data-popup-btn`).forEach((openBtn) => {
-    openBtn.addEventListener("click", () => {
-      const popupName = openBtn.dataset.popupBtn;
-      const popup = document.querySelector(`[data-popup="${popupName}"]`);
-      const overlay = popup.closest(".overlay");
+// Popup
+export function openPopup(overlayClasName, popupClasName) {
+  const classOverlay = classNames.popups.overlay;
+  const classOverlayActive = classNames.popups.overlayActive;
+  const classPopup = classNames.popups.popup;
+  const classPopupActive = classNames.popups.popupActive;
 
-      popup.classList.add("popup_active");
-      overlay.classList.add("overlay_active");
+  document.querySelectorAll("[data-popup-open]").forEach((openBtn) => {
+    openBtn.addEventListener("click", () => {
+      const popupName = openBtn.dataset.popupOpen;
+      const popup = document.querySelector(`[data-popup="${popupName}"]`);
+      const overlay = popup.closest(`.${classOverlay}`);
+
+      popup.classList.add(classPopupActive);
+      overlay.classList.add(classOverlayActive);
       document.body.style.overflow = "hidden";
     });
   });
 }
-
 export function closePopup() {
+  const classOverlay = classNames.popups.overlay;
+  const classOverlayActive = classNames.popups.overlayActive;
+  const classPopup = classNames.popups.popup;
+  const classPopupActive = classNames.popups.popupActive;
+
   document.addEventListener("click", (e) => {
-    const overlay = e.target.closest(".overlay_active");
-    const popup = e.target.closest(".popup_active");
+    const overlay = e.target.closest(`.${classOverlayActive}`);
+    const popup = e.target.closest(`.${classPopupActive}`);
     const closeBtn = e.target.closest("[data-popup-close]");
 
     if (!(closeBtn || (overlay && !popup))) return;
 
-    const activePopup = overlay.querySelector(".popup_active");
+    const activePopup = overlay.querySelector(`.${classPopupActive}`);
 
-    overlay.classList.remove("overlay_active");
-    activePopup.classList.remove("popup_active");
+    overlay.classList.remove(classOverlayActive);
+    activePopup.classList.remove(classPopupActive);
     document.body.style.overflow = "auto";
 
-    overlay.addEventListener('transitionend', function handler() {
-      resetPoups(activePopup)
-      overlay.removeEventListener('transitionend', handler);
+    overlay.addEventListener("transitionend", function handler() {
+      resetPoups(activePopup);
+      overlay.removeEventListener("transitionend", handler);
     });
   });
 }
+function resetPoups(popup) {
+  const classQuiz = classNames.popupQuiz.quiz;
+  const classStepActive = classNames.popupQuiz.stepActive;
+  const classResult = classNames.popupQuiz.result;
+  const classResultActive = classNames.popupQuiz.resultActive;
 
+  popup.querySelectorAll("form").forEach((form) => {
+    form.reset();
+  });
+
+  if (!popup.classList.contains(classQuiz)) return;
+
+  const quizResult = popup.querySelector(`.${classResult}`);
+  let currentStep = popup.querySelector(`.${classStepActive}`);
+
+  if (quizResult.classList.contains(classResultActive)) {
+    quizResult.classList.remove(classResultActive);
+    currentStep = popup.querySelector('[data-quiz-step="1"]');
+    currentStep.classList.add(classStepActive);
+    return;
+  }
+
+  currentStep.classList.remove(classStepActive);
+  currentStep = popup.querySelector('[data-quiz-step="1"]');
+  currentStep.classList.add(classStepActive);
+}
+
+// QuizPopup
 export function changeStepsQuizPopup() {
-  const quizPopup = document.querySelector(".popup-quiz");
+  const classQuiz = classNames.popupQuiz.quiz;
+  const classStepActive = classNames.popupQuiz.stepActive;
+  const classResultActive = classNames.popupQuiz.resultActive;
 
+  const quizPopup = document.querySelector(`.${classQuiz}`);
 
   const quizBtnBackCol = quizPopup.querySelectorAll("[data-quiz-step-back]");
   const quizBtnNextCol = quizPopup.querySelectorAll("[data-quiz-step-next]");
@@ -72,16 +128,16 @@ export function changeStepsQuizPopup() {
   const goTo = (e, increment) => {
     e.preventDefault();
 
-    let currentStep = quizPopup.querySelector(".step_active");
+    let currentStep = quizPopup.querySelector(`.${classStepActive}`);
     let currentStepNum = currentStep.dataset.quizStep;
 
-    currentStep.classList.remove("step_active");
+    currentStep.classList.remove(classStepActive);
     if (increment) currentStepNum++;
     else currentStepNum--;
     currentStep = quizPopup.querySelector(
       `[data-quiz-step="${currentStepNum}"`
-      );
-    currentStep.classList.add("step_active");
+    );
+    currentStep.classList.add(classStepActive);
   };
 
   quizBtnBackCol.forEach((quizBtnBack) => {
@@ -94,11 +150,11 @@ export function changeStepsQuizPopup() {
   quizBtnSubmit.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const currentStep = quizPopup.querySelector(".step_active");
-    currentStep.classList.remove("step_active");
+    const currentStep = quizPopup.querySelector(`.${classStepActive}`);
+    currentStep.classList.remove(classStepActive);
 
     const result = quizPopup.querySelector("[data-quiz-result]");
-    result.classList.add("popup-quiz__result_active");
+    result.classList.add(classResultActive);
   });
 
   // Previous Close
@@ -107,111 +163,45 @@ export function changeStepsQuizPopup() {
   });
 }
 
-function resetPoups(popup) {
-  popup.querySelectorAll("form").forEach((form) => {
-    form.reset();
-  });
+// Swiper
+export function initMiniPartnersSwiper(className) {
+  const classBlock = classNames.swiper.miniPartners;
 
-  if (!popup.classList.contains("popup-quiz")) return;
-
-  const quizResult = popup.querySelector(".popup-quiz__result");
-  let currentStep = popup.querySelector(".step_active");
-
-  if(quizResult.classList.contains("popup-quiz__result_active")) {
-    quizResult.classList.remove("popup-quiz__result_active");
-    currentStep = popup.querySelector('[data-quiz-step="1"]');
-    currentStep.classList.add("step_active");
-    return
-  }
-
-  currentStep.classList.remove("step_active");
-  currentStep = popup.querySelector('[data-quiz-step="1"]');
-  currentStep.classList.add("step_active");
-}
-
-export function initMiniPartnersSwiper() {
-  return new Swiper(".mini-partners__slider", {
+  return new Swiper(`.${classBlock}`, {
     modules: [Autoplay],
     loop: true,
     spaceBetween: 110,
     speed: 5000,
-    simulateTouch: false,
+    slidesPerView: 5,
+    autoplay: {
+      delay: 0,
+      reverseDirection: true,
+      disableOnInteraction: false,
+    },
+  });
+}
+export function initReviewsSwiper() {
+  const classBlock = classNames.swiper.review;
+
+  return new Swiper(`.${classBlock}`, {
+    modules: [Autoplay],
+    loop: true,
+    spaceBetween: 20,
+    speed: 15000,
+    slidesPerView: 3,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
+      reverseDirection: true,
     },
-    slidesPerView: 5,
   });
 }
 
-export function initAccordeon() {
-  const accCol = document.querySelectorAll(".acc");
-  accCol.forEach((acc) => {
-    const accItemCol = acc.querySelectorAll(".acc__item");
+// Choices.js
+export function initLangChoices() {
+  const classBlock = classNames.choices.block;
 
-    {
-      const firstAccItem = accItemCol[0];
-      firstAccItem.classList.add("acc__item_active");
-      const firstAccPanel = firstAccItem.querySelector(".acc__panel");
-      firstAccPanel.style.maxHeight = firstAccPanel.scrollHeight + 32 + "px";
-    }
-
-    accItemCol.forEach((accItem) => {
-      const accBtn = accItem.querySelector(".acc__btn");
-      const accPanel = accItem.querySelector(".acc__panel");
-
-      accBtn.addEventListener("click", () => {
-        accItemCol.forEach((otherAccItem) => {
-          const otherActiveAccItem =
-            otherAccItem.classList.contains("acc__item_active");
-          if (accItem === otherAccItem || !otherActiveAccItem) return;
-
-          const otherAccPanel = otherAccItem.querySelector(".acc__panel");
-          otherAccItem.classList.remove("acc__item_active");
-          otherAccPanel.style.maxHeight = 0;
-        });
-
-        if (!accItem.classList.contains("acc__item_active")) {
-          accItem.classList.add("acc__item_active");
-          accPanel.style.maxHeight = accPanel.scrollHeight + 32 + "px";
-        } else {
-          accItem.classList.remove("acc__item_active");
-          accPanel.style.maxHeight = 0;
-        }
-      });
-    });
-  });
-}
-
-export function associateAccordeonWithImageSrc() {
-  const acc = document.querySelector(".about-accordeon__acc");
-  const image = document.querySelector(".about-accordeon__img");
-  const picture = image.closest("picture");
-  const accItemCol = acc.querySelectorAll(".acc__item");
-  {
-    const firstAccItem = accItemCol[0];
-    const imagePath = firstAccItem.dataset.image;
-    image.setAttribute("src", imagePath);
-    if (picture) {
-      picture.querySelectorAll("source").forEach((source) => {
-        source.setAttribute("srcset", imagePath);
-      });
-    }
-  }
-  accItemCol.forEach((accItem) => {
-    accItem.addEventListener("click", () => {
-      image.src = accItem.dataset.image;
-      if (picture) {
-        picture.querySelectorAll("source").forEach((source) => {
-          source.setAttribute("srcset", accItem.dataset.image);
-        });
-      }
-    });
-  });
-}
-
-export function initLangSelects() {
-  document.querySelectorAll(".select-lang").forEach((choicesEl) => {
+  document.querySelectorAll(`.${classBlock}`).forEach((choicesEl) => {
     const select = new Choices(choicesEl, {
       searchEnabled: false,
       position: "bottom",
@@ -238,13 +228,142 @@ export function initLangSelects() {
         dropdown.classList.add("dropdown--down");
       }
     });
+
+    return select;
   });
 }
 
+// Accordeon
+export function initAccordeon() {
+  const classBlock = classNames.acc.block;
+  const classItem = classNames.acc.item;
+  const classItemActive = classNames.acc.itemActive;
+  const classBtn = classNames.acc.btn;
+  const classPanel = classNames.acc.panel;
+
+  const accCol = document.querySelectorAll(`.${classBlock}`);
+  accCol.forEach((acc) => {
+    const accItemCol = acc.querySelectorAll(`.${classItem}`);
+
+    {
+      const firstAccItem = accItemCol[0];
+      const firstAccPanel = firstAccItem.querySelector(`.${classPanel}`);
+      firstAccItem.classList.add(classItemActive);
+      firstAccPanel.style.maxHeight = firstAccPanel.scrollHeight + 32 + "px";
+    }
+
+    accItemCol.forEach((accItem) => {
+      const accBtn = accItem.querySelector(`.${classBtn}`);
+      const accPanel = accItem.querySelector(`.${classPanel}`);
+
+      accBtn.addEventListener("click", () => {
+        accItemCol.forEach((otherAccItem) => {
+          const otherActiveAccItem =
+            otherAccItem.classList.contains(classItemActive);
+          if (accItem === otherAccItem || !otherActiveAccItem) return;
+
+          const otherAccPanel = otherAccItem.querySelector(`.${classPanel}`);
+          otherAccItem.classList.remove(classItemActive);
+          otherAccPanel.style.maxHeight = 0;
+        });
+
+        if (!accItem.classList.contains(classItemActive)) {
+          accItem.classList.add(classItemActive);
+          accPanel.style.maxHeight = accPanel.scrollHeight + 32 + "px";
+        } else {
+          accItem.classList.remove(classItemActive);
+          accPanel.style.maxHeight = 0;
+        }
+      });
+    });
+  });
+}
+export function associateAccordeonWithImageSrc() {
+  const classSection = classNames.accImg.section;
+  const classAcc = classNames.accImg.acc;
+  const classImg = classNames.accImg.img;
+  const classAccBtn = classNames.acc.btn;
+
+  const accImgSection = document.querySelector(`.${classSection}`);
+  if (!accImgSection) return;
+
+  const acc = accImgSection.querySelector(`.${classAcc}`);
+  const image = accImgSection.querySelector(`.${classImg}`);
+  const picture = image.closest("picture");
+  const accBtnCol = acc.querySelectorAll(`.${classAccBtn}`);
+
+  {
+    const firstAccItem = accBtnCol[0];
+    const imagePath = firstAccItem.dataset.image;
+    image.setAttribute("src", imagePath);
+    if (picture) {
+      picture.querySelectorAll("source").forEach((source) => {
+        source.setAttribute("srcset", imagePath);
+      });
+    }
+  }
+
+  accBtnCol.forEach((accBtn) => {
+    accBtn.addEventListener("click", () => {
+      image.src = accBtn.dataset.image;
+      if (picture) {
+        picture.querySelectorAll("source").forEach((source) => {
+          source.setAttribute("srcset", accBtn.dataset.image);
+        });
+      }
+    });
+  });
+}
+
+// Video
+export function isVideo() {
+  const classBlock = classNames.videoBlock.block;
+  const classBtn = classNames.videoBlock.btn;
+  const classVideo = classNames.videoBlock.video;
+  const classPlayed = classNames.videoBlock.played;
+
+  const videoBlock = document.querySelector(`.${classBlock}`);
+  if (!videoBlock) return;
+
+  const videoBtn = videoBlock.querySelector(`.${classBtn}`);
+  const video = videoBlock.querySelector(`.${classVideo}`);
+
+  videoBtn.addEventListener("click", () => {
+    console.log('clickBtn');
+    videoBlock.classList.add(classPlayed);
+    video.play();
+    video.setAttribute("controls", "controls");
+    videoBtn.classList.add("visually-hidden");
+  });
+
+  video.onplay = () => {
+    console.log('onplay');
+    videoBlock.classList.add(classPlayed);
+    video.play();
+    video.setAttribute("controls", "controls");
+    videoBtn.classList.add("visually-hidden");
+  };
+
+  video.onpause = () => {
+    console.log('onpause');
+    setTimeout(() => {
+      if (!video.paused) return;
+      videoBlock.classList.remove(classPlayed);
+      video.removeAttribute("controls");
+      videoBtn.classList.remove("visually-hidden");
+    }, 200);
+  };
+}
+
+// Benefit List
 export function setBenefitСolumns() {
-  document.querySelectorAll(".benefits__list").forEach((list) => {
+  const classBlock = classNames.benefitList.block;
+  const classFew = classNames.benefitList.few;
+  const classMany = classNames.benefitList.many;
+
+  document.querySelectorAll(`.${classBlock}`).forEach((list) => {
     const childrenCount = list.children.length;
-    if (childrenCount <= 5) list.classList.add("benefits__list_few");
-    else if (childrenCount >= 8) list.classList.add("benefits__list_many");
+    if (childrenCount <= 5) list.classList.add(classFew);
+    else if (childrenCount >= 8) list.classList.add(classMany);
   });
 }

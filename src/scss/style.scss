@@ -20,6 +20,7 @@
 @use './modules/popup';
 @use './modules/popup-form';
 @use './modules/popup-quiz';
+@use './modules/video-block';
 
 // Layouts
 @use './layout/header';
@@ -27,11 +28,15 @@
 @use './layout/hero';
 @use './layout/mini-partners';
 @use './layout/about-desc';
-@use './layout/about-accordeon';
+@use './layout/acc-img';
+@use './layout/about-acc';
 @use './layout/benefits';
-@use './layout/tarifs';
+@use './layout/tariff-plans';
 @use './layout/half-blocks';
+@use './layout/reviews';
+@use './layout/presentation';
 
 // Main Page
-@use './layout/main/main-hero';
-@use './layout/main/main-benefits';
+@use './layout/home/home-hero';
+@use './layout/home/home-benefits';
+@use './layout/tariffs/tariffs-hero';

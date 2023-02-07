@@ -1,0 +1,46 @@
+mixin reviews(title, desc)
+  .reviews
+    .container.reviews__container
+      .reviews__text-block
+        h2.reviews__title=title
+        p.reviews__desc=desc
+      .swiper.reviews__slider
+        ul.swiper-wrapper
+          -
+            let reviewList = [
+              {
+                name: "Chistopher Markus",
+                desc: "GrowFood CEO",
+                message: "«IMO Logistics has been a lifesaver for my business. Their fast shipping and reliable delivery guarantees have allowed me to get my products to my customers quickly and efficiently. Highly recommend!»",
+              },
+              {
+                name: "Matthias Schmidt",
+                desc: "BrightHive",
+                message: "«I've been thoroughly impressed with IMO Logistics' customized approach to my individual needs. They truly take the time to understand my business and provide tailored solutions that work best for me. Thank you!»",
+              },
+              {
+                name: "Sebastian Roth",
+                desc: "SkyWave",
+                message: "«IMO Logistics has truly exceeded my expectations. Their fast shipping, tailored solutions, and reliable delivery guarantees have allowed me to grow my business with confidence. I couldn't be happier with their services.»",
+              },
+              {
+                name: "Dorothea Müller",
+                desc: "NextGen",
+                message: "«I'm so glad I found IMO Logistics. Their IT-interfaces provide me with real-time updates, which is crucial for my business operations. Their reliable delivery guarantees have allowed me to grow my business with confidence.»",
+              },
+              {
+                name: "Thomas Köhler",
+                desc: "GlintGlobal",
+                message: "«I've been impressed with IMO Logistics' customized approach. They truly take the time to understand my business and provide tailored solutions that work best for me. Their fast shipping and delivery guarantees are just icing on the cake!»",
+              },
+            ];
+          each review, idx in reviewList
+            li.swiper-slide
+              .reviews__item
+                p.reviews__text=review.message
+                .reviews__person
+                  img.reviews__person-img(src=`@/img/reviews/person-${idx+1}.jpg`, alt="Person")
+                  .reviews__person-text-block
+                    h3.reviews__person-name=review.name
+                    span.reviews__person-desc=review.desc
+

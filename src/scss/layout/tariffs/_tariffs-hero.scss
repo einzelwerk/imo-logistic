@@ -1,0 +1,47 @@
+@use '../../partials/variables'as vars;
+
+.tariffs {
+  .hero {
+    color: vars.$white;
+    background: vars.$bg-dark;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 27.56%;
+      background: url('@/img/pages/tariffs-hero.svg') no-repeat center / cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 150px;
+      background: linear-gradient(180deg, #151514 29.89%, rgba(21, 21, 20, 0) 100%);
+      opacity: 0.8;
+    }
+
+    &__container {
+      justify-content: unset;
+      align-items: center;
+    }
+
+    &__content {
+      max-width: 1100px;
+      margin-top: 130px;
+    }
+
+    &__desc {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 600px;
+      color: vars.$text-on-dark;
+    }
+  }
+}

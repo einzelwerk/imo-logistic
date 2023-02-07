@@ -1,0 +1,12 @@
+mixin presentation(title,desc)
+  .presentation
+    .container.presentation__container
+      .presentation__text-block
+        h2.presentation__title=title
+        p.presentation__desc=desc
+        button.btn.btn_yellow.presentation__btn(type="button") Kontakt Vertrieb
+      .video-block.presentation__video-block
+        button.video-block__btn(type="button")
+          svg.video-block__icon
+            use(xlink:href="@/img/sprite.svg#play")
+        video.video-block__video(src="@/files/globus-video.mp4" preload="metadata" loop muted)

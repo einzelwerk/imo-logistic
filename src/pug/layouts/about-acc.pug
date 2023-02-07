@@ -1,0 +1,50 @@
+mixin about-acc(titleObj, accObj)
+  .about-acc
+    .container.about-acc__container
+      h2.about-acc__title
+        =titleObj.text
+        if titleObj.notice
+          span.about-acc__title_notice +4
+      ul.acc.about-acc__acc(class=accObj.counter ? 'acc_counter' : '')
+        -
+          accList = [
+            {
+              title: 'Lagerung',
+              desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+            },
+            {
+              title: 'Annahme von Bestellungen',
+              desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+            },
+            {
+              title: 'Paketdienst',
+              desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+            },
+            {
+              title: 'Produktverpackung',
+              desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+            },
+            {
+              title: 'Postfrankierung',
+              desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+            },
+            {
+              title: 'Lieferung',
+              desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+            },
+            {
+              title: 'Retourenmanagement',
+              desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+            },
+          ];
+        each accItem in accList
+          li.acc__item
+            button.acc__btn(type="button")
+              span.acc__title=accItem.title
+              if accObj.icon
+                svg.acc__icon.acc__icon_open
+                  use(xlink:href="@/img/sprite.svg#acc-open")
+                svg.acc__icon.acc__icon_close
+                  use(xlink:href="@/img/sprite.svg#acc-close")
+            .acc__panel
+              span=accItem.desc

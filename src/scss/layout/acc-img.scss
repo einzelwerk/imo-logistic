@@ -1,4 +1,4 @@
-.about-accordeon {
+.acc-img {
   overflow: hidden;
 
   &__container {
@@ -13,6 +13,7 @@
 
   &__img {
     &-block {
+      flex-grow: 1;
       position: relative;
       width: 100%;
       padding-right: calc((100vw - var(--container)) / 2);

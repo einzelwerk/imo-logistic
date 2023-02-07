@@ -1,9 +1,9 @@
 include ../modules/mixins
-header.header
+header.header.header_blur
   .container.header__container
     +logo('header__logo', 'logo-white')
     nav.header__nav
-      a.header__nav-link(href="#") Tariffs
+      a.header__nav-link(href="./tariffs.html") Tariffs
       a.header__nav-link(href="#") Über uns
       a.header__nav-link(href="#") Leistungen
       a.header__nav-link(href="#") Karriere
@@ -11,7 +11,7 @@ header.header
       a.header__nav-link(href="#") Kontakt
     .header__contact
       a.btn.header__contact-tel(href="tel:#") Call us
-      button.btn.btn_white(type="button" data-popup-btn="form") Angebot Anfordern
+      button.btn.btn_white(type="button" data-popup-open="form") Angebot Anfordern
       select.select-lang.header__select
         option(value="en") En
         option(value="ru") Ru

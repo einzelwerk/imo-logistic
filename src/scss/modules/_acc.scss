@@ -7,25 +7,47 @@
   counter-reset: accCounter;
   margin-left: -32px;
 
+  &_counter {
+    .acc {
+      &__btn {
+        &::before {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
   &__item {
     overflow: hidden;
 
     &_active {
-      .acc__btn {
-        padding-bottom: 24px;
+      .acc {
+        &__btn {
+          padding-bottom: 24px;
 
-        &::before {
-          color: vars.$yellow;
+          &::before {
+            color: vars.$yellow;
+          }
+
+          &::after {
+            border-color: transparent;
+          }
         }
 
-        &::after {
-          border-color: transparent;
+        &__panel {
+          padding-bottom: 32px;
+          visibility: visible;
         }
-      }
 
-      .acc__panel {
-        padding-bottom: 32px;
-        visibility: visible;
+        &__icon {
+          color: vars.$bg-light-divider;
+          &_open {
+            display: none;
+          }
+          &_close {
+            display: inline-block;
+          }
+        }
       }
     }
   }
@@ -43,12 +65,13 @@
       padding-bottom 0.5s ease-in-out, ;
 
     &::before {
-      counter-increment: accCounter;
       content: counter(accCounter, decimal-leading-zero);
+      counter-increment: accCounter;
       color: vars.$text-on-dark;
       font-size: 14px;
       line-height: 1.71;
       transition: color .5s ease-in-out;
+      display: none;
     }
 
     &::after {
@@ -85,6 +108,17 @@
   &__title {
     transition: opacity .5s ease-in-out;
     opacity: .6;
+  }
+
+  &__icon {
+    margin-left: auto;
+    width: 36px;
+    height: 36px;
+    color: vars.$headlines;
+    transition: color .3s ease-in-out;
+    &_close {
+      display: none;
+    }
   }
 
   &__panel {

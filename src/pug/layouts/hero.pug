@@ -1,5 +1,5 @@
-mixin hero(pageName, title, desc, btn = false, videoSrc = false)
-  section.hero(class=`${pageName}-hero`)
+mixin hero(title, desc, btn = false, videoSrc = false)
+  section.hero
     if videoSrc
       .hero__video-block
         video.hero__video(src=videoSrc autoplay muted loop)
@@ -8,4 +8,4 @@ mixin hero(pageName, title, desc, btn = false, videoSrc = false)
         h1.hero__title=title
         p.hero__desc=desc
         if btn
-          button.btn.btn_big.btn_yellow.hero__btn(data-popup-btn="form" type="button")=btn
+          button.btn.btn_big.btn_yellow.hero__btn(data-popup-open="form" type="button")=btn

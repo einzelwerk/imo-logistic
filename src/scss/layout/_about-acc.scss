@@ -1,0 +1,28 @@
+@use "../partials/variables"as vars;
+@use "../partials/mixins"as mix;
+
+.about-acc {
+  padding: 120px 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    @include mix.h2;
+
+    &_notice {
+      @include mix.h3;
+      padding: 7px 16px;
+      background: vars.$yellow;
+      border-radius: 24px;
+    }
+  }
+
+  &__acc {}
+}

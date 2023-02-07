@@ -1,9 +1,9 @@
 @use '../../partials/variables'as vars;
 
-.main-benefits {
-  background: vars.$bg-light;
-
+.home {
   .benefits {
+    background: vars.$bg-light;
+
     &__item {
       background: vars.$white;
     }

@@ -1,6 +1,6 @@
-mixin about-accordeon
-  section.about-accordeon
-    .container.about-accordeon__container
+mixin acc-img
+  section.acc-img
+    .container.acc-img__container
       -
         accList = [
           {
@@ -32,12 +32,12 @@ mixin about-accordeon
             desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
           },
         ];
-      ul.acc.about-accordeon__acc
+      ul.acc.acc_counter.acc-img__acc
         each accItem, idx in accList
-          li.acc__item(data-image=`@/img/about-accordeon/acc-${idx+1}.jpg`)
-            button.acc__btn(type="button")
+          li.acc__item
+            button.acc__btn(type="button" data-image=`@/img/acc-img/acc-${idx+1}.jpg`)
               span.acc__title=accItem.title
             .acc__panel
               span=accItem.desc
-      .about-accordeon__img-block
-        img.about-accordeon__img(src="#", alt="")
+      .acc-img__img-block
+        img.acc-img__img(src="#", alt="")

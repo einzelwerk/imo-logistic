@@ -5,28 +5,36 @@ import {
   openPopup,
   changeStepsQuizPopup,
   initMiniPartnersSwiper,
+  initReviewsSwiper,
   initAccordeon,
   associateAccordeonWithImageSrc,
-  initLangSelects,
+  initLangChoices,
   setBenefitСolumns,
+  isVideo,
 } from "./modules/functions.js";
 
 // Header Bluring
-headerBlur('.home');
-headerHide()
+headerBlur();
+headerHide();
 
 // Popup
 closePopup();
-openPopup()
-changeStepsQuizPopup()
+openPopup();
+changeStepsQuizPopup();
 
 // Swiper
 initMiniPartnersSwiper();
+initReviewsSwiper();
+
+// Choices.js
+initLangChoices();
 
 // Accordeon
 initAccordeon();
 associateAccordeonWithImageSrc();
-initLangSelects();
-setBenefitСolumns();
 
-window.onload = () => {};
+// Video
+isVideo()
+
+// Benefit List
+setBenefitСolumns();

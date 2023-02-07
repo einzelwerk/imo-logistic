@@ -1,24 +1,25 @@
 @use '../../partials/variables'as vars;
 
-.main-hero {
-  color: vars.$white;
-  background: vars.$bg-dark;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 150px;
-    background: linear-gradient(180deg, #151514 29.89%, rgba(21, 21, 20, 0) 100%);
-    opacity: 0.8;
-  }
-
+.home {
   .hero {
+    color: vars.$white;
+    background: vars.$bg-dark;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 150px;
+      background: linear-gradient(180deg, #151514 29.89%, rgba(21, 21, 20, 0) 100%);
+      opacity: 0.8;
+    }
+
     &__container {
       justify-content: unset;
     }
+
     &__content {
       margin-top: 100px;
     }

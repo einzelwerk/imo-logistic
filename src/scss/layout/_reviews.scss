@@ -1,0 +1,83 @@
+@use '../partials/mixins'as mix;
+@use '../partials/variables'as vars;
+
+.reviews {
+  overflow: hidden;
+  padding: 120px 0;
+  background: vars.$bg-light;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px
+  }
+
+  &__text-block {
+    display: flex;
+    gap: 150px;
+  }
+
+  &__title {
+    @include mix.h2;
+  }
+
+  &__desc {
+    color: vars.$text-on-light;
+  }
+
+  &__slider {
+    width: 95.38%;
+    margin: 0 auto;
+    height: auto;
+    overflow: visible;
+
+    .swiper {
+      &-wrapper {
+        transition-timing-function: linear !important;
+      }
+    }
+  }
+
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 400px;
+    padding: 20px;
+    padding-bottom: 24px;
+    background: vars.$white;
+  }
+
+  &__text {
+    @include mix.p-20;
+  }
+
+  &__person {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    &-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &-name {
+      @include mix.h5;
+    }
+
+    &-desc {
+      @include mix.p-14;
+      color: vars.$placeholder;
+    }
+  }
+}
