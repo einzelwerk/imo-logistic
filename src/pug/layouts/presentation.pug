@@ -1,12 +1,15 @@
-mixin presentation(title,desc)
+include ../modules/presentation/video-block
+
+mixin presentation(title,descArr)
   .presentation
     .container.presentation__container
       .presentation__text-block
         h2.presentation__title=title
-        p.presentation__desc=desc
+        p.presentation__desc
+          each desc, idx in descArr
+            span=desc
+            br
+            if idx+1 !== descArr.length
+              br
         button.btn.btn_yellow.presentation__btn(type="button") Kontakt Vertrieb
-      .video-block.presentation__video-block
-        button.video-block__btn(type="button")
-          svg.video-block__icon
-            use(xlink:href="@/img/sprite.svg#play")
-        video.video-block__video(src="@/files/globus-video.mp4" preload="metadata" loop muted)
+      +video-block('@/files/globus-video.mp4')

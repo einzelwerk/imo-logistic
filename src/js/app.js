@@ -6,10 +6,10 @@ import {
   changeStepsQuizPopup,
   initMiniPartnersSwiper,
   initReviewsSwiper,
+  initGallerySwiper,
   initAccordeon,
   associateAccordeonWithImageSrc,
   initLangChoices,
-  setBenefitСolumns,
   isVideo,
 } from "./modules/functions.js";
 
@@ -25,6 +25,7 @@ changeStepsQuizPopup();
 // Swiper
 initMiniPartnersSwiper();
 initReviewsSwiper();
+initGallerySwiper()
 
 // Choices.js
 initLangChoices();
@@ -35,6 +36,3 @@ associateAccordeonWithImageSrc();
 
 // Video
 isVideo()
-
-// Benefit List
-setBenefitСolumns();

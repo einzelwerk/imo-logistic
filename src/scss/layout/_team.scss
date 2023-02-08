@@ -1,0 +1,42 @@
+@use '../partials/mixins'as mix;
+@use '../partials/variables'as vars;
+
+.team {
+  padding: 120px 0;
+  background: vars.$bg-light;
+  color: vars.$text-on-light;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__text-block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__title-block {
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__title {
+    @include mix.h2;
+    color: vars.$headlines;
+  }
+
+  &__subtitle {
+    @include mix.h3;
+  }
+
+  &__desc {
+    max-width: 510px;
+
+  }
+}

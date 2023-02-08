@@ -14,29 +14,33 @@
 @use './modules/buttons';
 @use './modules/inputs';
 @use './modules/acc';
-@use './modules/tarif-card';
-@use './modules/benefit-list';
-@use './modules/tarif-offer';
-@use './modules/popup';
-@use './modules/popup-form';
-@use './modules/popup-quiz';
+@use './modules/advantage-list';
+@use './modules/partners-small';
+@use './modules/desc';
 @use './modules/video-block';
+@use './modules/half-blocks';
+@use './modules/popups/popup';
+@use './modules/popups/popup-form';
+@use './modules/popups/popup-quiz';
+@use './modules/benefits/benefits-list';
+@use './modules/team/team-list';
+@use './modules/team/team-join';
+@use './modules/rate/rate-card';
+@use './modules/rate/rate-offer';
 
 // Layouts
 @use './layout/header';
 @use './layout/footer';
 @use './layout/hero';
-@use './layout/mini-partners';
-@use './layout/about-desc';
 @use './layout/acc-img';
 @use './layout/about-acc';
 @use './layout/benefits';
-@use './layout/tariff-plans';
-@use './layout/half-blocks';
+@use './layout/rate';
 @use './layout/reviews';
 @use './layout/presentation';
+@use './layout/team';
+@use './layout/gallery';
 
 // Main Page
 @use './layout/home/home-hero';
-@use './layout/home/home-benefits';
 @use './layout/tariffs/tariffs-hero';

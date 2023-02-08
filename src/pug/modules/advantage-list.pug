@@ -1,0 +1,9 @@
+mixin advantage-list(advantageList, className)
+  ul.advantage-list(class=className)
+    each benefit in advantageList
+      li.advantage-list__item(class=benefit.isActive ? '' : 'advantage-list__item_inactive')
+        -
+          const iconName = benefit.isActive ? 'on' : 'off'
+        svg.advantage-list__icon
+          use(xlink:href=`@/img/sprite.svg#${iconName}`)
+        span.advantage-list__text=benefit.text

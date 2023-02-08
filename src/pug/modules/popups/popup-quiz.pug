@@ -1,0 +1,135 @@
+include ../advantage-list
+
+mixin popup-quiz(isActive = false)
+  .popup.popup-quiz(class=isActive ? 'popup_active' : '' data-popup="quiz")
+    .popup-quiz__container
+      button.popup__close(type="button" data-popup-close)
+        svg.popup__close-icon
+          use(xlink:href="@/img/sprite.svg#close")
+      form.popup-quiz__form(action="#")
+        +quiz-step(1, {
+          title: 'How many packages should we send for you per month?',
+          text: true,
+          name: 'packages-month',
+          amounts: [
+            {amount: '100', text: 'up to'},
+            {amount: '250', text: 'up to'},
+            {amount: '500', text: 'up to'},
+            {amount: '700', text: 'up to'},
+            {amount: '2000', text: 'up to'},
+          ]
+        })
+        +quiz-step(2, {
+          title: 'How many individual items does a package contain on average?',
+          text: false,
+          name: 'how-items-package',
+          amounts: [
+            {amount: '1'},
+            {amount: '2'},
+            {amount: '3'},
+            {amount: '5'},
+            {amount: '>10'},
+          ]
+        })
+        +quiz-step(3, {
+          title: 'How many individual items do you plan to store with us?',
+          text: true,
+          name: 'how-items-store',
+          amounts: [
+            {amount: '30', text: 'up to'},
+            {amount: '50', text: 'up to'},
+            {amount: '60', text: 'up to'},
+            {amount: '90', text: 'up to'},
+            {amount: '90', text: 'more than'},
+          ]
+        })
+        +quiz-step(4, {
+          title: 'How much pallets will be stored with us?',
+          text: true,
+          name: 'pallets-store',
+          amounts: [
+            {amount: '2', text: 'up to'},
+            {amount: '10', text: 'up to'},
+            {amount: '35', text: 'up to'},
+            {amount: '60', text: 'up to'},
+            {amount: '60', text: 'more than'},
+          ]
+        })
+      .popup-quiz__result(data-quiz-result)
+        span.popup-quiz__result-name Final result
+        h2.popup-quiz__title Thanks for completing our quiz! We've selected the best tariff for you
+        .popup-quiz__content
+          .popup-quiz__left
+            .popup-quiz__left-text-block
+              h3.popup-quiz__left-title Tariff M
+              .popup-quiz__pay
+                span.popup-quiz__pay_amount ab 1500€
+                span.popup-quiz__pay_text monatlich
+            -
+              const benefitList = [
+                {isActive: false, text: 'Set-Up IT (299€)'},
+                {isActive: false, text: 'Provision/Initial stocking (299€)'},
+                {isActive: true, text: 'Up to 10 working hours'},
+                {isActive: true, text: '500 picks'},
+                {isActive: true, text: '100 packs'},
+                {isActive: true, text: 'Up to 50 shleves included'},
+                {isActive: true, text: 'Up to 10 pallet spaces included'},
+              ];
+            +advantage-list(benefitList, 'popup-quiz__advantage-list')
+            button.btn.btn_yellow.popup-quiz__btn(type="button") Book a call
+          .popup-quiz__right
+            ul.popup-quiz__info
+              li.popup-quiz__info-item
+                span.popup-quiz__info-item_title Zentrale
+                a.popup-quiz__info-item_link(href="tel:+4951199994290") +49 511 9999 4 290
+                a.popup-quiz__info-item_link(href="mailto:info@imologistics.com") info@imologistics.com
+              li.popup-quiz__info-item
+                span.popup-quiz__info-item_title Rafael Porebski, Head of Supply Chain Management
+                a.popup-quiz__info-item_link(href="tel:+4917624847788") +49 176 24847788
+                a.popup-quiz__info-item_link(href="mailto:rafaelpo@imologistics.com") rafaelpo@imologistics.com
+            .popup-quiz__advantages
+              -
+                const advantagesList = [
+                  {isActive: true, text: 'Overnight'},
+                  {isActive: true, text: 'Wunschtermin'},
+                  {isActive: true, text: 'Same-Day'},
+                  {isActive: true, text: 'Selbstabholung'},
+                ];
+              +advantage-list(advantagesList, 'popup-quiz__advantages-list')
+          .popup-quiz__bottom
+            button.btn.btn_big.btn_light.popup-quiz__repeat(type="button" data-quiz-btn-reset)
+              svg.popup-quiz__repeat_icon
+                use(xlink:href="@/img/sprite.svg#repeat")
+            button.btn.btn_big.btn_light.popup-quiz__close(data-popup-close type="button") Close
+
+mixin quiz-step(step, list)
+  .step(data-quiz-step=step class=step === 1 ? 'step_active' : '')
+    .step__info
+      span.step__info_current #{step < 10 ? '0' + step : step}
+      span /
+      span.step__info_all 04
+    .step__content(action="#")
+      h2.step__title=list.title
+      .step__field-block
+        each field, idx in list.amounts
+          label.step__field
+            if idx == 0
+              input.visually-hidden.step__field-flag(type="radio" name=list.name checked value=field.amount required)
+            else
+              input.visually-hidden.step__field-flag(type="radio" name=list.name value=field.amount required)
+            .step__field-custom
+              if field.text
+                span.step__field-custom_text=field.text
+              span.step__field-custom_amount=field.amount
+      .step__btn-block
+        if step > 1
+          button.step__btn-back.btn.btn_big.btn_light(type="button" data-quiz-step-back) Back
+        if step === 4
+          button.step__btn-next.btn.btn_big.btn_yellow(type="submit" data-quiz-btn-submit) See results
+        else
+          button.step__btn-next.btn.btn_big.btn_yellow(type="submit" data-quiz-step-next) Next step
+
+
+
+
+

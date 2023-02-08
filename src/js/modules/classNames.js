@@ -22,8 +22,9 @@ export const classNames = {
     stepActive: "step_active",
   },
   swiper: {
-    miniPartners: "mini-partners__slider",
+    miniPartners: "partners-small__slider",
     review: "reviews__slider",
+    gallery: "gallery__slider",
   },
   choices: {
     block: "select-lang",
@@ -45,10 +46,5 @@ export const classNames = {
     btn: "video-block__btn",
     video: "video-block__video",
     played: "video-block_played",
-  },
-  benefitList: {
-    block: "benefits__list",
-    few: "benefits__list_few",
-    many: "benefits__list_many",
   },
 };

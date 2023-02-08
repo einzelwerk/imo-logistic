@@ -1,0 +1,12 @@
+include ../advantage-list
+
+mixin rate-card(tag, rate, isGray = false)
+  #{tag}.rate-card(class=isGray ? 'rate-card_gray' : '')
+    .rate-card__text-block
+      h3.rate-card__title=rate.title
+      .rate-card__additionally
+        span.rate-card__price=rate.price
+        span.rate-card__desc=rate.desc
+    hr.rate-card__hr
+    +advantage-list(rate.benefits, 'rate-card__advantage-list')
+    button.btn.btn_yellow.rate-card__btn-choose(type="button") Choose

@@ -6,6 +6,13 @@ block vars
 
 block content
   include ../layouts/hero
+  include ../modules/partners-small
+  include ../modules/desc
+  include ../layouts/acc-img
+  include ../layouts/benefits
+  include ../layouts/rate
+  include ../modules/half-blocks
+
   +hero(
     'Smartes fulfillment für e-commerce untermehnen',
     'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
@@ -13,19 +20,15 @@ block content
     '@/files/globus-video.mp4'
   )
 
-  include ../layouts/mini-partners
+  +partners-small
 
-  include ../layouts/about-desc
-  +about-desc
+  +desc(
+    'We are a fullfilment & logistic company, that is working out a a coherent 360-degree logistics solution with individual concepts based on our customers. Fast shipping, late cut-off times, product based and secured storage and transparency through IT interfaces are a matter of course for us.'
+  )
 
-  include ../layouts/acc-img
   +acc-img
 
-  include ../layouts/benefits
   +benefits(
-    {
-      title: 'Die unrealistischsten Vorteile unseres Unternehmens',
-    },
     [
       {
         title: 'Fast shipping',
@@ -47,13 +50,15 @@ block content
         desc: 'We’re your merchant of record. That means we handle the legal side of processing payments.',
         icon: 'emailbox',
       },
-    ]
+    ],
+    {
+      title: 'Die unrealistischsten Vorteile unseres Unternehmens',
+    },
+    true
   )
 
-  include ../layouts/tariff-plans
-  +tariff-plans(false)
+  +rate(false)
 
-  include ../layouts/half-blocks
   section
     +half-storage(true)
     +half-delivery

@@ -1,0 +1,43 @@
+@use '../partials/variables'as vars;
+@use '../partials/mixins'as mix;
+
+.rate {
+  padding: 120px 0;
+  background: vars.$bg-dark;
+  color: vars.$white;
+
+  &_white {
+    background: unset;
+    color: vars.$headlines;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  &__title {
+    @include mix.h2;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__list {
+    margin-top: -3px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}

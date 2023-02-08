@@ -14,14 +14,16 @@
 
   &__text-block {
     display: flex;
-    gap: 150px;
+    justify-content: space-between;
   }
 
   &__title {
     @include mix.h2;
+    width: 640px;
   }
 
   &__desc {
+    width: 510px;
     color: vars.$text-on-light;
   }
 

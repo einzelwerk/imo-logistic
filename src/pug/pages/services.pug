@@ -1,0 +1,33 @@
+extends ../modules/main
+
+block vars
+  - const title = 'Leistungen';
+  - const pageName = 'services';
+
+block content
+  include ../layouts/hero
+  include ../modules/desc
+  include ../layouts/acc-img
+  include ../layouts/rate
+  include ../layouts/gallery
+  include ../modules/half-blocks
+
+  +hero(
+    'Leistungen',
+    'Einfache Preise ohne versteckte Kosten. Starten Sie jetzt kostenlos - ohne Probezeit, Vertrag oder Risiko.',
+  )
+
+  +desc(
+    'We are a fullfilment & logistic company, that is working out a a coherent 360-degree logistics solution with individual concepts based on our customers. Fast shipping, late cut-off times, product based and secured storage and transparency through IT interfaces are a matter of course for us.'
+  )
+
+  +acc-img
+
+  +rate(false)
+
+  include ../layouts/gallery
+  +gallery
+
+  section
+    +half-offer
+    +half-analysis(true)

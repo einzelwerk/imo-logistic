@@ -1,5 +1,5 @@
-mixin acc(Class,accList)
-  ul.acc(class=Class)
+mixin acc(accList, className)
+  ul.acc(class=className)
     each accItem in accList
       li.acc__item
         button.acc__btn(type="button")

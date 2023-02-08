@@ -169,10 +169,10 @@ export function initMiniPartnersSwiper(className) {
 
   return new Swiper(`.${classBlock}`, {
     modules: [Autoplay],
-    loop: true,
     spaceBetween: 110,
     speed: 5000,
     slidesPerView: 5,
+    loop: true,
     autoplay: {
       delay: 0,
       reverseDirection: true,
@@ -185,10 +185,26 @@ export function initReviewsSwiper() {
 
   return new Swiper(`.${classBlock}`, {
     modules: [Autoplay],
-    loop: true,
     spaceBetween: 20,
     speed: 15000,
     slidesPerView: 3,
+    loop: true,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+      reverseDirection: true,
+    },
+  });
+}
+export function initGallerySwiper() {
+  const classBlock = classNames.swiper.gallery;
+
+  return new Swiper(`.${classBlock}`, {
+    modules: [Autoplay],
+    spaceBetween: 20,
+    speed: 15000,
+    slidesPerView: 2,
+    loop: true,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
@@ -329,7 +345,7 @@ export function isVideo() {
   const video = videoBlock.querySelector(`.${classVideo}`);
 
   videoBtn.addEventListener("click", () => {
-    console.log('clickBtn');
+    console.log("clickBtn");
     videoBlock.classList.add(classPlayed);
     video.play();
     video.setAttribute("controls", "controls");
@@ -337,7 +353,7 @@ export function isVideo() {
   });
 
   video.onplay = () => {
-    console.log('onplay');
+    console.log("onplay");
     videoBlock.classList.add(classPlayed);
     video.play();
     video.setAttribute("controls", "controls");
@@ -345,7 +361,7 @@ export function isVideo() {
   };
 
   video.onpause = () => {
-    console.log('onpause');
+    console.log("onpause");
     setTimeout(() => {
       if (!video.paused) return;
       videoBlock.classList.remove(classPlayed);
@@ -355,15 +371,4 @@ export function isVideo() {
   };
 }
 
-// Benefit List
-export function setBenefitСolumns() {
-  const classBlock = classNames.benefitList.block;
-  const classFew = classNames.benefitList.few;
-  const classMany = classNames.benefitList.many;
 
-  document.querySelectorAll(`.${classBlock}`).forEach((list) => {
-    const childrenCount = list.children.length;
-    if (childrenCount <= 5) list.classList.add(classFew);
-    else if (childrenCount >= 8) list.classList.add(classMany);
-  });
-}
