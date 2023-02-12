@@ -1,4 +1,4 @@
-mixin hero(title, desc, btn = false, videoSrc = false)
+mixin hero(title, desc, videoSrc = false)
   section.hero
     if videoSrc
       .hero__video-block
@@ -7,5 +7,4 @@ mixin hero(title, desc, btn = false, videoSrc = false)
       .hero__content
         h1.hero__title=title
         p.hero__desc=desc
-        if btn
-          button.btn.btn_big.btn_yellow.hero__btn(data-popup-open="form" type="button")=btn
+        block

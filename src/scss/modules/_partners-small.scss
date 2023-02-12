@@ -29,7 +29,7 @@
   &__slider {
     width: 87.38%;
     margin: 0 auto;
-    height: auto;
+    height: 36px;
     overflow: visible;
   }
 
@@ -39,11 +39,12 @@
     }
   }
   &__item {
+    height: 100%;
     width: fit-content;
     margin: 0 auto;
   }
   &__img {
     object-fit: contain;
-    height: 36px;
+    height: 100%;
   }
 }

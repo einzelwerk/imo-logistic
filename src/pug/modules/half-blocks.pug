@@ -1,3 +1,5 @@
+include ./email-btns
+
 mixin half-storage(isRight)
   .half-block.half-block_storage(class=isRight ? 'half-block_right' : '')
     .container.half-block__container
@@ -58,14 +60,7 @@ mixin half-offer(isRight)
           h2.half-block__title Sie möchten eine Beratung oder ein individuelles Angebot?
           .half-block__info
             p.half-block__desc Schreiben Sie mir eine E-Mail oder rufen Sie direkt an. Ich bin gerne für Sie da.
-            .half-block__btns
-              button.btn.btn_big.btn_black(type="button" data-popup-open="form") Make an order
-              a.btn.btn_big.btn_white(href="mailto:#")
-                svg.half-block__btns-icon
-                  use(xlink:href="@/img/sprite.svg#inbox")
-              a.btn.btn_big.btn_white(href="tel:#")
-                svg.half-block__btns-icon
-                  use(xlink:href="@/img/sprite.svg#inbox")
+            +email-btns('Make an order')
       .half-block__img-wrap
         img.half-block__img(src="@/img/half/half-4.jpg", alt="")
 
@@ -74,14 +69,13 @@ mixin half-analysis(isRight)
   .half-block.half-block_analysis(class=isRight ? 'half-block_right' : '')
     .container.half-block__container
       .half-block__content
-        .half-block__text-block
-          .half-block__info
-            h2.half-block__title Bedarfsanalye
-            p.half-block__desc Um Ihnen den bestmöglichen Service anbieten zu können, haben wir einen Fragenbogen entwickelt, um genau Ihren Bedarf zu analysieren. Bitte antworten Sie so genau wie möglich auf die Fragen und wir erarbeiten ein individuelles Angebot genau auf Ihre Interessen abgestimmt.
-            button.btn.btn_white(type="button")
-              span.btn__text Download
-              svg.btn__icon
-                use(xlink:href="@/img/sprite.svg#download")
+        .half-block__info
+          h2.half-block__title Bedarfsanalye
+          p.half-block__desc Um Ihnen den bestmöglichen Service anbieten zu können, haben wir einen Fragenbogen entwickelt, um genau Ihren Bedarf zu analysieren. Bitte antworten Sie so genau wie möglich auf die Fragen und wir erarbeiten ein individuelles Angebot genau auf Ihre Interessen abgestimmt.
+          button.btn.btn_white(type="button")
+            span.btn__text Download
+            svg.btn__icon
+              use(xlink:href="@/img/sprite.svg#download")
       .half-block__img-wrap
         img.half-block__img(src="@/img/half/half-5.jpg", alt="")
 

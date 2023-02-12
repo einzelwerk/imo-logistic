@@ -15,8 +15,8 @@ block content
   +hero(
     'Transparente Preise, maximale Erfolge: Entdecken Sie unser Fulfillment-Angebot',
     'Einfache Preise ohne versteckte Kosten. Starten Sie jetzt kostenlos - ohne Probezeit, Vertrag oder Risiko.',
-    'Jetzt kostenlos starten',
   )
+    button.btn.btn_big.btn_yellow.hero__btn(data-popup-open="quiz" type="button") Jetzt kostenlos starten
 
   +rate(true)
 
@@ -32,9 +32,18 @@ block content
 
   +about-acc(
     {text: 'Frequently Asked Questions'},
+    [
+      'Lagerung',
+      'Annahme von Bestellungen',
+      'Paketdienst',
+      'Produktverpackung',
+      'Postfrankierung',
+      'Lieferung',
+      'Retourenmanagement',
+    ],
     {counter: true, icon: true}
   )
-
+    span We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.
   section
     +half-analysis(true)
     +half-offer

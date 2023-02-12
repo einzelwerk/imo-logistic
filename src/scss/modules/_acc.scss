@@ -34,6 +34,10 @@
           }
         }
 
+        &__title {
+          opacity: 1;
+        }
+
         &__panel {
           padding-bottom: 32px;
           visibility: visible;
@@ -122,11 +126,18 @@
   }
 
   &__panel {
+    padding: 0 32px;
     color: vars.$text-on-light;
     max-height: 0;
-    padding: 0 32px;
     visibility: hidden;
     transition: max-height 0.5s ease-in-out, padding-bottom 0.5s ease-in-out,
       visibility 0.5s ease-in-out;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 522px;
   }
 }

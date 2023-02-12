@@ -1,0 +1,23 @@
+mixin shipping-partners
+  .shipping-partners
+    .container.shipping-partners__container
+      .shipping-partners__text-block
+        h2.shipping-partners__title Our shipping partners
+        p.shipping-partners__desc Wir pflegen enge Beziehungen zu unseren Partnern, um gemeinsam Wachstum und Erfolg zu erreichen. 
+      ul.shipping-partners__list
+        -
+          const partnersList = [
+            {imagesSrc: ['dhl.svg','dpdhl.svg'], name: 'GoGreen Shipping with DHL'},
+            {imagesSrc: ['dpd.svg'], name: 'CO2-neutral shipping with DPD'},
+            {imagesSrc: ['gls.svg'], name: 'KlimaProtect shipping with GLS DE'},
+            {imagesSrc: ['go.png'], name: 'Sustainable environmental policy at GO!'},
+            {imagesSrc: ['hellman.svg'], name: 'Hellmann Worldwide Logistics: Engagement in numerous environmentally-friendly projects'},
+          ];
+        each partners in partnersList
+          li.shipping-partners__item
+            .shipping-partners__item-img-wrap
+              each imageSrc in partners.imagesSrc
+                img.shipping-partners__item-img(src=`@/img/shipping-partners/${imageSrc}`, alt="")
+            .shipping-partners__item-text-block
+              h3.shipping-partners__item-name=partners.name
+

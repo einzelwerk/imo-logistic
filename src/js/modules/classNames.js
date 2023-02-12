@@ -23,6 +23,7 @@ export const classNames = {
   },
   swiper: {
     miniPartners: "partners-small__slider",
+    partners: "partners__slider",
     review: "reviews__slider",
     gallery: "gallery__slider",
   },

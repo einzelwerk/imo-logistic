@@ -8,6 +8,10 @@
   color: vars.$text-on-dark;
   border-radius: 24px;
 
+  &>* {
+    width: 50%;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -25,7 +29,9 @@
     @include mix.h2;
   }
 
-  &__desc {}
+  &__desc {
+    width: 420px;
+  }
 
   &__btn {
     margin-top: auto;

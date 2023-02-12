@@ -1,0 +1,10 @@
+.email-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+}

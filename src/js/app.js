@@ -7,10 +7,12 @@ import {
   initMiniPartnersSwiper,
   initReviewsSwiper,
   initGallerySwiper,
+  initPartnersSwiper,
   initAccordeon,
   associateAccordeonWithImageSrc,
   initLangChoices,
   isVideo,
+  inputFileChange,
 } from "./modules/functions.js";
 
 // Header Bluring
@@ -25,7 +27,8 @@ changeStepsQuizPopup();
 // Swiper
 initMiniPartnersSwiper();
 initReviewsSwiper();
-initGallerySwiper()
+initGallerySwiper();
+initPartnersSwiper();
 
 // Choices.js
 initLangChoices();
@@ -35,4 +38,7 @@ initAccordeon();
 associateAccordeonWithImageSrc();
 
 // Video
-isVideo()
+isVideo();
+
+// Input File Change
+inputFileChange()

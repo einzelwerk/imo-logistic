@@ -164,7 +164,7 @@ export function changeStepsQuizPopup() {
 }
 
 // Swiper
-export function initMiniPartnersSwiper(className) {
+export function initMiniPartnersSwiper() {
   const classBlock = classNames.swiper.miniPartners;
 
   return new Swiper(`.${classBlock}`, {
@@ -209,6 +209,22 @@ export function initGallerySwiper() {
       delay: 0,
       disableOnInteraction: false,
       reverseDirection: true,
+    },
+  });
+}
+export function initPartnersSwiper() {
+  const classBlock = classNames.swiper.partners;
+
+  return new Swiper(`.${classBlock}`, {
+    modules: [Autoplay],
+    spaceBetween: 20,
+    speed: 5000,
+    slidesPerView: 3,
+    loop: true,
+    autoplay: {
+      delay: 0,
+      reverseDirection: true,
+      disableOnInteraction: false,
     },
   });
 }
@@ -371,4 +387,15 @@ export function isVideo() {
   };
 }
 
-
+// Input File Changez
+export function inputFileChange() {
+  document.querySelectorAll(".attach input").forEach((input) => {
+    input.addEventListener("change", () => {
+      const attach = input.closest(".attach");
+      attach.classList.add("attach_active");
+      input.files[0]
+        ? (attach.querySelector("span").innerHTML = input.files[0].name)
+        : null;
+    });
+  });
+}

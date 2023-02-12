@@ -43,15 +43,6 @@
     border-bottom: 1px solid vars.$bg-light-divider;
   }
 
-  &__advantage-list {
-    .advantage-list {
-      &__item {
-        max-width: 167px;
-        width: 167px;
-      }
-    }
-  }
-
   &__btn {
     &-choose {
       margin-top: auto;

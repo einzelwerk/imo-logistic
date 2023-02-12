@@ -1,0 +1,41 @@
+@use '../partials/variables'as vars;
+@use '../partials/mixins'as mix;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__field {
+    &-block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    width: 100%;
+
+    &_textarea {
+      min-height: 150px;
+
+    }
+  }
+
+  &__checkbox {
+    &-text {
+      &_link {
+        color: vars.$headlines;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}

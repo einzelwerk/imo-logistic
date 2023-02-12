@@ -1,0 +1,15 @@
+mixin info(settings, title, desc = [], imgSrc)
+  .info(class=settings.isLeft ? '' : 'info_right' class=settings.isBlack ? '' : 'info_white' )
+    .container.info__container
+      .info__content
+        h2.info__title=title
+        p.info__desc
+          each text, idx in desc
+            if idx + 1 !== desc.length
+              span=text
+              br
+              br
+            else
+              span=text
+      .info__img-wrap
+        img.info__img(src=imgSrc, alt="")

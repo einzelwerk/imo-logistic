@@ -28,13 +28,12 @@
     }
 
     &__container {
-      justify-content: unset;
       align-items: center;
     }
 
     &__content {
+      margin-top: 6.3vh;
       max-width: 1100px;
-      margin-top: 130px;
     }
 
     &__desc {

@@ -4,7 +4,7 @@ mixin benefits-list(benefitsList = [], isWhite, className = '')
       benefitsList.length <= 5
         ? "benefits-list_few"
         : benefitsList.length >= 8
-        ? "benefits-list_few"
+        ? "benefits-list_many"
         : "";
     const classColor = isWhite ? 'benefits-list_white' : isWhite + ''
   ul.benefits-list(class=classCount class=classColor class=className)
