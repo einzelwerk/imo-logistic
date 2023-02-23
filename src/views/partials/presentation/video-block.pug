@@ -1,0 +1,7 @@
+mixin video-block(videoSrc)
+  .video-block.presentation__video-block
+    .video-block__inner
+      button.video-block__btn(type="button")
+        svg.video-block__icon
+          use(xlink:href="./assets/sprite.svg#play")
+      video.video-block__video(src=videoSrc preload="metadata" loop muted)

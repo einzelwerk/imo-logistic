@@ -1,0 +1,184 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mix;
+
+.half-block {
+  height: 700px;
+  min-height: 700px;
+  overflow: hidden;
+
+  @media (max-width: vars.$lg) {
+    height: unset;
+    min-height: unset;
+  }
+
+  @media (min-width: calc(vars.$lg + 0.02px)) {
+    &_right {
+      .half-block {
+        &__img-wrap {
+          margin-right: 0;
+          margin-left: calc((-100vw + var(--container)) / 2);
+          padding-right: 0;
+          padding-left: calc((100vw - var(--container)) / 2);
+        }
+
+        &__content {
+          order: 2;
+          padding-left: 90px;
+        }
+      }
+    }
+
+    &.half-block_analysis {
+      .half-block__content {
+        padding-left: 130px;
+      }
+    }
+  }
+
+  &_offer {
+    background: vars.$yellow;
+  }
+
+  &_analysis {
+    background: #f9eec8;
+
+    .half-block__content {
+      justify-content: center;
+    }
+
+    .half-block__info {
+      margin-top: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    height: 100%;
+
+    & > * {
+      flex-basis: 50%;
+    }
+
+    @media (max-width: vars.$lg) {
+      flex-direction: column;
+
+      & > * {
+        flex-basis: unset;
+        width: 100%;
+      }
+    }
+  }
+
+  &__img {
+    &-wrap {
+      position: relative;
+      flex-grow: 1;
+      height: 100%;
+      margin-right: calc((-100vw + var(--container)) / 2);
+      padding-right: calc((100vw - var(--container)) / 2);
+      @media (max-width: vars.$lg) {
+        flex-grow: unset;
+        width: 100vw;
+        margin: 0;
+        margin-left: calc((-100vw + var(--container)) / 2);
+        padding: 0;
+      }
+    }
+    @media (max-width: vars.$lg) {
+      min-height: 320px;
+    }
+    @media (min-width: calc(vars.$lg + 0.02px)) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-top: clamp(48px, 6.05vw, 60px);
+    padding-bottom: clamp(40px, 6.05vw, 60px);
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 535px;
+    height: 100%;
+  }
+
+  &__title {
+    @include mix.h2;
+    @media (max-width: vars.$md) {
+      @include mix.h3-desktop;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 3.02vw, 30px);
+    margin-top: auto;
+  }
+
+  &__desc {
+    color: vars.$text-on-light;
+  }
+
+  &__advantage-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(12px, 1vw, 16px) clamp(18px, 3.02vw, 30px);
+    width: fit-content;
+
+    @media (min-width: calc(vars.$md + 0.02px)) {
+      @include mix.p-18;
+
+      .advantage-list {
+        &__item {
+          gap: 12px;
+          width: 180px;
+        }
+
+        &__icon {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+
+  &__statistic {
+    display: flex;
+    gap: clamp(6px, 1.21vw, 12px);
+    align-items: center;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: clamp(86px, 8.75vw, 140px);
+      padding: clamp(10px, 1vw, 20px);
+      background: vars.$bg-light;
+      border-radius: clamp(12px, 2.42vw, 24px);
+    }
+
+    &-amount {
+      @include mix.h3-desktop;
+    }
+
+    &-text {
+      margin-top: auto;
+      @include mix.p-14;
+      @media (max-width: vars.$md) {
+        font-size: 12px;
+        line-height: 0.95;
+      }
+    }
+  }
+}

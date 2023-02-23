@@ -1,0 +1,124 @@
+@use './variables' as vars;
+
+@mixin h1 {
+  font-weight: 450;
+  font-size: clamp(36px, 6vw, 72px);
+  font-family: CircularStd, sans-serif;
+  line-height: 1;
+  @media (max-width: vars.$md) {
+    line-height: 1.11;
+  }
+}
+
+@mixin h2 {
+  font-weight: 450;
+  font-size: clamp(24px, 3.67vw, 44px);
+  font-family: CircularStd, sans-serif;
+  line-height: 1.14;
+  @media (max-width: vars.$md) {
+    line-height: 1.33;
+  }
+}
+
+@mixin h2-desktop {
+  font-weight: 450;
+  font-size: 44px;
+  font-family: CircularStd, sans-serif;
+  line-height: 1.14;
+}
+
+@mixin h3 {
+  $fsz: 28px;
+
+  font-weight: 450;
+  font-size: $fsz;
+  font-family: CircularStd, sans-serif;
+  line-height: 1.29;
+}
+
+@mixin h3-desktop {
+  font-weight: 450;
+  font-size: 28px;
+  font-family: CircularStd, sans-serif;
+  line-height: 1.29;
+}
+
+@mixin h4 {
+  font-weight: 450;
+  font-size: 24px;
+  font-family: CircularStd, sans-serif;
+  line-height: 1.33;
+}
+
+@mixin h4-desktop {
+  font-weight: 450;
+  font-size: 24px;
+  font-family: CircularStd, sans-serif;
+  line-height: 1.33;
+}
+
+@mixin h5 {
+  font-weight: 450;
+  font-size: 20px;
+  font-family: CircularStd, sans-serif;
+  line-height: 1.5;
+}
+
+@mixin h5-desktop {
+  font-weight: 450;
+  font-size: 20px;
+  font-family: CircularStd, sans-serif;
+  line-height: 1.5;
+}
+
+@mixin p-20 {
+  font-weight: 400;
+  font-size: 20px;
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+}
+
+@mixin p-18 {
+  font-weight: 400;
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: 1.56;
+}
+
+@mixin p-18-desktop {
+  font-weight: 400;
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: 1.56;
+}
+
+@mixin p-16 {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+}
+
+@mixin p-14 {
+  font-weight: 400;
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.43;
+}
+
+@mixin btn-big {
+  font-weight: 500;
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: 1.56;
+  @media (max-width: vars.$md) {
+    @include btn-small;
+  }
+}
+
+@mixin btn-small {
+  font-weight: 500;
+  font-size: 16px;
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+}

@@ -1,0 +1,161 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as vars;
+
+.reviews {
+  position: relative;
+  padding-top: clamp(53px, 12.1vw, 120px);
+  padding-bottom: clamp(40px, 12.1vw, 120px);
+  overflow: hidden;
+  background: vars.$bg-light;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(35px, 6.05vw, 60px);
+  }
+
+  &__text-block {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    @media (max-width: vars.$md) {
+      flex-direction: column;
+      justify-content: unset;
+    }
+  }
+
+  &__title {
+    @include mix.h2;
+
+    max-width: 640px;
+  }
+
+  &__desc {
+    max-width: 510px;
+    color: vars.$text-on-light;
+  }
+
+  &__slider {
+    &-block {
+      position: relative;
+      z-index: 3;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 5;
+        width: 80px;
+        content: '';
+        @media (max-width: vars.$md) {
+          content: none;
+        }
+      }
+
+      &::before {
+        left: 0;
+        margin-left: calc((-100vw + var(--container)) / 2);
+        background: linear-gradient(
+          90deg,
+          #f7f6f2 16.95%,
+          rgb(247 246 242 / 69%) 54.7%,
+          rgb(247 246 242 / 0%) 100%
+        );
+      }
+
+      &::after {
+        right: 0;
+        margin-right: calc((-100vw + var(--container)) / 2);
+        background: linear-gradient(
+          90deg,
+          #f7f6f2 16.95%,
+          rgb(247 246 242 / 69%) 54.7%,
+          rgb(247 246 242 / 0%) 100%
+        );
+        transform: rotate(180deg);
+      }
+
+      .swiper {
+        &-scrollbar {
+          margin-top: 26px;
+          @media (min-width: calc(vars.$md + 0.02px)) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    width: 95.38%;
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
+
+    @media (max-width: vars.$xxl) {
+      width: 100%;
+    }
+    @media (max-width: vars.$sm) {
+      width: 84.7%;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    min-height: clamp(271px, 40.32vw, 400px);
+    padding: clamp(14px, 2.02vw, 20px);
+    padding-bottom: clamp(16px, 2.42vw, 24px);
+    background: vars.$white;
+    border-radius: 16px;
+  }
+
+  &__text {
+    @include mix.p-20;
+    @media (max-width: vars.$md) {
+      font-size: 14px;
+    }
+  }
+
+  &__person {
+    display: flex;
+    gap: clamp(11px, 1.61vw, 16px);
+    align-items: center;
+    margin-top: auto;
+
+    &-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      @media (max-width: vars.$md) {
+        width: 41px;
+        height: 41px;
+      }
+    }
+
+    &-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &-name {
+      @include mix.h5;
+      @media (max-width: vars.$md) {
+        font-size: 14px;
+        line-height: 1.45;
+      }
+    }
+
+    &-desc {
+      @include mix.p-14;
+      @media (max-width: vars.$md) {
+        font-size: 10px;
+        line-height: 1.4;
+      }
+
+      color: vars.$placeholder;
+    }
+  }
+}

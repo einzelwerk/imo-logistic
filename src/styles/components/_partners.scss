@@ -1,0 +1,49 @@
+@use '../utils/variables'as vars;
+@use '../utils/mixins'as mix;
+
+.partners {
+  padding: 120px 0;
+  overflow: hidden;
+  background: vars.$bg-light;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    color: vars.$text-on-light;
+  }
+
+  &__text-block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    width: 640px;
+    @include mix.h2;
+  }
+
+  &__desc {
+    width: 510px;
+  }
+
+  &__slider {
+    width: 63.08%;
+    height: 140px;
+    overflow: visible;
+  }
+
+  &__item {
+    height: 100%;
+    padding: 48px 10px;
+    background: vars.$white;
+    border-radius: 24px;
+  }
+
+  &__img {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}

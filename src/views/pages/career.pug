@@ -1,0 +1,113 @@
+extends ../layouts/main
+
+block vars
+  - const title = 'Karriere';
+  - const pageName = 'career';
+
+block content
+  include ../components/hero
+  include ../components/desc
+  include ../components/benefits
+  include ../components/reviews
+  include ../components/about-acc
+  include ../components/info
+  include ../components/partners
+  include ../components/contact-filling
+
+  +hero(
+    'Join our team and make a difference at IMO Logistics',
+    'Discover a fulfilling career at IMO Logistics. Join a dynamic team and work with cutting-edge technology in a supportive work environment. Apply today!'
+  )
+    button.btn.btn_big.btn_yellow.hero__btn(data-popup-open="form" type="button") Go to open jobs
+
+  +desc(
+    'IMOLogistics ist ständig auf der Suche nach talentierten und motivierten Mitarbeitern, die unser Team verstärken möchten. Wir bieten eine herausfordernde und lohnende Karrieremöglichkeit in einer schnell wachsenden Branche.'
+  )
+
+  .image-block
+    img.image-block__img(src=require("@/img/pages/career-desc.jpg"), alt="")
+
+  +benefits(
+    [
+      {
+        title: 'Flexible work schedules',
+        desc: 'Balance your work and personal life with our flexible schedule options.',
+        icon: 'calendar',
+      },
+      {
+        title: 'Competitive salary',
+        desc: "Earn what you're worth with our fair and generous pay structure.",
+        icon: 'sendmoney',
+      },
+      {
+        title: 'Growth opportunities',
+        desc: 'Advance your career with our supportive and dynamic work environment.',
+        icon: 'trendup',
+      },
+      {
+        title: 'Health & wellness benefits',
+        desc: 'Take care of yourself with our comprehensive health and wellness programs.',
+        icon: 'home-lock',
+      },
+      {
+        title: 'Career advancement programs',
+        desc: 'Make the most of your skills and experience with our tailored career advancement programs.',
+        icon: 'emailbox',
+      },
+      {
+        title: 'Friendly and collaborative culture',
+        desc: 'Join a tight-knit team where everyone works together towards common goals.',
+        icon: 'reward',
+      },
+      {
+        title: 'Paid time offand paid holidays',
+        desc: 'Enjoy a well-deserved break with our generous paid time off and holiday policies.',
+        icon: 'calendar',
+      },
+      {
+        title: 'Collaborate with leading industry experts',
+        desc: 'Gain invaluable insights and perspectives in your field through our collaboration and mentorship opportunities.',
+        icon: 'calendar',
+      },
+    ],
+    {
+      title: 'Unsere Benefits',
+      desc: 'Unser Unternehmen bietet eine Vielzahl von Vorteilen, um unsere Mitarbeiter zu unterstützen und zu fördern. Von flexiblen Arbeitszeiten bis hin zu attraktiven Vergütungspaketen, wir sorgen dafür, dass Sie sich bei uns wohl fühlen.',
+    },
+    true
+  )
+
+  +reviews(
+    "What team members says",
+    "At IMO Logistics, our employees are the heart of our success. Read what our team has to say about working here and discover why we're a great place to build a career."
+  )
+
+  +about-acc(
+    {text: 'Open Jobs', notice: '+4'},
+    [
+      'Senior Software Engineers',
+      'Senior Product Designer',
+      'Community Manager',
+      'Administrator',
+    ],
+    {counter: false, icon: true}
+  )
+    span We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.
+    button.btn.btn_big.btn_black(type="button") Apply now
+
+  +info(
+    {isLeft: true, isBlack: true},
+    'Großes Zahlungsvolumen oder einzigartiges Geschäftsmodell?',
+    [
+      'Schnell, flexibel und zuverlässig: durch unsere ausgefeilten und hoch skalierbaren FulfillmentProzesse können Markenhersteller und Händler in ihren nationalen und internationalen Märkten leistungsstark auftreten und wirtschaftlich optimiert agieren.',
+    ],
+    require('@/img/info/comand.jpg')
+  )
+
+  +partners
+
+  +contact-filling(
+    'Didn’t find any good fit in our company for you?',
+    'Sind Sie an einer Zusammenarbeit interessiert? Schreiben Sie uns, wir werden Ihnen bald antworten!',
+    true
+  )

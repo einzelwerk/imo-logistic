@@ -1,0 +1,12 @@
+.app.sustainability {
+  .hero {
+    &::before {
+      background: url("@/img/pages/sustainability-hero.jpg") no-repeat center /
+        cover;
+    }
+
+    &__content {
+      margin-top: 75px;
+    }
+  }
+}

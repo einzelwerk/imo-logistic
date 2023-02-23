@@ -1,0 +1,35 @@
+include ../partials/logo
+
+header.header
+  .container.header__container
+    select.select-lang.header__select.header__select-mobile
+        option(value="en") En
+        option(value="ru") Ru
+        option(value="am") Am
+    +logo('header__logo', 'logo-white')
+    nav.header__nav
+      .header__nav-list 
+        a.header__nav-link(href="./tariffs.html") Tariffs
+        a.header__nav-link(href="./about.html") Über uns
+        a.header__nav-link(href="./services.html") Leistungen
+        a.header__nav-link(href="./career.html") Karriere
+        a.header__nav-link(href="./sustainability.html") Nachhaltigkeit
+        a.header__nav-link(href="./contact.html") Kontakt
+    .header__contact
+      a.btn.header__contact-tel(href="#") Call us
+      button.btn.btn_white(type="button" data-popup-open="form") Angebot Anfordern
+      select.select-lang.header__select
+        option(value="en") En
+        option(value="ru") Ru
+        option(value="am") Am
+    .header__nav-contact
+      a.header__nav-contact-tel(href="#")
+        svg.header__nav-contact-tel-icon
+          use(xlink:href="./assets/sprite.svg#phone")
+      button.header__burger
+        span.header__burger-item
+        span.header__burger-item
+        span.header__burger-item
+
+
+

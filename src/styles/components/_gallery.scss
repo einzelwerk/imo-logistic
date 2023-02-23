@@ -1,0 +1,27 @@
+@use '../utils/variables'as vars;
+@use '../utils/mixins'as mix;
+
+.gallery {
+  padding: 120px 0;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__title {
+    @include mix.h2;
+  }
+
+  &__slider {
+    width: 87.69%;
+    height: 360px;
+    overflow: visible;
+  }
+
+  &__img {
+    border-radius: 24px;
+  }
+}

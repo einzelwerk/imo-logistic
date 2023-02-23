@@ -1,0 +1,70 @@
+@use '../utils/variables'as vars;
+@use '../utils/mixins'as mix;
+
+.shipping-partners {
+  padding: 120px 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__text-block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include mix.h2;
+
+    width: 640px;
+  }
+
+  &__desc {
+    width: 510px;
+    color: vars.$text-on-light;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    grid-column: 3 span;
+    gap: 10px;
+    min-height: 360px;
+    padding: 20px;
+    background: vars.$bg-light;
+    border-radius: 24px;
+
+    &:nth-child(3n),
+    &:nth-child(4n),
+    &:nth-child(5n) {
+      grid-column: 2 span;
+    }
+
+    &-img-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    &-img {
+      width: fit-content;
+    }
+
+    &-text-block {
+      margin-top: auto;
+    }
+
+    &-name {
+      @include mix.h3;
+    }
+  }
+
+}

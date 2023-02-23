@@ -1,0 +1,63 @@
+@use '../utils/mixins'as mix;
+@use '../utils/variables'as vars;
+
+// Reset
+.select-lang {
+  margin: 0;
+  font-size: unset;
+
+  &::after {
+    content: none !important;
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform .3s ease-in-out;
+    content: '';
+  }
+
+  &.is-open {
+    &::before {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  .choices {
+    &__inner {
+      min-height: unset;
+      padding: 0 !important;
+      font-size: unset;
+      background: none;
+      border: none;
+    }
+
+    &__list {
+      padding: 0;
+      border: none !important;
+
+      &--dropdown {
+        background: unset;
+      }
+    }
+
+    &__item {
+      font-size: unset !important;
+
+      &--choice {
+        padding: 0 !important;
+        transition: background-color .2s ease;
+
+        &.is-highlighted {
+          background: unset;
+        }
+      }
+    }
+  }
+
+  .dropdown--up {
+    top: unset;
+    bottom: 100%;
+  }
+}

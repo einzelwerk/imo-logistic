@@ -1,0 +1,11 @@
+@use '../utils/variables'as vars;
+@use '../utils/mixins'as mix;
+
+.desc {
+  padding: clamp(60px, 12.1vw, 120px) 0;
+
+  &__text {
+    max-width: 1100px;
+    @include mix.h2;
+  }
+}

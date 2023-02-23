@@ -1,0 +1,9 @@
+mixin email-btns(text, className)
+  .email-btns(class=className)
+    button.email-btns__btn.btn.btn_big.btn_black(type="button" data-popup-open="form")=text
+    a.email-btns__link.btn.btn_big.btn_white(href="mailto:#")
+      svg.email-btns__icon.btn__icon
+        use(xlink:href="./assets/sprite.svg#inbox")
+    a.email-btns__link.btn.btn_big.btn_white(href="tel:#")
+      svg.email-btns__icon.btn__icon
+        use(xlink:href="./assets/sprite.svg#inbox")

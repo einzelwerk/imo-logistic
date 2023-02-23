@@ -1,0 +1,70 @@
+@use "../utils/variables" as vars;
+
+.app.tariffs {
+  .hero {
+    text-align: center;
+
+    &::before {
+      content: none;
+    }
+    
+    &__icons {
+      &::before,
+      &::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 27.56%;
+        content: "";
+        @media (max-width: vars.$xxl) {
+          height: 20%;
+        }
+        @media (max-width: vars.$lg) {
+          height: 15%;
+        }
+        @media (max-width: vars.$md) {
+          border-radius: 24px;
+        }
+      }
+
+      &::before {
+        background: url("@/img/pages/tariffs-hero-left.png") no-repeat left
+          bottom / contain;
+      }
+
+      &::after {
+        background: url("@/img/pages/tariffs-hero-right.png") no-repeat right
+          bottom / contain;
+      }
+    }
+
+    &__container {
+      align-items: center;
+    }
+
+    &__content {
+      width: 100%;
+      max-width: 1100px;
+      margin-top: 55px;
+      @media (max-width: vars.$lg) {
+        margin-top: 0;
+        margin-bottom: 70px;
+      }
+    }
+
+    &__title {
+      @media (max-width: vars.$lg) {
+        font-size: 32px;
+        line-height: 1.25;
+      }
+    }
+
+    &__desc {
+      max-width: 600px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}

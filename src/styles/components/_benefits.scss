@@ -1,0 +1,38 @@
+@use "../utils/mixins" as mix;
+@use "../utils/variables" as vars;
+
+.benefits {
+  padding: clamp(60px, 12.1vw, 120px) 0;
+  padding-bottom: clamp(80px, 12.1vw, 120px) 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(40px, 6.05vw, 60px);
+  }
+
+  &_gray {
+    background: vars.$bg-light;
+  }
+
+  &__text-block {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include mix.h2;
+
+    max-width: 580px;
+    @media (max-width: vars.$md) {
+      @include mix.h3-desktop;
+    }
+  }
+
+  &__desc {
+    max-width: 510px;
+    color: vars.$text-on-light;
+  }
+}

@@ -1,0 +1,8 @@
+.app.services {
+  .hero {
+    &::before {
+      background: url("@/img/pages/services-hero.jpg") no-repeat center /
+        cover;
+    }
+  }
+}

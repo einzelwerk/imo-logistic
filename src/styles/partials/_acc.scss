@@ -1,0 +1,186 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mix;
+
+.acc {
+  display: flex;
+  flex-direction: column;
+  counter-reset: accCounter;
+
+  &_counter {
+    .acc {
+      &__btn {
+        &::before {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    border-radius: 16px;
+    transition: background-color 0.5s ease-in-out;
+
+    @media (max-width: vars.$sm) {
+      margin: 0 (-1 * vars.$cont-padding);
+      padding-right: vars.$cont-padding;
+      padding-left: vars.$cont-padding;
+      border-radius: 0;
+    }
+
+    &:hover,
+    &:focus-within,
+    &:active {
+      background: vars.$bg-light;
+
+      .acc {
+        &__btn {
+          &::before {
+            color: vars.$yellow;
+          }
+
+          &::after {
+            border-color: transparent;
+          }
+        }
+
+        &__title {
+          opacity: 1;
+        }
+      }
+    }
+
+    &_active {
+      background: vars.$bg-light;
+
+      .acc {
+        &__btn {
+          padding-bottom: clamp(16px, 1.5vw, 24px);
+
+          &::before {
+            color: vars.$yellow;
+          }
+
+          &::after {
+            border-color: transparent;
+          }
+        }
+
+        &__title {
+          opacity: 1;
+        }
+
+        &__panel {
+          padding-bottom: 32px;
+          visibility: visible;
+          @media (max-width: vars.$lg) {
+            padding-bottom: 24px;
+          }
+        }
+
+        &__icon {
+          color: vars.$bg-light-divider;
+
+          &_open {
+            display: none;
+          }
+
+          &_close {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    gap: clamp(20px, 1.5vw, 24px);
+    align-items: center;
+    width: 100%;
+    padding: clamp(30px, 2vw, 32px);
+    border-radius: 16px;
+    transition: padding-bottom 0.5s ease-in-out;
+    @include mix.h3;
+
+    @media (max-width: vars.$sm) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    &::before {
+      display: none;
+      color: vars.$text-on-dark;
+      font-size: 14px;
+      line-height: 1.71;
+      transition: color 0.5s ease-in-out;
+      content: counter(accCounter, decimal-leading-zero);
+      counter-increment: accCounter;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      margin: 0 32px;
+      border-bottom: 1px solid vars.$bg-light-divider;
+      transition: border-color 0.3s ease-in-out;
+      content: '';
+    }
+  }
+
+  &__title {
+    opacity: 0.6;
+    transition: opacity 0.5s ease-in-out;
+    @media (max-width: vars.$lg) {
+      @include mix.h5-desktop;
+    }
+  }
+
+  &__icon {
+    &-wrap {
+      margin-left: auto;
+      @media (max-width: vars.$sm) {
+        display: none;
+      }
+    }
+
+    width: 36px;
+    height: 36px;
+    color: vars.$headlines;
+    transition: color 0.3s ease-in-out;
+
+    &_close {
+      display: none;
+    }
+  }
+
+  &__panel {
+    max-height: 0;
+    padding: 0 32px;
+    color: vars.$text-on-light;
+    visibility: hidden;
+    transition: max-height 0.5s ease-in-out, padding-bottom 0.5s ease-in-out,
+      visibility 0.5s ease-in-out;
+    @media (max-width: vars.$lg) {
+      span {
+        display: inline-block;
+        width: 81.25%;
+      }
+    }
+    @media (max-width: vars.$sm) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 522px;
+  }
+}

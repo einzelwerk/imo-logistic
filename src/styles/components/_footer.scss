@@ -1,0 +1,200 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mix;
+
+.footer {
+  margin-top: auto;
+  padding: clamp(48px, 6.05vw, 60px) 0 40px;
+  background: #f6f6f2;
+  @include mix.p-16;
+
+  &__container {
+    display: flex;
+    flex-flow: column wrap;
+    gap: clamp(40px, 8.75vw, 140px);
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+    align-items: flex-start;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    max-width: 220px;
+    margin-right: auto;
+    @media (max-width: vars.$md) {
+      max-width: 247px;
+    }
+  }
+
+  &__logo {
+    margin-bottom: clamp(16px, 2.02vw, 20px);
+    @media (max-width: vars.$md) {
+      height: 52px;
+    }
+  }
+
+  &__desc {
+    margin-bottom: clamp(16px, 2.42vw, 20px);
+    color: vars.$text-on-light;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__social {
+    padding: 18px;
+    font-size: 0;
+    background: vars.$white;
+    border-radius: 12px;
+
+    &-icon {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &__nav-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 80px;
+    align-items: flex-start;
+
+    &-item-block {
+      display: flex;
+      flex-direction: column;
+      gap: 32px 40px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(16px, 2.02vw, 20px);
+      max-width: 250px;
+    }
+
+    &-title {
+      @include mix.p-14;
+
+      opacity: 0.5;
+      @media (max-width: vars.$md) {
+        font-size: 12px;
+        line-height: 1.67;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(8px, 1.21vw, 12px);
+
+      &_contact {
+        gap: 12px;
+        @media (max-width: vars.$md) {
+          gap: 0;
+        }
+      }
+    }
+
+    &-link {
+      &_mail {
+        line-height: 1.5;
+      }
+    }
+  }
+
+  &__nav,
+  &__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 80px;
+    align-items: flex-start;
+  }
+
+  &__nav {
+    @media (max-width: vars.$md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      column-gap: 20px;
+    }
+  }
+
+  &__additionally {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    @include mix.p-14;
+    @media (max-width: vars.$md) {
+      font-size: 12px;
+      line-height: 1.67;
+    }
+
+    &-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      margin-right: auto;
+      @media (max-width: vars.$md) {
+        justify-content: space-between;
+        order: 3;
+        width: 100%;
+      }
+    }
+
+    &-list {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+  }
+
+  &__copyright {
+    opacity: 0.5;
+  }
+
+  &__select {
+    @include mix.p-14;
+    @media (max-width: vars.$md) {
+      font-size: 12px;
+      line-height: 1.67;
+    }
+
+    &::before {
+      right: 0;
+      width: 12px;
+      height: 12px;
+      background: url('@/img/icons/arrow-down-black.svg') no-repeat center /
+        contain;
+    }
+
+    .choices {
+      &__inner {
+        padding: 0 24px 0 5px !important;
+      }
+
+      &__list {
+        &--dropdown {
+          background: vars.$bg-light !important;
+        }
+      }
+
+      &__item {
+        &--choice {
+          padding: 4px 5px !important;
+
+          &.is-highlighted {
+            background: darken(vars.$bg-light, 20%) !important;
+          }
+        }
+      }
+    }
+  }
+}

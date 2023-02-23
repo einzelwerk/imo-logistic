@@ -1,0 +1,54 @@
+@use "../utils/mixins" as mix;
+@use "../utils/variables" as vars;
+
+.acc-img {
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    gap: 82px;
+    @media (max-width: vars.$xxl) {
+      gap: 30px;
+    }
+  }
+
+  &__acc {
+    max-width: 600px;
+    margin-bottom: 92px;
+    @media (max-width: vars.$xxl) {
+      max-width: 450px;
+    }
+    @media (max-width: vars.$lg) {
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    &-block {
+      position: relative;
+      flex-grow: 1;
+      width: 100%;
+      margin-right: calc((-100vw + var(--container)) / 2);
+      padding-right: calc((100vw - var(--container)) / 2);
+      @media (max-width: vars.$lg) {
+        display: none;
+      }
+    }
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__acc-panel-img {
+    width: 100%;
+    min-height: 380px;
+    margin-top: 24px;
+    @media (min-width: calc(vars.$lg + 0.02px)) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.app.about {
+  .hero {
+    &::before {
+      background: url("@/img/pages/about-hero.jpg") no-repeat center /
+        cover;
+    }
+  }
+}

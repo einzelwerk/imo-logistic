@@ -1,0 +1,32 @@
+@use '../utils/variables'as vars;
+
+.app.home {
+  .hero {
+    color: vars.$white;
+    background: vars.$bg-dark;
+
+    &__content {
+      margin-top: 17px;
+    } 
+
+    &__video {
+      &-block {
+        &::before {
+          background: vars.$bg-dark;
+        }
+
+        &::after {
+          background: linear-gradient(90deg, vars.$bg-dark 14.13%, rgba(vars.$bg-dark, 0) 61.96%);
+        }
+
+      }
+    }
+
+    &__desc {
+      color: vars.$text-on-dark;
+      @media (max-width: vars.$md) {
+        line-height: 1.38;
+      }
+    }
+  }
+}

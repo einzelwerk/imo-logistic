@@ -1,0 +1,55 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as vars;
+
+.btn {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 12px 24px;
+  white-space: nowrap;
+  text-align: center;
+  @include mix.btn-small;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &_big {
+    @include mix.btn-big;
+
+    padding: 14px 32px;
+    border-radius: 12px;
+
+    @media (max-width: vars.$md) {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+
+  &_white {
+    color: vars.$headlines;
+    background: vars.$white;
+    border-radius: 12px;
+  }
+
+  &_black {
+    color: vars.$white;
+    background: vars.$headlines;
+    border-radius: 12px;
+  }
+
+  &_light {
+    color: vars.$placeholder;
+    background: vars.$bg-light;
+    border-radius: 12px;
+  }
+
+  &_yellow {
+    color: vars.$headlines;
+    background: vars.$yellow;
+    border-radius: 12px;
+  }
+}

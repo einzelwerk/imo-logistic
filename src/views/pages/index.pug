@@ -1,0 +1,67 @@
+extends ../layouts/main
+
+block vars
+  - const title = 'Main';
+  - const pageName = 'home';
+
+block content
+  include ../components/hero
+  include ../components/partners-small
+  include ../components/desc
+  include ../components/acc-img
+  include ../components/benefits
+  include ../components/rate
+  include ../components/half-blocks
+  
+  +hero(
+    'Smartes fulfillment für e-commerce untermehnen',
+    'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+    {video: require('@/resources/globus-video.mp4')}
+  )
+    button.btn.btn_big.btn_yellow.hero__btn(data-popup-open="form" type="button") Fulfillment Angebot
+
+  +partners-small
+
+  +desc(
+    'We are a fullfilment & logistic company, that is working out a a coherent 360-degree logistics solution with individual concepts based on our customers. Fast shipping, late cut-off times, product based and secured storage and transparency through IT interfaces are a matter of course for us.'
+  )
+
+  +acc-img
+
+  +benefits(
+    [
+      {
+        title: 'Fast shipping',
+        desc: 'We’re your merchant of record. That means we handle the legal side of processing payments.',
+        icon: 'reward',
+      },
+      {
+        title: 'Late cut-off times',
+        desc: 'We’re your merchant of record. That means we handle the legal side of processing payments.',
+        icon: 'calendar',
+      },
+      {
+        title: 'Product-based & secured storage',
+        desc: 'We’re your merchant of record. That means we handle the legal side of processing payments.',
+        icon: 'home-lock',
+      },
+      {
+        title: 'Transparency through IT-interfaces',
+        desc: 'We’re your merchant of record. That means we handle the legal side of processing payments.',
+        icon: 'emailbox',
+      },
+    ],
+    {
+      title: 'Die unrealistischsten Vorteile unseres Unternehmens',
+    },
+    true
+  )
+
+  +rate(false)
+
+  section
+    +half-storage(true)
+    +half-delivery
+    +half-network(true)
+    +half-offer
+    +half-analysis(true)

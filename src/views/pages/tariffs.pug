@@ -1,0 +1,50 @@
+extends ../layouts/main
+
+block vars
+  - const title = 'Tariffs';
+  - const pageName = 'tariffs';
+
+block content
+  include ../components/hero
+  include ../components/rate
+  include ../components/reviews
+  include ../components/presentation
+  include ../components/about-acc
+  include ../components/half-blocks
+
+  +hero(
+    'Transparente Preise, maximale Erfolge: Entdecken Sie unser Fulfillment-Angebot',
+    'Einfache Preise ohne versteckte Kosten. Starten Sie jetzt kostenlos - ohne Probezeit, Vertrag oder Risiko.',
+    {icons: true}
+  )
+    button.btn.btn_big.btn_yellow.hero__btn(data-popup-open="quiz" type="button") Jetzt kostenlos starten
+
+  +rate(true)
+
+  +reviews(
+    'We are a fullfilment & logistic company, that is working out a a coherent 360-degree logistics solution',
+    'Schnell, flexibel und zuverlässig: durch unsere ausgefeilten und hoch skalierbaren FulfillmentProzesse können Markenhersteller und Händler in ihren nationalen und internationalen Märkten leistungsstark auftreten und wirtschaftlich optimiert agieren.'
+  )
+
+  +presentation(
+    'Großes Zahlungsvolumen oder einzigartiges Geschäftsmodell?',
+    ['Schnell, flexibel und zuverlässig: durch unsere ausgefeilten und hoch skalierbaren FulfillmentProzesse können Markenhersteller und Händler in ihren nationalen und internationalen Märkten leistungsstark auftreten und wirtschaftlich optimiert agieren.']
+  )
+
+  +about-acc(
+    {text: 'Frequently Asked Questions'},
+    [
+      'Lagerung',
+      'Annahme von Bestellungen',
+      'Paketdienst',
+      'Produktverpackung',
+      'Postfrankierung',
+      'Lieferung',
+      'Retourenmanagement',
+    ],
+    {counter: true, icon: true}
+  )
+    span We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.
+  section
+    +half-analysis(true)
+    +half-offer

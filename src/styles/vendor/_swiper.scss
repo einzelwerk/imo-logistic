@@ -1,0 +1,44 @@
+@use "../utils/variables" as vars;
+@use "../utils/mixins" as mix;
+
+.app {
+  .swiper {
+    &-slide {
+      width: 100%;
+      height: auto;
+    }
+
+    &-button-prev,
+    &-button-next {
+      &::after {
+        content: none;
+      }
+    }
+
+    &-pagination {
+      position: static;
+      bottom: 0;
+      left: 0;
+      font-size: 0;
+
+      &-bullet {
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+
+    &-scrollbar {
+      position: static;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      font-size: 0;
+      background: #d9d9d9;
+      border-radius: 0;
+
+      &-drag {
+        background: #000;
+        border-radius: 0;
+      }
+    }
+  }
+}

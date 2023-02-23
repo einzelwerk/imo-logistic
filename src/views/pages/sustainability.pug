@@ -1,0 +1,39 @@
+extends ../layouts/main
+
+block vars
+  - const title = 'Nachhaltigkeit';
+  - const pageName = 'sustainability';
+
+block content
+  include ../components/hero
+  include ../components/desc
+  include ../components/info
+  include ../components/shipping-partners
+  include ../components/half-blocks
+
+  +hero(
+    'Climate-neutral Fulfillment',
+    'Our objective is to design our processes as climate friendly as possible. To move objects, energy is necessary. During transport fossil fuels are burned, so it is simply not possible for us to completely avoid all CO2 emissions. Nevertheless, we want to contribute to climate protection by minimising CO2 emissions and compensating them subsequently.'
+  )
+
+  +desc(
+    'Our objective is to design our processes as climate friendly as possible. To move objects, energy is necessary. During transport fossil fuels are burned, so it is simply not possible for us to completely avoid all CO2 emissions. Nevertheless, we want to contribute to climate protection by minimising CO2 emissions and compensating them subsequently.'
+  )
+
+  .image-block
+    img.image-block__img(src=require("@/img/pages/trucks.jpg"), alt="")
+
+  +info(
+    {isLeft: false, isBlack: false},
+    'Compensation by climate-neutral shipping options',
+    [
+      'Today, the environmental orientation of a company strongly influences the purchasing decision of a customer. Many consciously decide to use environmentally friendly shipping and are willing to accept additional costs. We have been focusing on sustainable shipping for a long time. That’s why we work with shipping partners that offer a variety of sustainable and climate-neutral shipping options.',
+      'Choosing sustainable fulfillment solutions can be of great benefit to your business by successfully meeting the growing demand for sustainability on the part of customers.'
+    ],
+    require('@/img/info/paysage.jpg')
+  )
+
+  +shipping-partners
+
+  section
+    +half-offer

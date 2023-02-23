@@ -1,0 +1,83 @@
+include ../partials/email-btns
+
+mixin half-storage(isRight)
+  .half-block.half-block_storage(class=isRight ? 'half-block_right' : '')
+    .container.half-block__container
+      .half-block__content
+        .half-block__text-block
+          h2.half-block__title Lagerung
+          .half-block__info
+            p.half-block__desc Schnell, flexibel und zuverlässig: durch unsere ausgefeilten und hoch skalierbaren FulfillmentProzesse können Markenhersteller und Händler in ihren nationalen und internationalen Märkten leistungsstark auftreten und wirtschaftlich optimiert agieren.
+            button.btn.btn_yellow(type="button") Learn More
+      .half-block__img-wrap
+        img.half-block__img(src=require("@/img/half/half-1.jpg"), alt="")
+
+
+mixin half-delivery(isRight)
+  .half-block.half-block_delivery(class=isRight ? 'half-block_right' : '')
+    .container.half-block__container
+      .half-block__content
+        .half-block__text-block
+          h2.half-block__title Unsere Liefermöglichkeiten!
+          .half-block__info
+            p.half-block__desc Durch unsere langjährige Erfahrung in unterschiedlichsten Branchen haben wir heute den Prozess vom Bestelleingang, Lagerhaltung, Kommissionierung bis zur Versandabwicklung perfektioniert und decken ihn effizient, kostengünstig und professionell ab.
+            -
+              const benefitList = [
+                {isActive: true, text: 'Overnight'},
+                {isActive: true, text: 'Wunschtermin'},
+                {isActive: true, text: 'Same-Day'},
+                {isActive: true, text: 'Selbstabholung'},
+              ];
+            +advantage-list(benefitList, 'half-block__advantage-list')
+            button.btn.btn_yellow(type="button") Learn More
+      .half-block__img-wrap
+        img.half-block__img(src=require("@/img/half/half-2.jpg"), alt="")
+
+
+mixin half-network(isRight)
+  .half-block.half-block_network(class=isRight ? 'half-block_right' : '')
+    .container.half-block__container
+      .half-block__content
+        .half-block__text-block
+          h2.half-block__title Weltweit vernetzt!
+          .half-block__info
+            p.half-block__desc Unsere Vision, die weltweit führende End-to-End-Fulfillment-Lösung für den E-Commerce sowie den stationären Handel zu werden, behalten wir dabei stets vor Augen
+            ul.half-block__statistic
+              each item in [[15,'Länder'],[70,'Städte'],[60,'Pakete pro Minute',]]
+                li.half-block__statistic-item
+                  span.half-block__statistic-amount=item[0]
+                  span.half-block__statistic-text=item[1]
+            button.btn.btn_yellow(type="button") Learn More
+      .half-block__img-wrap
+        img.half-block__img(src=require("@/img/half/half-3.jpg"), alt="")
+
+
+mixin half-offer(isRight)
+  .half-block.half-block_offer(class=isRight ? 'half-block_right' : '')
+    .container.half-block__container
+      .half-block__content
+        .half-block__text-block
+          h2.half-block__title Sie möchten eine Beratung oder ein individuelles Angebot?
+          .half-block__info
+            p.half-block__desc Schreiben Sie mir eine E-Mail oder rufen Sie direkt an. Ich bin gerne für Sie da.
+            +email-btns('Make an order')
+      .half-block__img-wrap
+        img.half-block__img(src=require("@/img/half/half-4.jpg"), alt="")
+
+
+mixin half-analysis(isRight)
+  .half-block.half-block_analysis(class=isRight ? 'half-block_right' : '')
+    .container.half-block__container
+      .half-block__content
+        .half-block__info
+          .half-block__text-block
+            h2.half-block__title Bedarfsanalye
+            p.half-block__desc Um Ihnen den bestmöglichen Service anbieten zu können, haben wir einen Fragenbogen entwickelt, um genau Ihren Bedarf zu analysieren. Bitte antworten Sie so genau wie möglich auf die Fragen und wir erarbeiten ein individuelles Angebot genau auf Ihre Interessen abgestimmt.
+          button.btn.btn_white(type="button")
+            span.btn__text Download
+            svg.btn__icon
+              use(xlink:href="./assets/sprite.svg#download")
+      .half-block__img-wrap
+        img.half-block__img(src=require("@/img/half/half-5.jpg"), alt="")
+
+

@@ -1,0 +1,72 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mix;
+
+.presentation {
+  padding: clamp(40px, 10vw, 120px) 0;
+  overflow: hidden;
+  color: vars.$text-on-dark;
+  background: vars.$bg-dark;
+
+  @media (max-width: vars.$xxl) {
+    padding-bottom: 0;
+  }
+
+  &__container {
+    display: flex;
+    gap: 40px clamp(40px, 8.13vw, 130px);
+    @media (max-width: vars.$xxl) {
+      flex-direction: column;
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 3.03vw, 30px);
+    align-self: center;
+    max-width: 520px;
+  }
+
+  &__title {
+    @include mix.h2;
+
+    color: vars.$white;
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__btn {
+    @media (max-width: vars.$md) {
+      margin-top: 16px;
+    }
+  }
+
+  &__video-block {
+    flex-grow: 1;
+    max-width: 50vw;
+    @media (max-width: vars.$xxl) {
+      width: 100vw;
+      max-width: unset;
+      margin-left: calc((-100vw + var(--container)) / 2);
+    }
+
+    .video-block {
+      &__inner {
+        margin-right: calc((-100vw + var(--container)) / 2);
+        padding-right: calc((100vw - var(--container)) / 2);
+        padding-bottom: 87.5%;
+        @media (max-width: vars.$xxl) {
+          margin-right: 0;
+          padding-right: 0;
+        }
+        @media (max-width: vars.$md) {
+          padding-bottom: 88.89%;
+        }
+      }
+    }
+  }
+}

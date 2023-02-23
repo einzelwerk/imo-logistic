@@ -1,0 +1,104 @@
+include ../partials/rate/rate-list
+include ../partials/rate/rate-card
+include ../partials/rate/rate-offer
+
+mixin rate(isWhite = false)
+  section.rate(class=isWhite? 'rate_white' : '')
+    .container.rate__container
+      .rate__content
+        .rate__top
+          h2.rate__title Unsere Tarife
+          .rate__btn-wrap
+            button.rate__btn.btn.btn_big.btn_yellow(type="button" data-popup-open="quiz") Tarifrechner
+            if !isWhite
+              button.rate__btn.btn.btn_big.btn_white(type="button") Learn more
+        -
+          const rateList = [
+            {
+              title: 'S',
+              titleSmall: 'tarter*',
+              price: '499€',
+              desc: 'monatlich',
+              benefits: [
+              {isActive: false, text: 'Set-Up IT (299€)'},
+              {isActive: false, text: 'Provision/Initial stocking (299€)'},
+              {isActive: true, text: 'Up to 5 working hours'},
+              {isActive: true, text: '100 picks'},
+              {isActive: true, text: '50 packs'},
+              {isActive: true, text: 'Up to 25 shleves included'},
+              {isActive: true, text: 'Up to 5 pallet spaces included'},
+              ],
+            },
+            {
+              title: 'M',
+              price: '999€',
+              desc: 'monatlich',
+              benefits: [
+              {isActive: false, text: 'Set-Up IT (299€)'},
+              {isActive: false, text: 'Provision/Initial stocking (299€)'},
+              {isActive: true, text: 'Up to 10 working hours'},
+              {isActive: true, text: '500 picks'},
+              {isActive: true, text: '100 packs'},
+              {isActive: true, text: 'Up to 50 shleves included '},
+              {isActive: true, text: 'Up to 15 pallet spaces included'},
+              ],
+            },
+            {
+              title: 'L',
+              price: '1499€',
+              desc: 'monatlich',
+              benefits: [
+              {isActive: true, text: 'Set-Up IT'},
+              {isActive: true, text: 'Provision/Initial stocking'},
+              {isActive: true, text: 'Up to 30 working hours'},
+              {isActive: true, text: '1000 picks'},
+              {isActive: true, text: '150 packs'},
+              {isActive: true, text: 'Up to 100 shleves included '},
+              {isActive: true, text: 'Up to 17 pallet spaces included'},
+              ],
+            },
+            {
+              title: 'XL',
+              price: '1999€',
+              desc: 'monatlich',
+              benefits: [
+              {isActive: true, text: 'Set-Up IT'},
+              {isActive: true, text: 'Provision/Initial stocking'},
+              {isActive: true, text: 'Up to 80 working hours'},
+              {isActive: true, text: '1500 picks'},
+              {isActive: true, text: '200 packs'},
+              {isActive: true, text: 'Up to 150 shleves included '},
+              {isActive: true, text: 'Up to 20 pallet spaces included'},
+              ],
+            },
+            {
+              title: '2XL',
+              price: '2499€',
+              desc: 'monatlich',
+              benefits: [
+              {isActive: true, text: 'Set-Up IT'},
+              {isActive: true, text: 'Provision/Initial stocking'},
+              {isActive: true, text: 'Up to 80 working hours'},
+              {isActive: true, text: '2000 picks'},
+              {isActive: true, text: '250 packs'},
+              {isActive: true, text: 'Up to 200 shleves included '},
+              {isActive: true, text: 'Up to 25 pallet spaces included'},
+              ],
+            },
+            {
+              title: '3XL',
+              price: '4999€',
+              desc: 'monatlich',
+              benefits: [
+              {isActive: true, text: 'Set-Up IT'},
+              {isActive: true, text: 'Provision/Initial stocking'},
+              {isActive: true, text: 'Up to 80 working hours'},
+              {isActive: true, text: '3000 picks'},
+              {isActive: true, text: '500 packs'},
+              {isActive: true, text: 'Up to 300 shleves included '},
+              {isActive: true, text: 'Up to 80 pallet spaces included'},
+              ],
+            },
+          ]
+        +rate-list(rateList, isWhite)
+      +rate-offer

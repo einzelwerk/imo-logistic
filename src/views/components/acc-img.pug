@@ -1,0 +1,44 @@
+mixin acc-img
+  section.acc-img
+    .container.acc-img__container
+      -
+        accList = [
+          {
+            title: 'Lagerung',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+          {
+            title: 'Annahme von Bestellungen',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+          {
+            title: 'Paketdienst',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+          {
+            title: 'Produktverpackung',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+          {
+            title: 'Postfrankierung',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+          {
+            title: 'Lieferung',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+          {
+            title: 'Retourenmanagement',
+            desc: 'We’re your merchant of record. That means we handle the legal side of processing payments, merchant fees, fraud, and taxes for you without you lifting a finger.',
+          },
+        ];
+      ul.acc.acc_counter.acc-img__acc
+        each accItem, idx in accList
+          li.acc__item
+            button.acc__btn(type="button" data-image=require(`@/img/acc-img/acc-${idx+1}.jpg`))
+              span.acc__title=accItem.title
+            .acc__panel
+              span=accItem.desc
+              img.acc-img__acc-panel-img(src=require(`@/img/acc-img/acc-${idx+1}.jpg`), alt="")
+      .acc-img__img-block
+        img.acc-img__img(src="#", alt="")

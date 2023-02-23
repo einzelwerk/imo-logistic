@@ -1,0 +1,35 @@
+@use '../utils/variables'as vars;
+@use '../utils/mixins'as mix;
+
+.contact-filling {
+  padding: 120px 0;
+
+  &__container {
+    display: flex;
+    gap: 90px;
+    align-items: flex-start;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 560px;
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__title {
+    @include mix.h2;
+
+    color: vars.$text-on-light;
+  }
+
+  &__contact-mini {
+    flex-grow: 1;
+  }
+}

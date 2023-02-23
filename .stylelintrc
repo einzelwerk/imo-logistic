@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss",
+    "stylelint-config-rational-order",
+    "stylelint-config-prettier-scss"
+  ],
+  "ignoreFiles": ["node_modules/**", "dist/**", "normalize.scss", "reset.scss"],
+  "rules": {
+    "no-descending-specificity": null,
+    "scss/no-global-function-names": null,
+    "selector-class-pattern": null,
+    "color-function-notation": null
+  }
+}

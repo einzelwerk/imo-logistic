@@ -1,0 +1,44 @@
+@use '../utils/mixins'as mix;
+@use '../utils/variables'as vars;
+
+.team {
+  padding: 120px 0;
+  color: vars.$text-on-light;
+  background: vars.$bg-light;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__text-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title-block {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 640px;
+  }
+
+  &__title {
+    @include mix.h2;
+
+    color: vars.$headlines;
+  }
+
+  &__subtitle {
+    @include mix.h3;
+  }
+
+  &__desc {
+    max-width: 510px;
+
+  }
+}

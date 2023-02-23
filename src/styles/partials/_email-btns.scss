@@ -1,0 +1,28 @@
+@use "../utils/variables" as vars;
+@use "../utils/mixins" as mix;
+
+.email-btns {
+  display: flex;
+  gap: clamp(4px, 0.67vw, 8px);
+
+  &__btn {
+    @media (max-width: vars.$md) {
+      line-height: 1.75;
+    }
+  }
+
+  &__link {
+    @media (max-width: vars.$md) {
+      padding: 13px 14px;
+    }
+    @media (max-width: vars.$sm) {
+      flex-grow: 1;
+    }
+  }
+
+  &__icon {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+  }
+}

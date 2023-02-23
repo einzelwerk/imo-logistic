@@ -1,0 +1,50 @@
+@use '../utils/variables'as vars;
+
+.partners-small {
+  position: relative;
+  padding: clamp(18px, 3.23vw, 32px) 0;
+  overflow: hidden;
+  background: vars.$bg-light;
+
+
+  &__slider {
+    &-block{
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 5;
+      width: 80px;
+      content: '';
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(90deg, #F7F6F2 16.95%, rgb(247 246 242 / 69%) 54.7%, rgb(247 246 242 / 0%) 100%);
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(90deg, #F7F6F2 16.95%, rgb(247 246 242 / 69%) 54.7%, rgb(247 246 242 / 0%) 100%);
+      transform: rotate(180deg);
+    }
+  }
+
+    width: 87.38%;
+    height: clamp(24px, 3.63vw, 36px);
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  &__item {
+    width: fit-content;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  &__img {
+    height: 100%;
+    object-fit: contain;
+  }
+}

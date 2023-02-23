@@ -1,0 +1,12 @@
+include ../partials/benefits/benefits-list
+
+mixin benefits(benefitsList, data, isGray = false)
+  - const classColor =  isGray ? 'benefits_gray' : ''
+  section.benefits(class=classColor)
+    .container.benefits__container
+      .benefits__text-block
+        h2.benefits__title=data.title
+        if data.desc
+          p.benefits__desc=data.desc
+      +benefits-list(benefitsList, isGray)
+

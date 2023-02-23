@@ -1,0 +1,83 @@
+@use "../../utils/mixins" as mix;
+@use "../../utils/variables" as vars;
+
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+
+  &_few {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &_many {
+    .benefits-list {
+      &__item {
+        &:nth-child(5n),
+        &:nth-child(5n - 1) {
+          grid-column: span 3;
+        }
+      }
+    }
+  }
+
+  @media (max-width: vars.$md) {
+    grid-template-columns: 1fr;
+  }
+
+  &_white {
+    .benefits-list {
+      &__item {
+        background: vars.$white;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+    gap: 30px;
+    min-height: 360px;
+    padding: 20px;
+    padding-right: clamp(20px, 3.33vw, 40px);
+    background: vars.$bg-light;
+    border-radius: 24px;
+    @media (max-width: vars.$md) {
+      min-height: unset;
+    }
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    color: vars.$headlines;
+
+    &-block {
+      width: 80px;
+      height: 80px;
+      padding: 16px;
+      background: vars.$yellow;
+      border-radius: 24px;
+    }
+  }
+
+  &__text-block {
+    max-width: 440px;
+    margin-top: auto;
+  }
+
+  &__title {
+    @include mix.h3;
+
+    margin-bottom: 12px;
+    @media (max-width: vars.$md) {
+      @include mix.h4-desktop;
+    }
+  }
+
+  &__desc {
+    max-width: 440px;
+    color: vars.$text-on-light;
+  }
+}

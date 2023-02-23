@@ -1,0 +1,79 @@
+@use '../utils/mixins'as mix;
+@use '../utils/variables'as vars;
+
+input,
+textarea {
+  @include mix.p-14;
+
+  padding: 11px 15px;
+  color: vars.$placeholder;
+  border: 1px solid vars.$bg-light-divider;
+  border-radius: 8px;
+
+  &::placeholder {
+    color: vars.$placeholder;
+  }
+}
+
+.checkbox {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  @include mix.p-14;
+
+  &__flag {
+    &:checked {
+      &+span {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__custom {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid vars.$headlines;
+    border-radius: 4px;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      background: url('@/img/icons/check.svg') no-repeat center / contain;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      content: '';
+    }
+  }
+}
+
+.attach {
+  position: relative;
+  @include mix.p-14;
+
+  padding: 11px 15px;
+  color: vars.$placeholder;
+  border: 1px solid vars.$bg-light-divider;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &_active {
+    color: vars.$headlines;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    color: vars.$placeholder;
+    transform: translateY(-50%);
+  }
+}

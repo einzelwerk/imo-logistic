@@ -1,0 +1,13 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parser": "@babel/eslint-parser",
+  "extends": ["eslint-config-airbnb-base", "prettier"],
+  "plugins": ["prettier"],
+  "ignorePatterns": ["node_modules/", "dist/"],
+  "rules": {
+    "import/no-extraneous-dependencies": "off"
+  }
+}
