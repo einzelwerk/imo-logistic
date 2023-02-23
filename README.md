@@ -1,2 +1,2 @@
-# IMO Logistic - https://grade33.github.io/imo-logistic
+# IMO Logistic - https://einzelwerk.github.io/imo-logistic/
 
