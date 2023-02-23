@@ -1,6 +1,0 @@
-Что хранят в папке assets и public
-Prettier settings
-path.join() or path.resolve()
-cross-env & process (process.env, processenv.NODE_ENV)
-HOT Module
-Images Formatter, minimizer
