@@ -1,0 +1,54 @@
+on: push
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, 'deploy')"
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        local-dir: './dist/'
+        server: ${{ secrets.ftp_server }}
+        username: ${{ secrets.ftp_user }}
+        password: ${{ secrets.ftp_password }}
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          *.html
+          .idea
+
+    - name: send Boshnik telegram message
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO_BOSHNIK }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          ${{ github.actor }} created commit:
+          Commit message: ${{ github.event.commits[0].message }}
+
+          Repository: https://github.com/${{ github.repository }}
+          See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
+    - name: send Dasha telegram message
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO_DASHA }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          Author: ${{ github.actor }}
+          Update site: ${{ secrets.SITE_URL }}
+
+    - name: send Galya telegram message
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO_GALYA }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          Author: ${{ github.actor }}
+          Update site: ${{ secrets.SITE_URL }}
