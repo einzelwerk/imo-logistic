@@ -7537,6 +7537,7 @@ function isVideo() {
   if (!videoBlock) return;
   var videoBtn = videoBlock.querySelector(".".concat(classBtn));
   var video = videoBlock.querySelector(".".concat(classVideo));
+  videoBlock.style.height = "".concat(videoBlock.scrollHeight, "px");
   videoBtn.addEventListener('click', function () {
     videoBlock.classList.add(classPlayed);
     video.play();
@@ -16432,25 +16433,25 @@ function initMiniPartnersSwiper() {
   var classBlock = classNames.swiper.miniPartners;
   return new core(".".concat(classBlock), {
     modules: [Autoplay],
-    slidesPerView: 2,
-    spaceBetween: 27,
-    loop: true,
-    speed: 2000,
     autoplay: {
-      delay: 500
+      disableOnInteraction: true,
+      delay: 2000
     },
-    breakpoints: (_breakpoints = {}, _defineProperty(_breakpoints, breakpointsMin.sm, {
-      slidesPerView: 3,
-      spaceBetween: 30
-    }), _defineProperty(_breakpoints, breakpointsMin.md, {
-      slidesPerView: 4,
-      spaceBetween: 40
-    }), _defineProperty(_breakpoints, breakpointsMin.lg, {
-      slidesPerView: 5,
-      spaceBetween: 80
-    }), _defineProperty(_breakpoints, breakpointsMin.xl, {
-      spaceBetween: 110,
+    slidesPerView: 3,
+    spaceBetween: 27,
+    speed: 1000,
+    loop: true,
+    loopedSlides: 5,
+    centeredSlides: true,
+    breakpoints: (_breakpoints = {}, _defineProperty(_breakpoints, breakpointsMin.md, {
+      spaceBetween: 50,
       slidesPerView: 5
+    }), _defineProperty(_breakpoints, breakpointsMin.xl, {
+      spaceBetween: 80,
+      slidesPerView: 6
+    }), _defineProperty(_breakpoints, breakpointsMin.xxl, {
+      spaceBetween: 110,
+      slidesPerView: 7
     }), _breakpoints)
   });
 }
@@ -16490,45 +16491,73 @@ function initReviewsSwiper() {
     scrollbar: {
       el: '.swiper-scrollbar'
     },
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    speed: 1000,
     autoplay: {
       disableOnInteraction: true,
       delay: 2000
     },
-    breakpoints: (_breakpoints3 = {}, _defineProperty(_breakpoints3, breakpointsMin.md, {
-      slidesPerView: 2
+    slidesPerView: 2,
+    spaceBetween: 16,
+    speed: 1000,
+    loop: true,
+    centeredSlides: true,
+    breakpoints: (_breakpoints3 = {}, _defineProperty(_breakpoints3, breakpointsMin.lg, {
+      spaceBetween: 20,
+      slidesPerView: 3
     }), _defineProperty(_breakpoints3, breakpointsMin.xl, {
       slidesPerView: 3
+    }), _defineProperty(_breakpoints3, breakpointsMin.xxl, {
+      slidesPerView: 4
     }), _breakpoints3)
   });
 }
 function initGallerySwiper() {
+  var _breakpoints4;
   var classBlock = classNames.swiper.gallery;
   return new core(".".concat(classBlock), {
-    modules: [Autoplay],
-    slidesPerView: 2,
-    spaceBetween: 20,
-    loop: true,
-    speed: 2000,
+    modules: [Autoplay, Scrollbar],
+    scrollbar: {
+      el: '.swiper-scrollbar'
+    },
     autoplay: {
-      delay: 5000
-    }
+      disableOnInteraction: true,
+      delay: 2000
+    },
+    slidesPerView: 1,
+    spaceBetween: 12,
+    speed: 1000,
+    loop: true,
+    centeredSlides: true,
+    breakpoints: (_breakpoints4 = {}, _defineProperty(_breakpoints4, breakpointsMin.md, {
+      spaceBetween: 20,
+      slidesPerView: 2
+    }), _defineProperty(_breakpoints4, breakpointsMin.lg, {
+      slidesPerView: 3
+    }), _breakpoints4)
   });
 }
 function initPartnersSwiper() {
+  var _breakpoints5;
   var classBlock = classNames.swiper.partners;
   return new core(".".concat(classBlock), {
     modules: [Autoplay],
-    slidesPerView: 3,
-    spaceBetween: 20,
-    loop: true,
-    speed: 2000,
     autoplay: {
-      delay: 5000
-    }
+      disableOnInteraction: true,
+      delay: 2000
+    },
+    slidesPerView: 'auto',
+    spaceBetween: 48,
+    speed: 1000,
+    loop: true,
+    loopedSlides: 5,
+    centeredSlides: true,
+    breakpoints: (_breakpoints5 = {}, _defineProperty(_breakpoints5, breakpointsMin.md, {
+      spaceBetween: 20,
+      slidesPerView: 3
+    }), _defineProperty(_breakpoints5, breakpointsMin.lg, {
+      slidesPerView: 4
+    }), _defineProperty(_breakpoints5, breakpointsMin.xxl, {
+      slidesPerView: 5
+    }), _breakpoints5)
   });
 }
 ;// CONCATENATED MODULE: ./src/scripts/app.js
@@ -16571,24 +16600,29 @@ isVideo();
 
 // Input Type File
 onChangeInputTypeFile();
+
+/* //!
 function clamp(min, max) {
-  var breakpoints = [1600, 1400, 1200, 992, 768, 576];
-  var minBp = 360;
-  var widthNum;
-  var bp;
-  for (var i = 0; i < breakpoints.length; i += 1) {
+  const breakpoints = [1600, 1400, 1200, 992, 768, 576];
+  const minBp = 360;
+  let widthNum;
+  let bp;
+  for (let i = 0; i < breakpoints.length; i += 1) {
     bp = breakpoints[i];
-    widthNum = max / bp * 100;
-    var isFits = widthNum / 100 * minBp <= min;
+
+    widthNum = (max / bp) * 100;
+    const isFits = (widthNum / 100) * minBp <= min;
+
     if (isFits) {
       break;
     }
-    ;
+
     widthNum = null;
   }
   return [bp, widthNum];
 }
-console.log(clamp(50, 100));
+clamp(50, 100);
+*/
 })();
 
 /******/ })()
