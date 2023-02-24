@@ -1,11 +1,14 @@
 mixin partners-small
   .partners-small
     .container.partners-small__container
-      .partners-small__slider-block
+      .slider-full-width.slider-fog
         .swiper.partners-small__slider
           ul.swiper-wrapper
-            - let i = 1;
-            while i <= 7
-              li.swiper-slide
-                .partners-small__item
-                  img.partners-small__img(src=require(`@/img/partners/partner-${i++}.png`), alt="Partner Logo")
+            - let i = 0;
+            while i < 2
+              - i++
+              - let j = 1;
+              while j <= 7
+                li.swiper-slide
+                  .partners-small__item
+                    img.partners-small__img(src=require(`@/img/partners/partner-${j++}.png`), alt="Partner Logo")

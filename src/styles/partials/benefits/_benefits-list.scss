@@ -1,5 +1,5 @@
-@use "../../utils/mixins" as mix;
-@use "../../utils/variables" as vars;
+@use '../../utils/mixins' as mix;
+@use '../../utils/variables' as vars;
 
 .benefits-list {
   display: grid;
@@ -15,12 +15,16 @@
       &__item {
         &:nth-child(5n),
         &:nth-child(5n - 1) {
-          grid-column: span 3;
+          @media (min-width: calc(vars.$xl + 0.02px)) {
+            grid-column: span 3;
+          }
         }
       }
     }
   }
-
+  @media (max-width: vars.$xl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
   @media (max-width: vars.$md) {
     grid-template-columns: 1fr;
   }

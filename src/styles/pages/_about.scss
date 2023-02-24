@@ -1,8 +1,20 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as vars;
+
 .app.about {
   .hero {
+    @media (max-width: vars.$md) {
+      text-align: center;
+    }
+
     &::before {
-      background: url("@/img/pages/about-hero.jpg") no-repeat center /
-        cover;
+      background: url('@/img/pages/about-hero.jpg') no-repeat center / cover;
+    }
+
+    &__container {
+      @media (max-width: vars.$md) {
+        align-items: center;
+      }
     }
   }
 }

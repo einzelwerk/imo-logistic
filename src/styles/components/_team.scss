@@ -3,13 +3,19 @@
 
 .team {
   padding: 120px 0;
+  padding-top: clamp(40px, 10vw, 120px);
+  padding-bottom: clamp(38px, 10vw, 120px);
   color: vars.$text-on-light;
   background: vars.$bg-light;
+  @media (max-width: vars.$lg) {
+    padding-bottom: 0;   
+  }
 
   &__container {
     display: flex;
     flex-direction: column;
     gap: 60px;
+    gap: clamp(30px, 6.05vw, 60px);
   }
 
   &__text-block {
@@ -23,7 +29,7 @@
   &__title-block {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: clamp(20px, 2.02vw, 24px);
     max-width: 640px;
   }
 
@@ -31,10 +37,17 @@
     @include mix.h2;
 
     color: vars.$headlines;
+
+    @media (max-width: vars.$md) {
+      @include mix.h3-desktop;
+    }
   }
 
   &__subtitle {
     @include mix.h3;
+    @media (max-width: vars.$md) {
+      @include mix.p-16;
+    }
   }
 
   &__desc {

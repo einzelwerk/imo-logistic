@@ -50,23 +50,25 @@ isVideo();
 onChangeInputTypeFile();
 
 
+/* //!
 function clamp(min, max) {
   const breakpoints = [1600, 1400, 1200, 992, 768, 576];
   const minBp = 360;
   let widthNum;
   let bp;
-  for (let i = 0; i < breakpoints.length; i+=1) {
+  for (let i = 0; i < breakpoints.length; i += 1) {
     bp = breakpoints[i];
 
     widthNum = (max / bp) * 100;
     const isFits = (widthNum / 100) * minBp <= min;
 
     if (isFits) {
-      break
-    };
+      break;
+    }
 
     widthNum = null;
   }
   return [bp, widthNum];
 }
-console.log(clamp(50, 100));
+clamp(50, 100);
+*/

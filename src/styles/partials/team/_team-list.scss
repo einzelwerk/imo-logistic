@@ -1,5 +1,5 @@
-@use '../../utils/mixins'as mix;
-@use '../../utils/variables'as vars;
+@use '../../utils/mixins' as mix;
+@use '../../utils/variables' as vars;
 
 .team-list {
   display: grid;
@@ -7,13 +7,27 @@
   gap: 20px;
   color: vars.$text-on-light;
 
+  @media (max-width: vars.$xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: vars.$md) {
+    gap: 7px 6px;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
+    gap: 7px;
     min-height: 300px;
-    padding: 20px;
+    padding: clamp(10px, 1.25vw, 20px);
     background: vars.$white;
     border-radius: 24px;
+    @media (max-width: vars.$xl) {
+      min-height: 250px;
+    }
+    @media (max-width: vars.$md) {
+      min-height: 127px;
+    }
   }
 
   &__avatar {
@@ -21,17 +35,28 @@
     height: 80px;
     margin-bottom: auto;
     border-radius: 24px;
+    @media (max-width: vars.$md) {
+      width: 51px;
+      height: 51px;
+    }
   }
 
   &__text-block {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    @media (max-width: vars.$md) {
+      font-size: 12px;
+      line-height: 1.25;
+    }
   }
 
   &__name {
     @include mix.h3;
 
     color: vars.$headlines;
+    @media (max-width: vars.$md) {
+      font-size: 12px;
+      line-height: 1.67;
+    }
   }
 }

@@ -1,25 +1,27 @@
-@use '../utils/variables'as vars;
-@use '../utils/mixins'as mix;
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mix;
 
 .partners {
-  padding: 120px 0;
+  padding: clamp(60px, 10vw, 120px) 0;
   overflow: hidden;
   background: vars.$bg-light;
 
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: clamp(40px, 6.05vw, 60px);
     color: vars.$text-on-light;
   }
 
   &__text-block {
     display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
     justify-content: space-between;
   }
 
   &__title {
-    width: 640px;
+    max-width: 640px;
     @include mix.h2;
   }
 
@@ -28,21 +30,31 @@
   }
 
   &__slider {
-    width: 63.08%;
-    height: 140px;
-    overflow: visible;
+    &-slide {
+      @media (max-width: vars.$md) {
+        width: auto !important;
+      }
+    }
   }
 
   &__item {
     height: 100%;
+    min-height: 140px;
     padding: 48px 10px;
     background: vars.$white;
     border-radius: 24px;
+    @media (max-width: vars.$xxl) {
+      min-height: unset;
+    }
+    @media (max-width: vars.$md) {
+      max-height: 60px;
+      padding: 14px 0;
+      background: none;
+    }
   }
 
   &__img {
     display: block;
-    height: 100%;
     margin: 0 auto;
     object-fit: contain;
   }

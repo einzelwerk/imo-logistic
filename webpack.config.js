@@ -23,7 +23,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'assets/scripts/[name].[contenthash:8].js',
+    filename: 'assets/scripts/[name].js',
     assetModuleFilename: (pathData) => {
       const relativePath = path
         .relative(
@@ -31,7 +31,7 @@ module.exports = {
           path.dirname(pathData.filename)
         )
         .replace(/\\/g, '/');
-      return `${relativePath}/[name].[contenthash:8][ext]`;
+      return `${relativePath}/[name][ext]`;
     },
   },
   devServer: {
@@ -42,7 +42,7 @@ module.exports = {
     hot: false,
     compress: true,
     historyApiFallback: true,
-    port: 8080,
+    port: 8000,
     client: {
       logging: 'none',
       overlay: {
@@ -135,7 +135,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new ESLintPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'assets/styles/[name].[contenthash:8].css',
+      filename: 'assets/styles/[name].css',
     }),
     new SpritePlugin({
       plainSprite: true,

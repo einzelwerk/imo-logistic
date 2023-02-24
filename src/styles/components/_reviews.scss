@@ -36,66 +36,11 @@
   }
 
   &__slider {
-    &-block {
-      position: relative;
-      z-index: 3;
-
-      &::before,
-      &::after {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        z-index: 5;
-        width: 80px;
-        content: '';
-        @media (max-width: vars.$md) {
-          content: none;
-        }
+    &-scrollbar {
+      margin-top: 26px;
+      @media (min-width: calc(vars.$md + 0.02px)) {
+        display: none;
       }
-
-      &::before {
-        left: 0;
-        margin-left: calc((-100vw + var(--container)) / 2);
-        background: linear-gradient(
-          90deg,
-          #f7f6f2 16.95%,
-          rgb(247 246 242 / 69%) 54.7%,
-          rgb(247 246 242 / 0%) 100%
-        );
-      }
-
-      &::after {
-        right: 0;
-        margin-right: calc((-100vw + var(--container)) / 2);
-        background: linear-gradient(
-          90deg,
-          #f7f6f2 16.95%,
-          rgb(247 246 242 / 69%) 54.7%,
-          rgb(247 246 242 / 0%) 100%
-        );
-        transform: rotate(180deg);
-      }
-
-      .swiper {
-        &-scrollbar {
-          margin-top: 26px;
-          @media (min-width: calc(vars.$md + 0.02px)) {
-            display: none;
-          }
-        }
-      }
-    }
-
-    width: 95.38%;
-    height: auto;
-    margin: 0 auto;
-    overflow: visible;
-
-    @media (max-width: vars.$xxl) {
-      width: 100%;
-    }
-    @media (max-width: vars.$sm) {
-      width: 84.7%;
     }
   }
 

@@ -4,7 +4,7 @@ mixin reviews(title, desc)
       .reviews__text-block
         h2.reviews__title=title
         p.reviews__desc=desc
-      .reviews__slider-block
+      .slider-full-width.slider-fog
         .swiper.reviews__slider
           ul.swiper-wrapper
             -
@@ -35,13 +35,16 @@ mixin reviews(title, desc)
                   message: "«I've been impressed with IMO Logistics' customized approach. They truly take the time to understand my business and provide tailored solutions that work best for me. Their fast shipping and delivery guarantees are just icing on the cake!»",
                 },
               ];
-            each review, idx in reviewList
-              li.swiper-slide
-                .reviews__item
-                  p.reviews__text=review.message
-                  .reviews__person
-                    img.reviews__person-img(src=require(`@/img/reviews/person-${idx+1}.jpg`), alt="Person")
-                    .reviews__person-text-block
-                      h3.reviews__person-name=review.name
-                      span.reviews__person-desc=review.desc
-          .swiper-scrollbar
+            - let i = 0;
+            while i < 2
+              - i++
+              each review, idx in reviewList
+                li.swiper-slide
+                  .reviews__item
+                    p.reviews__text=review.message
+                    .reviews__person
+                      img.reviews__person-img(src=require(`@/img/reviews/person-${idx+1}.jpg`), alt="Person")
+                      .reviews__person-text-block
+                        h3.reviews__person-name=review.name
+                        span.reviews__person-desc=review.desc
+          .reviews__slider-scrollbar.swiper-scrollbar

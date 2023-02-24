@@ -12,6 +12,8 @@ export default function isVideo() {
   const videoBtn = videoBlock.querySelector(`.${classBtn}`);
   const video = videoBlock.querySelector(`.${classVideo}`);
 
+  videoBlock.style.height = `${videoBlock.scrollHeight}px`;
+
   videoBtn.addEventListener('click', () => {
     videoBlock.classList.add(classPlayed);
     video.play();

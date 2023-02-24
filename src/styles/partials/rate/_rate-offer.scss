@@ -11,12 +11,10 @@
 
   @media (max-width: vars.$lg) {
     flex-direction: column;
-  }
-  @media (max-width: vars.$sm) {
-    margin-right: (-1 * vars.$cont-padding);
-    margin-left: (-1 * vars.$cont-padding);
-    padding-right: vars.$cont-padding;
-    padding-left: vars.$cont-padding;
+    margin-right: calc((-100vw + var(--container)) / 2);
+    margin-left: calc((-100vw + var(--container)) / 2);
+    padding-right: calc((100vw - var(--container)) / 2);
+    padding-left: calc((100vw - var(--container)) / 2);
   }
 
   &__content {
@@ -24,7 +22,7 @@
     flex-direction: column;
     gap: 20px;
     padding: 30px;
-    @media (max-width: vars.$sm) {
+    @media (max-width: vars.$lg) {
       padding-right: 0;
       padding-bottom: 40px;
       padding-left: 0;
@@ -58,10 +56,9 @@
       width: 50%;
       @media (max-width: vars.$lg) {
         width: 100%;
-      }
-      @media (max-width: vars.$sm) {
         width: 100vw;
-        margin-left: (-1 * vars.$cont-padding);
+        min-width: 100vw;
+        margin-left: calc((-100vw + var(--container)) / 2);
       }
     }
 

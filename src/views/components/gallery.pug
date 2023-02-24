@@ -2,10 +2,17 @@ mixin gallery
   .gallery
     .container.gallery__container
       h2.gallery__title Gallery Section
-      .swiper.gallery__slider
-        ul.swiper-wrapper
-          - let i = 1;
-          while i <= 4
-            li.swiper-slide
-              img.gallery__img(src=require(`@/img/gallery/gallery-${i++}.jpg`), alt="")
+      .slider-full-width
+        .gallery__slider.swiper
+          ul.swiper-wrapper
+            - let i = 0;
+            while i < 2
+              - i++
+              - let j = 1;
+              while j <= 4
+                li.swiper-slide
+                  .gallery__item
+                    img.gallery__img(src=require(`@/img/gallery/gallery-${j++}.jpg`), alt="")
+            .gallery__slider-scrollbar.swiper-scrollbar
+            
 

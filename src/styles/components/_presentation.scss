@@ -48,21 +48,20 @@
   &__video-block {
     flex-grow: 1;
     max-width: 50vw;
+    margin-right: calc((-100vw + var(--container)) / 2);
+    padding-right: calc((100vw - var(--container)) / 2);
     @media (max-width: vars.$xxl) {
       width: 100vw;
       max-width: unset;
+      margin-right: 0;
       margin-left: calc((-100vw + var(--container)) / 2);
+      padding-right: 0;
+      border-radius: 0 0 24px 24px;
     }
 
     .video-block {
       &__inner {
-        margin-right: calc((-100vw + var(--container)) / 2);
-        padding-right: calc((100vw - var(--container)) / 2);
         padding-bottom: 87.5%;
-        @media (max-width: vars.$xxl) {
-          margin-right: 0;
-          padding-right: 0;
-        }
         @media (max-width: vars.$md) {
           padding-bottom: 88.89%;
         }

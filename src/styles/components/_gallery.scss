@@ -1,27 +1,43 @@
-@use '../utils/variables'as vars;
-@use '../utils/mixins'as mix;
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mix;
 
 .gallery {
-  padding: 120px 0;
+  padding-top: clamp(40px, 10vw, 120px);
+  padding-bottom: clamp(30px, 7.5vw, 120px);
   overflow: hidden;
 
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: clamp(30px, 6.05vw, 60px);
   }
 
   &__title {
     @include mix.h2;
+    @media (max-width: vars.$md) {
+      @include mix.h3-desktop;
+    }
   }
 
   &__slider {
-    width: 87.69%;
-    height: 360px;
-    overflow: visible;
+    &-scrollbar {
+      margin-top: 30px;
+      @media (min-width: calc(vars.$md + 0.02px)) {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    width: 100%;
   }
 
   &__img {
+    width: 100%;
+    max-height: 360px;
     border-radius: 24px;
+    @media (max-width: vars.$md) {
+      max-height: 218px;
+    }
   }
 }

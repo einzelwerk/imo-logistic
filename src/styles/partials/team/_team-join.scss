@@ -1,5 +1,5 @@
-@use '../../utils/mixins'as mix;
-@use '../../utils/variables'as vars;
+@use '../../utils/mixins' as mix;
+@use '../../utils/variables' as vars;
 
 .team-join {
   display: flex;
@@ -7,34 +7,57 @@
   color: vars.$text-on-dark;
   background: vars.$bg-dark;
   border-radius: 24px;
+  @media (max-width: vars.$lg) {
+    flex-direction: column;
+    margin-right: calc((-100vw + var(--container)) / 2);
+    margin-left: calc((-100vw + var(--container)) / 2);
+    padding-right: calc((100vw - var(--container)) / 2);
+    padding-left: calc((100vw - var(--container)) / 2);
+  }
 
-  &>* {
+  & > * {
     width: 50%;
+    @media (max-width: vars.$lg) {
+      width: unset;
+    }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+    min-height: 290px;
     padding: 30px;
+    @media (max-width: vars.$md) {
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 
   &__text-block {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: clamp(15px, 2.02vw, 20px);
   }
 
   &__title {
     color: vars.$white;
     @include mix.h2;
+    @media (max-width: vars.$md) {
+      @include mix.h3-desktop;
+    }
   }
 
   &__desc {
-    width: 420px;
+    max-width: 420px;
   }
 
   &__btn {
     margin-top: auto;
+    @media (max-width: vars.$lg) {
+      padding-right: 23px;
+      padding-left: 23px;
+    }
 
     svg {
       width: 24px;
@@ -42,14 +65,16 @@
     }
   }
 
-  &__poster-wrap {
-    width: 50%;
-  }
-
   &__poster {
     width: 100%;
     height: 100%;
-    border-top-right-radius: 24px;
-    border-bottom-right-radius: 24px;
+    border-radius: 0 24px 24px 0;
+    @media (max-width: vars.$lg) {
+      width: 100vw;
+      min-width: 100vw;
+      min-height: 300px;
+      margin-left: calc((-100vw + var(--container)) / 2);
+      border-radius: 0 0 24px 24px;
+    }
   }
 }

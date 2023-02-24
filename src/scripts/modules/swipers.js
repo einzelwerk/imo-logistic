@@ -7,36 +7,33 @@ import 'swiper/css/navigation'; // eslint-disable-line import/no-unresolved
 import 'swiper/css/pagination'; // eslint-disable-line import/no-unresolved
 import 'swiper/css/scrollbar'; // eslint-disable-line import/no-unresolved
 
-
-
 export function initMiniPartnersSwiper() {
   const classBlock = classNames.swiper.miniPartners;
 
   return new Swiper(`.${classBlock}`, {
     modules: [Autoplay],
-    slidesPerView: 2,
-    spaceBetween: 27,
-    loop: true,
-    speed: 2000,
     autoplay: {
-      delay: 500,
+      disableOnInteraction: true,
+      delay: 2000,
     },
+    slidesPerView: 3,
+    spaceBetween: 27,
+    speed: 1000,
+    loop: true,
+    loopedSlides: 5,
+    centeredSlides: true,
     breakpoints: {
-      [breakpointsMin.sm]: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      },
       [breakpointsMin.md]: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
-      [breakpointsMin.lg]: {
+        spaceBetween: 50,
         slidesPerView: 5,
-        spaceBetween: 80,
       },
       [breakpointsMin.xl]: {
+        spaceBetween: 80,
+        slidesPerView: 6,
+      },
+      [breakpointsMin.xxl]: {
         spaceBetween: 110,
-        slidesPerView: 5,
+        slidesPerView: 7,
       },
     },
   });
@@ -81,20 +78,25 @@ export function initReviewsSwiper() {
     scrollbar: {
       el: '.swiper-scrollbar',
     },
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    speed: 1000,
     autoplay: {
       disableOnInteraction: true,
       delay: 2000,
     },
+    slidesPerView: 2,
+    spaceBetween: 16,
+    speed: 1000,
+    loop: true,
+    centeredSlides: true,
     breakpoints: {
-      [breakpointsMin.md]: {
-        slidesPerView: 2,
+      [breakpointsMin.lg]: {
+        spaceBetween: 20,
+        slidesPerView: 3,
       },
       [breakpointsMin.xl]: {
         slidesPerView: 3,
+      },
+      [breakpointsMin.xxl]: {
+        slidesPerView: 4,
       },
     },
   });
@@ -103,13 +105,27 @@ export function initGallerySwiper() {
   const classBlock = classNames.swiper.gallery;
 
   return new Swiper(`.${classBlock}`, {
-    modules: [Autoplay],
-    slidesPerView: 2,
-    spaceBetween: 20,
-    loop: true,
-    speed: 2000,
+    modules: [Autoplay, Scrollbar],
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
     autoplay: {
-      delay: 5000,
+      disableOnInteraction: true,
+      delay: 2000,
+    },
+    slidesPerView: 1,
+    spaceBetween: 12,
+    speed: 1000,
+    loop: true,
+    centeredSlides: true,
+    breakpoints: {
+      [breakpointsMin.md]: {
+        spaceBetween: 20,
+        slidesPerView: 2,
+      },
+      [breakpointsMin.lg]: {
+        slidesPerView: 3,
+      },
     },
   });
 }
@@ -118,12 +134,27 @@ export function initPartnersSwiper() {
 
   return new Swiper(`.${classBlock}`, {
     modules: [Autoplay],
-    slidesPerView: 3,
-    spaceBetween: 20,
-    loop: true,
-    speed: 2000,
     autoplay: {
-      delay: 5000,
+      disableOnInteraction: true,
+      delay: 2000,
+    },
+    slidesPerView: 'auto',
+    spaceBetween: 48,
+    speed: 1000,
+    loop: true,
+    loopedSlides: 5,
+    centeredSlides: true,
+    breakpoints: {
+      [breakpointsMin.md]: {
+        spaceBetween: 20,
+        slidesPerView: 3,
+      },
+      [breakpointsMin.lg]: {
+        slidesPerView: 4,
+      },
+      [breakpointsMin.xxl]: {
+        slidesPerView: 5,
+      },
     },
   });
 }
