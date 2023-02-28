@@ -7,10 +7,6 @@
       text-align: center;
     }
 
-    &::before {
-      background: url('@/img/pages/about-hero.jpg') no-repeat center / cover;
-    }
-
     &__container {
       @media (max-width: vars.$md) {
         align-items: center;

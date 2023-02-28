@@ -1,5 +1,5 @@
-@use '../utils/mixins'as mix;
-@use '../utils/variables'as vars;
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as vars;
 
 input,
 textarea {
@@ -23,7 +23,7 @@ textarea {
 
   &__flag {
     &:checked {
-      &+span {
+      & + span {
         &::after {
           opacity: 1;
         }
@@ -33,6 +33,7 @@ textarea {
 
   &__custom {
     position: relative;
+    flex: none;
     width: 20px;
     height: 20px;
     border: 1px solid vars.$headlines;
@@ -47,7 +48,7 @@ textarea {
       background: url('@/img/icons/check.svg') no-repeat center / contain;
       transform: translate(-50%, -50%);
       opacity: 0;
-      transition: opacity .3s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
       content: '';
     }
   }

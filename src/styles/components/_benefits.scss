@@ -17,6 +17,7 @@
 
   &__text-block {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     align-items: flex-start;
     justify-content: space-between;

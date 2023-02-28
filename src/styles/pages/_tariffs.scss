@@ -47,11 +47,6 @@
     &__content {
       width: 100%;
       max-width: 1100px;
-      margin-top: 55px;
-      @media (max-width: vars.$lg) {
-        margin-top: 0;
-        margin-bottom: 70px;
-      }
     }
 
     &__title {

@@ -1,8 +1,18 @@
-@use '../../utils/mixins'as mix;
-@use '../../utils/variables'as vars;
+@use '../../utils/mixins' as mix;
+@use '../../utils/variables' as vars;
 
 .popup-quiz {
-  width: 800px;
+  width: 50vw;
+
+  @media (max-width: vars.$xxl) {
+    width: 70vw;
+  }
+  @media (max-width: vars.$lg) {
+    width: 85vw;
+  }
+  @media (max-width: vars.$md) {
+    width: 100vw;
+  }
 
   .step {
     display: flex;
@@ -16,11 +26,14 @@
 
     &__info {
       display: flex;
-      gap: 8px;
+      gap: clamp(4px, 0.81vw, 8px);
       align-items: center;
       color: vars.$text-on-dark;
-      font-size: 20px;
-      line-height: 1.5;
+      @include mix.p-20;
+
+      @media (max-width: vars.$md) {
+        @include mix.p-16;
+      }
 
       &_current {
         color: vars.$headlines;
@@ -31,6 +44,10 @@
       max-width: 520px;
       color: vars.$headlines;
       @include mix.h3;
+
+      @media (max-width: vars.$md) {
+        @include mix.h4-desktop;
+      }
     }
 
     &__content {
@@ -42,13 +59,17 @@
     &__field {
       &-block {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: clamp(8px, 1.01vw, 10px);
+
+        @media (max-width: vars.$md) {
+          grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
+        }
       }
 
       &-flag {
         &:checked {
-          &+div {
+          & + div {
             background: vars.$bg-light;
             border-color: vars.$yellow;
 
@@ -67,8 +88,13 @@
         padding: 12px 20px;
         border: 1px solid vars.$bg-light-divider;
         border-radius: 16px;
-        transition: background-color .3s ease-in-out,
-          border-color .3s ease-in-out;
+        transition: background-color 0.3s ease-in-out,
+          border-color 0.3s ease-in-out;
+
+        @media (max-width: vars.$md) {
+          gap: 10px;
+          padding: 9px 15px;
+        }
 
         &::after {
           position: absolute;
@@ -76,20 +102,37 @@
           right: 16px;
           width: 20px;
           height: 20px;
-          background: url('@/img/icons/yellow-circle-check.svg') no-repeat center / contain;
+          background: url('@/img/icons/yellow-circle-check.svg') no-repeat
+            center / contain;
           opacity: 0;
-          transition: opacity .3s ease-in-out;
+          transition: opacity 0.3s ease-in-out;
           content: '';
+
+          @media (max-width: vars.$md) {
+            top: 9px;
+            right: 14px;
+            width: 15px;
+            height: 15px;
+          }
         }
 
         &_text {
           @include mix.p-14;
+
+          @media (max-width: vars.$md) {
+            font-size: 12px;
+            line-height: 1.17;
+          }
         }
 
         &_amount {
           @include mix.h3;
 
           color: vars.$headlines;
+
+          @media (max-width: vars.$md) {
+            @include mix.p-16;
+          }
         }
       }
     }
@@ -116,9 +159,15 @@
     flex-direction: column;
     gap: 30px;
     color: vars.$headlines;
+    @media (max-width: vars.$md) {
+      gap: 10px;
+    }
 
     &-name {
-      @include mix.p-20
+      @include mix.p-20;
+      @media (max-width: vars.$md) {
+        font-size: 16px;
+      }
     }
 
     &_active {
@@ -128,12 +177,21 @@
 
   &__title {
     @include mix.h3;
+    @media (max-width: vars.$md) {
+      @include mix.h2;
+
+      margin-bottom: 35px;
+    }
   }
 
   &__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    @media (max-width: vars.$md) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
   }
 
   &__left {
@@ -147,18 +205,27 @@
     &-text-block {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: clamp(10px, 1.21vw, 12px);
     }
 
     &-title {
       @include mix.h3;
+
+      @media (max-width: vars.$md) {
+        @include mix.h1;
+      }
     }
   }
 
   &__pay {
     display: flex;
-    gap: 12px;
+    gap: 8px 12px;
     align-items: center;
+
+    @media (max-width: vars.$md) {
+      flex-direction: column;
+      align-items: unset;
+    }
 
     &_amount {
       @include mix.h3;
@@ -174,9 +241,16 @@
     flex-wrap: wrap;
     max-height: 156px;
 
+    @media (max-width: vars.$md) {
+      max-height: unset;
+    }
+
     .advantage-list {
       &__item {
         max-width: 155px;
+        @media (max-width: vars.$md) {
+          max-width: unset;
+        }
       }
     }
   }
@@ -189,6 +263,9 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @media (max-width: vars.$md) {
+      gap: 40px;
+    }
   }
 
   &__info {
@@ -201,6 +278,10 @@
     border: 1px solid vars.$bg-light-divider;
     border-radius: 16px;
 
+    @media (max-width: vars.$lg) {
+      padding: 16px;
+    }
+
     &-item {
       display: flex;
       flex-direction: column;
@@ -209,6 +290,11 @@
       &_title {
         @include mix.p-14;
 
+        @media (max-width: vars.$lg) {
+          font-size: 12px;
+          line-height: 1.67;
+        }
+
         margin-bottom: 8px;
         color: vars.$text-on-light;
       }
@@ -216,20 +302,31 @@
       &_link {
         @include mix.p-20;
 
+        @media (max-width: vars.$lg) {
+          @include mix.p-16;
+        }
       }
     }
   }
 
   &__advantages {
-    padding: 16px 20px;
+    padding: clamp(12px, 1.61vw, 16px) 20px;
     background: vars.$bg-dark;
     border-radius: 16px;
+
+    @media (max-width: vars.$lg) {
+      padding: 20px 15px;
+    }
 
     &-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px 12px;
       @include mix.p-16;
+
+      @media (max-width: vars.$lg) {
+        @include mix.p-14;
+      }
 
       color: vars.$white;
 
@@ -246,7 +343,6 @@
       }
     }
   }
-
 
   &__bottom {
     display: flex;

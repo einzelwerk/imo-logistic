@@ -86,14 +86,14 @@ export function changeStepsQuizPopup() {
     e.preventDefault();
 
     let currentStep = quizPopup.querySelector(`.${classStepActive}`);
-    let currentStepNum = currentStep.dataset.quizStep;
-
+    let currentStepNum = +currentStep.dataset.quizStep;
+    
     currentStep.classList.remove(classStepActive);
     if (increment) currentStepNum += 1;
     else currentStepNum -= 1;
     currentStep = quizPopup.querySelector(
       `[data-quiz-step="${currentStepNum}"`
-    );
+      );
     currentStep.classList.add(classStepActive);
   };
 

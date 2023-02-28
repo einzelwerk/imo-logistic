@@ -39,6 +39,9 @@
   &__img {
     width: 100%;
     height: 800px;
+    @media (max-width: vars.$xxl) {
+      height: auto;
+    }
   }
 }
 

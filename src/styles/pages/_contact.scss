@@ -1,17 +1,28 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as vars;
+
 .app.contact {
   .hero {
-    &::before {
-      background: url("@/img/pages/contact-hero.jpg") no-repeat center /
-        cover;
+    color: vars.$headlines;
+    background: vars.$bg-dark;
+
+    @media (max-width: vars.$sm) {
+      text-align: center;
     }
 
     &__container {
       height: unset;
-      min-height: 600px;
+      @media (min-width: calc(vars.$sm + 0.02px)) {
+        min-height: 600px;
+      }
+      @media (max-width: vars.$sm) {
+        align-items: center;
+        justify-content: flex-start;
+      }
     }
 
-    &__content {
-      margin-top: 50px;
+    &__desc {
+      color: vars.$text-on-light;
     }
   }
 }

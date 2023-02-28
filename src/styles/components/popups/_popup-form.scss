@@ -1,21 +1,39 @@
-@use '../../utils/mixins'as mix;
-@use '../../utils/variables'as vars;
+@use '../../utils/mixins' as mix;
+@use '../../utils/variables' as vars;
 
 .popup-form {
-  width: 600px;
+  width: 37.5vw;
   color: vars.$text-on-light;
+
+  @media (max-width: vars.$xxl) {
+    width: 60vw;
+  }
+  @media (max-width: vars.$lg) {
+    width: 80vw;
+  }
+  @media (max-width: vars.$md) {
+    width: 100vw;
+  }
 
   &__container {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    @media (max-width: vars.$md) {
+      gap: 46px;
+    }
   }
 
   &__text-block {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: clamp(15px, 2.02vw, 20px);
+    align-items: center;
     text-align: center;
+    @media (max-width: vars.$sm) {
+      align-items: flex-start;
+      text-align: left;
+    }
   }
 
   &__title {
@@ -24,5 +42,16 @@
 
   &__desc {
     max-width: 474px;
+    @media (max-width: vars.$sm) {
+      @include mix.p-16;
+    }
+  }
+
+  .form {
+    &__field-row {
+      @media (max-width: vars.$sm) {
+        flex-direction: column;
+      }
+    }
   }
 }

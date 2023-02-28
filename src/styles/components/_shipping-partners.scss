@@ -1,5 +1,5 @@
-@use '../utils/variables'as vars;
-@use '../utils/mixins'as mix;
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mix;
 
 .shipping-partners {
   padding: 120px 0;
@@ -7,11 +7,13 @@
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: clamp(40px, 6.05vw, 60px);
   }
 
   &__text-block {
     display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
     justify-content: space-between;
   }
 
@@ -30,28 +32,45 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;
+    @media (max-width: vars.$xl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: vars.$md) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
     grid-column: 3 span;
-    gap: 10px;
+    gap: 30px;
     min-height: 360px;
     padding: 20px;
     background: vars.$bg-light;
     border-radius: 24px;
 
+    @media (max-width: vars.$md) {
+      min-height: unset;
+    }
+
     &:nth-child(3n),
     &:nth-child(4n),
     &:nth-child(5n) {
       grid-column: 2 span;
+      @media (max-width: vars.$xl) {
+        grid-column: unset;
+      }
+    }
+
+    @media (max-width: vars.$xl) {
+      grid-column: unset;
     }
 
     &-img-wrap {
       display: flex;
       flex-direction: column;
-      gap: 10px
+      gap: 10px;
     }
 
     &-img {
@@ -64,7 +83,9 @@
 
     &-name {
       @include mix.h3;
+      @media (max-width: vars.$md) {
+        @include mix.h4-desktop;
+      }
     }
   }
-
 }

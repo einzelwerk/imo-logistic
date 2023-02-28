@@ -1,5 +1,5 @@
-@use '../utils/variables'as vars;
-@use '../utils/mixins'as mix;
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mix;
 
 .form {
   display: flex;
@@ -11,6 +11,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      gap: clamp(16px, 2.02vw, 24px);
     }
 
     &-row {
@@ -22,7 +23,6 @@
 
     &_textarea {
       min-height: 150px;
-
     }
   }
 

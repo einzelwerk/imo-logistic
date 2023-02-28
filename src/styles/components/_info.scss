@@ -19,6 +19,10 @@
         margin-left: calc((-100vw + var(--container)) / 2);
         padding-right: 0;
         padding-left: calc((100vw - var(--container)) / 2);
+        @media (max-width: vars.$xxl) {
+          order: unset;
+          padding-left: 0;
+        }
       }
     }
   }
@@ -68,6 +72,7 @@
     @media (max-width: vars.$xxl) {
       flex-grow: unset;
       width: 100vw;
+      height: unset;
       margin-right: 0;
       margin-left: calc((-100vw + var(--container)) / 2);
       padding-right: 0;

@@ -2,12 +2,12 @@
 @use '../utils/mixins' as mix;
 
 .contact-filling {
-  padding: 120px 0;
+  padding: clamp(60px, 10vw, 120px) 0;
 
   &__container {
     display: flex;
     flex-wrap: wrap;
-    gap: 90px;
+    gap: clamp(40px, 9.08vw, 90px);
     align-items: flex-start;
   }
 
@@ -15,13 +15,13 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    width: 560px;
+    max-width: 560px;
   }
 
   &__text-block {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: clamp(16px, 3.03vw, 30px);
   }
 
   &__title {

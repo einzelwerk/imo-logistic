@@ -7003,158 +7003,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 221:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "calendar-usage",
-      viewBox: "0 0 48 48",
-      url: "assets/" + "sprite.svg#calendar",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 682:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "emailbox-usage",
-      viewBox: "0 0 48 48",
-      url: "assets/" + "sprite.svg#emailbox",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 938:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "hearth-usage",
-      viewBox: "0 0 48 48",
-      url: "assets/" + "sprite.svg#hearth",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 382:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "home-lock-usage",
-      viewBox: "0 0 48 48",
-      url: "assets/" + "sprite.svg#home-lock",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 989:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "reward-usage",
-      viewBox: "0 0 48 48",
-      url: "assets/" + "sprite.svg#reward",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 844:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "safety-usage",
-      viewBox: "0 0 48 48",
-      url: "assets/" + "sprite.svg#safety",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 4:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "sendmoney-usage",
-      viewBox: "0 0 48 48",
-      url: "assets/" + "sprite.svg#sendmoney",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 517:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "trendup-usage",
-      viewBox: "0 0 48 48",
-      url: "assets/" + "sprite.svg#trendup",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
 /***/ 569:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -7353,14 +7201,6 @@ var map = {
 	"./acc-open.svg": 762,
 	"./arrow-right.svg": 733,
 	"./attach.svg": 489,
-	"./benefits/calendar.svg": 221,
-	"./benefits/emailbox.svg": 682,
-	"./benefits/hearth.svg": 938,
-	"./benefits/home-lock.svg": 382,
-	"./benefits/reward.svg": 989,
-	"./benefits/safety.svg": 844,
-	"./benefits/sendmoney.svg": 4,
-	"./benefits/trendup.svg": 517,
 	"./close.svg": 569,
 	"./download.svg": 130,
 	"./inbox.svg": 629,
@@ -7712,7 +7552,7 @@ function changeStepsQuizPopup() {
   var goTo = function goTo(e, increment) {
     e.preventDefault();
     var currentStep = quizPopup.querySelector(".".concat(classStepActive));
-    var currentStepNum = currentStep.dataset.quizStep;
+    var currentStepNum = +currentStep.dataset.quizStep;
     currentStep.classList.remove(classStepActive);
     if (increment) currentStepNum += 1;else currentStepNum -= 1;
     currentStep = quizPopup.querySelector("[data-quiz-step=\"".concat(currentStepNum, "\""));
@@ -16495,7 +16335,7 @@ function initReviewsSwiper() {
       disableOnInteraction: true,
       delay: 2000
     },
-    slidesPerView: 2,
+    slidesPerView: 1.25,
     spaceBetween: 16,
     speed: 1000,
     loop: true,
@@ -16522,7 +16362,7 @@ function initGallerySwiper() {
       disableOnInteraction: true,
       delay: 2000
     },
-    slidesPerView: 1,
+    slidesPerView: 1.5,
     spaceBetween: 12,
     speed: 1000,
     loop: true,

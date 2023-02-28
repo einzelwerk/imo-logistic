@@ -1,8 +1,10 @@
 mixin hero(title, desc, data = {})
   section.hero
-    if data && data.icons
+    if data && data.bg
+      img.hero__bg(src=data.bg, alt="")
+    else if data && data.icons
       .hero__icons
-    if data && data.video
+    else if data && data.video
       .hero__video-block
         video.hero__video(src=data.video autoplay muted loop)
     .container.hero__container
