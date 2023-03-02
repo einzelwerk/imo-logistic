@@ -56,13 +56,13 @@ textarea {
 
 .attach {
   position: relative;
-  @include mix.p-14;
-
+  width: 100%;
   padding: 11px 15px;
   color: vars.$placeholder;
   border: 1px solid vars.$bg-light-divider;
   border-radius: 8px;
   cursor: pointer;
+  @include mix.p-14;
 
   &_active {
     color: vars.$headlines;

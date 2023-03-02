@@ -9,14 +9,24 @@
   &__field {
     &-block {
       display: flex;
-      flex-direction: column;
+      flex-flow: row wrap;
       gap: 20px;
       gap: clamp(16px, 2.02vw, 24px);
+      gap: var(--form-gap);
+
+      --form-gap: 20px;
     }
 
     &-row {
+      position: relative;
       display: flex;
+      flex-wrap: wrap;
       gap: 20px;
+      width: 100%;
+    }
+
+    &-half {
+      width: calc((100% - var(--form-gap)) / 2);
     }
 
     width: 100%;
@@ -37,5 +47,23 @@
 
   &__btn {
     width: 100%;
+  }
+
+  &__field.is-invalid,
+  .is-invalid ~ .checkbox__custom {
+    border-color: red;
+  }
+
+  .is-invalid ~ .error {
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    display: block !important;
+    color: red;
+    font-size: small;
+  }
+
+  &-error &__field {
+    margin-bottom: 10px;
   }
 }
