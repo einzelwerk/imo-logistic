@@ -10,7 +10,7 @@ exports.markup = function markup() {
 
   return (
     src(path.src.markup)
-      .pipe(pug({ pretty: isDev }))
+      .pipe(pug({ pretty: true }))
       .pipe(plugins.replace(/@\//g, './assets/'))
       // .pipe(inject(sources))
       .pipe(dest(path.build.markup))
