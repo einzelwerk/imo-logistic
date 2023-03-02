@@ -1,6 +1,6 @@
 import classNames from '../utils/classNames';
 
-export default function onChangeInputTypeFile() {
+export function onChangeInputTypeFile() {
   const classInputFile = classNames.input.file;
   const classInputFileActive = classNames.input.fileActive;
 

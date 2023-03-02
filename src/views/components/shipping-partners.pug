@@ -17,7 +17,7 @@ mixin shipping-partners
           li.shipping-partners__item
             .shipping-partners__item-img-wrap
               each imageSrc in partners.imagesSrc
-                img.shipping-partners__item-img(src=require(`@/img/shipping-partners/${imageSrc}`), alt="")
+                img.shipping-partners__item-img(src=`@/img/shipping-partners/${imageSrc}`, alt="")
             .shipping-partners__item-text-block
               h3.shipping-partners__item-name=partners.name
 

@@ -23,21 +23,6 @@
     }
   }
 
-  &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 150px;
-    background: linear-gradient(
-      180deg,
-      vars.$headlines 29.89%,
-      rgb(21 21 20 / 0%) 100%
-    );
-    opacity: 0.8;
-    content: '';
-  }
-
   &__bg {
     position: absolute;
     top: 0;

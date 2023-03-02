@@ -1,4 +1,11 @@
 export default {
+  burgerMenu: {
+    burger: 'header__burger',
+    close: 'menu-mobile__close',
+    menu: 'menu-mobile',
+    menuActive: 'menu-mobile_active',
+    menuContent: 'menu-mobile__content',
+  },
   page: {
     app: 'app',
     home: 'home',

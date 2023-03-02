@@ -2,7 +2,7 @@ mixin team-list(teamList, className)
   ul.team-list(class=className)
     each item in teamList
       li.team-list__item
-        img.team-list__avatar(src=require(`@/img/team/avatars/${item.imgSrc}`), alt=item.name)
+        img.team-list__avatar(src=`@/img/team/avatars/${item.imgSrc}`, alt=item.name)
         .team-list__text-block
           h3.team-list__name=item.name
           span.team-list__post=item.post

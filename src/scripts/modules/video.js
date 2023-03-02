@@ -1,6 +1,6 @@
 import classNames from '../utils/classNames';
 
-export default function isVideo() {
+export function isVideo() {
   const classBlock = classNames.videoBlock.block;
   const classBtn = classNames.videoBlock.btn;
   const classVideo = classNames.videoBlock.video;

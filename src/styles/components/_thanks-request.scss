@@ -1,0 +1,56 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mix;
+
+.thanks-request {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-height: 800px;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 680px;
+    height: 100%;
+  }
+
+  &__icon {
+    width: clamp(85px, 12.92vw, 128px);
+    height: clamp(85px, 12.92vw, 128px);
+    margin-bottom: clamp(20px, 2.02vw, 30px);
+    @media (max-width: vars.$md) {
+      margin-top: auto;
+    }
+  }
+
+  &__title {
+    @include mix.h1;
+
+    margin-bottom: clamp(12px, 2.02vw, 30px);
+  }
+
+  &__desc {
+    margin-bottom: clamp(30px, 2.02vw, 48px);
+    @media (max-width: vars.$md) {
+      margin-bottom: auto;
+    }
+  }
+
+  &__btn {
+    padding-right: 60px;
+    padding-left: 60px;
+    @media (max-width: vars.$md) {
+      width: 100%;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as vars;
+
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  color: vars.$headlines;
+  font-size: 0;
+  background: rgba(vars.$bg-dark, 0.9);
+  visibility: hidden;
+  opacity: 0;
+  backdrop-filter: blur(3px);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+  &_active {
+    visibility: visible;
+    opacity: 1;
+
+    .menu-mobile {
+      &__content {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    width: 88.89vw;
+    height: 100%;
+    padding: 0 20px 30px;
+    overflow-y: auto;
+    background: vars.$white;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    @include mix.p-16;
+  }
+
+  &__close {
+    box-sizing: content-box;
+    width: 16px;
+    height: 16px;
+    margin: -15px;
+    padding: 15px;
+
+    &-item {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        height: 1px;
+        background: rgba(vars.$headlines, 0.5);
+        transform: translate(-50%, -50%) rotate(45deg);
+        content: '';
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+
+    &-left {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 15px;
+    padding-top: 18px;
+    color: vars.$text-on-light;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-link {
+      margin: 0 -20px;
+      padding: 18px 20px;
+    }
+  }
+
+  &__btn {
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    width: 100%;
+  }
+}

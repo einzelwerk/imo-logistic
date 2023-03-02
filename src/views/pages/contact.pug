@@ -1,4 +1,4 @@
-extends ../layouts/main
+extends ../layouts/main-light
 
 block vars
   - const title = 'Kontakt';
@@ -11,7 +11,7 @@ block content
   +hero(
     'Kontakt',
     'Einfache Preise ohne versteckte Kosten. Starten Sie jetzt kostenlos - ohne Probezeit, Vertrag oder Risiko.',
-    {bg: require('@/img/pages/contact-hero.jpg')}
+    {bg: '@/img/pages/contact-hero.jpg'}
   )
 
   +contact-filling(

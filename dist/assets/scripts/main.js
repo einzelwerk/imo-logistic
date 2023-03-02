@@ -6925,314 +6925,6 @@ __webpack_exports__ = __webpack_exports__["default"];
 ;
 });
 
-/***/ }),
-
-/***/ 475:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "acc-close-usage",
-      viewBox: "0 0 36 36",
-      url: "assets/" + "sprite.svg#acc-close",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 762:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "acc-open-usage",
-      viewBox: "0 0 36 36",
-      url: "assets/" + "sprite.svg#acc-open",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 733:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "arrow-right-usage",
-      viewBox: "0 0 24 24",
-      url: "assets/" + "sprite.svg#arrow-right",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 489:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "attach-usage",
-      viewBox: "0 0 20 20",
-      url: "assets/" + "sprite.svg#attach",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 569:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "close-usage",
-      viewBox: "0 0 36 36",
-      url: "assets/" + "sprite.svg#close",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 130:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "download-usage",
-      viewBox: "0 0 20 20",
-      url: "assets/" + "sprite.svg#download",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 629:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "inbox-usage",
-      viewBox: "0 0 30 30",
-      url: "assets/" + "sprite.svg#inbox",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 907:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "linkedin-usage",
-      viewBox: "0 0 12 12",
-      url: "assets/" + "sprite.svg#linkedin",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 129:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "off-usage",
-      viewBox: "0 0 20 20",
-      url: "assets/" + "sprite.svg#off",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 633:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "on-usage",
-      viewBox: "0 0 20 20",
-      url: "assets/" + "sprite.svg#on",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 714:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "phone-usage",
-      viewBox: "0 0 19 19",
-      url: "assets/" + "sprite.svg#phone",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 430:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "play-usage",
-      viewBox: "0 0 40 40",
-      url: "assets/" + "sprite.svg#play",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 224:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "repeat-usage",
-      viewBox: "0 0 24 24",
-      url: "assets/" + "sprite.svg#repeat",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 946:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "right-arrow-usage",
-      viewBox: "0 0 20 20",
-      url: "assets/" + "sprite.svg#right-arrow",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
-/***/ 326:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-var map = {
-	"./acc-close.svg": 475,
-	"./acc-open.svg": 762,
-	"./arrow-right.svg": 733,
-	"./attach.svg": 489,
-	"./close.svg": 569,
-	"./download.svg": 130,
-	"./inbox.svg": 629,
-	"./linkedin.svg": 907,
-	"./off.svg": 129,
-	"./on.svg": 633,
-	"./phone.svg": 714,
-	"./play.svg": 430,
-	"./repeat.svg": 224,
-	"./right-arrow.svg": 946
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 326;
-
 /***/ })
 
 /******/ 	});
@@ -7291,17 +6983,6 @@ webpackContext.id = 326;
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -7310,6 +6991,13 @@ var __webpack_exports__ = {};
 
 ;// CONCATENATED MODULE: ./src/scripts/utils/classNames.js
 /* harmony default export */ const classNames = ({
+  burgerMenu: {
+    burger: 'header__burger',
+    close: 'menu-mobile__close',
+    menu: 'menu-mobile',
+    menuActive: 'menu-mobile_active',
+    menuContent: 'menu-mobile__content'
+  },
   page: {
     app: 'app',
     home: 'home',
@@ -7366,6 +7054,28 @@ var __webpack_exports__ = {};
     fileActive: 'attach_active'
   }
 });
+;// CONCATENATED MODULE: ./src/scripts/modules/burger-menu.js
+
+function burgerMenu() {
+  var classBurgerBtn = classNames.burgerMenu.burger;
+  var classCloseBtn = classNames.burgerMenu.close;
+  var classMenu = classNames.burgerMenu.menu;
+  var classMenuContent = classNames.burgerMenu.menuContent;
+  var classMenuActive = classNames.burgerMenu.menuActive;
+  var burgerBtn = document.querySelector(".".concat(classBurgerBtn));
+  var closeBtn = document.querySelector(".".concat(classCloseBtn));
+  var menu = document.querySelector(".".concat(classMenu));
+  var menuContent = document.querySelector(".".concat(classMenuContent));
+  burgerBtn.addEventListener('click', function () {
+    document.body.style.overflow = 'hidden';
+    menu.classList.add(classMenuActive);
+  });
+  menu.addEventListener('click', function (e) {
+    if (menuContent.contains(e.target) && !closeBtn.contains(e.target)) return;
+    document.body.style.overflow = 'auto';
+    menu.classList.remove(classMenuActive);
+  });
+}
 ;// CONCATENATED MODULE: ./src/scripts/modules/video.js
 
 function isVideo() {
@@ -16410,7 +16120,10 @@ function initPartnersSwiper() {
 
 
 
-__webpack_require__(326);
+
+
+// Burger Menu
+burgerMenu();
 
 // Header
 headerBlur();
@@ -16440,29 +16153,6 @@ isVideo();
 
 // Input Type File
 onChangeInputTypeFile();
-
-/* //!
-function clamp(min, max) {
-  const breakpoints = [1600, 1400, 1200, 992, 768, 576];
-  const minBp = 360;
-  let widthNum;
-  let bp;
-  for (let i = 0; i < breakpoints.length; i += 1) {
-    bp = breakpoints[i];
-
-    widthNum = (max / bp) * 100;
-    const isFits = (widthNum / 100) * minBp <= min;
-
-    if (isFits) {
-      break;
-    }
-
-    widthNum = null;
-  }
-  return [bp, widthNum];
-}
-clamp(50, 100);
-*/
 })();
 
 /******/ })()

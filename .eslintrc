@@ -6,8 +6,15 @@
   "parser": "@babel/eslint-parser",
   "extends": ["eslint-config-airbnb-base", "prettier"],
   "plugins": ["prettier"],
-  "ignorePatterns": ["node_modules/", "dist/"],
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "gulp/",
+    "gulpfile.js",
+    "webpack.config.js"
+  ],
   "rules": {
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off"
   }
 }

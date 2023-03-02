@@ -3,7 +3,7 @@ import classNames from '../utils/classNames';
 
 import 'choices.js/public/assets/styles/choices.min.css';
 
-export default function initLangChoices() {
+export function initLangChoices() {
   const classBlock = classNames.choices.block;
 
   document.querySelectorAll(`.${classBlock}`).forEach((choicesEl) => {

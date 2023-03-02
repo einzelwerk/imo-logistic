@@ -1,6 +1,7 @@
-import isVideo from './modules/video';
-import initLangChoices from './modules/choices';
-import onChangeInputTypeFile from './modules/inputTypeFile';
+import { burgerMenu } from './modules/burger-menu';
+import { isVideo } from './modules/video';
+import { initLangChoices } from './modules/choices';
+import { onChangeInputTypeFile } from './modules/inputTypeFile';
 import { headerBlur, headerHide } from './modules/header';
 import { openPopup, closePopup, changeStepsQuizPopup } from './modules/popups';
 import {
@@ -18,7 +19,8 @@ import {
 import 'normalize.css';
 import '../styles/main.scss';
 
-require.context('../assets/icons/', true, /\.(svg)$/);
+// Burger Menu
+burgerMenu();
 
 // Header
 headerBlur();
@@ -48,27 +50,3 @@ isVideo();
 
 // Input Type File
 onChangeInputTypeFile();
-
-
-/* //!
-function clamp(min, max) {
-  const breakpoints = [1600, 1400, 1200, 992, 768, 576];
-  const minBp = 360;
-  let widthNum;
-  let bp;
-  for (let i = 0; i < breakpoints.length; i += 1) {
-    bp = breakpoints[i];
-
-    widthNum = (max / bp) * 100;
-    const isFits = (widthNum / 100) * minBp <= min;
-
-    if (isFits) {
-      break;
-    }
-
-    widthNum = null;
-  }
-  return [bp, widthNum];
-}
-clamp(50, 100);
-*/

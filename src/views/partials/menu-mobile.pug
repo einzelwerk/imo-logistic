@@ -1,0 +1,25 @@
+include ./logo
+include ./select/select-lang-big
+
+mixin menu-mobile
+  .menu-mobile
+    .menu-mobile__content
+      .menu-mobile__header
+        .menu-mobile__header-left
+          +logo('header__logo', 'logo-black')
+          +select-lang-big(true, true)
+        button.menu-mobile__close(type="button")
+          span.menu-mobile__close-item
+      nav.menu-mobile__nav
+        .menu-mobile__nav-list 
+          a.menu-mobile__nav-link(href="./tariffs.html") Tariffs
+          a.menu-mobile__nav-link(href="./about.html") Über uns
+          a.menu-mobile__nav-link(href="./services.html") Leistungen
+          a.menu-mobile__nav-link(href="./career.html") Karriere
+          a.menu-mobile__nav-link(href="./sustainability.html") Nachhaltigkeit
+          a.menu-mobile__nav-link(href="./contact.html") Kontakt  
+      .menu-mobile__btn-wrap 
+        button.menu-mobile__btn.btn.btn_light(type="button") Call Us
+        button.menu-mobile__btn.btn.btn_yellow(type="button") Angebot Anfordern
+
+

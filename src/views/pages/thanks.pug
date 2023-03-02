@@ -1,0 +1,11 @@
+extends ../layouts/main-light
+
+block vars
+  - const title = 'Danke für die Bewerbung';
+  - const pageName = 'thanks';
+
+block content
+  include ../components/thanks-request
+  
+  +thanks-request
+  

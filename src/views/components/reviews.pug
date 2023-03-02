@@ -43,7 +43,7 @@ mixin reviews(title, desc)
                   .reviews__item
                     p.reviews__text=review.message
                     .reviews__person
-                      img.reviews__person-img(src=require(`@/img/reviews/person-${idx+1}.jpg`), alt="Person")
+                      img.reviews__person-img(src=`@/img/reviews/person-${idx+1}.jpg`, alt="Person")
                       .reviews__person-text-block
                         h3.reviews__person-name=review.name
                         span.reviews__person-desc=review.desc

@@ -35,10 +35,10 @@ mixin acc-img
       ul.acc.acc_counter.acc-img__acc
         each accItem, idx in accList
           li.acc__item
-            button.acc__btn(type="button" data-image=require(`@/img/acc-img/acc-${idx+1}.jpg`))
+            button.acc__btn(type="button" data-image=`@/img/acc-img/acc-${idx+1}.jpg`)
               span.acc__title=accItem.title
             .acc__panel
               span=accItem.desc
-              img.acc-img__acc-panel-img(src=require(`@/img/acc-img/acc-${idx+1}.jpg`), alt="")
+              img.acc-img__acc-panel-img(src=`@/img/acc-img/acc-${idx+1}.jpg`, alt="")
       .acc-img__img-block
         img.acc-img__img(src="#", alt="")

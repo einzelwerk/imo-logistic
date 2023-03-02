@@ -11,7 +11,7 @@ mixin benefits-list(benefitsList = [], isWhite, className = '')
     each benefit in benefitsList
       li.benefits-list__item
         .benefits-list__icon-block
-          img(src=require(`@/img/benefits/${benefit.icon}.svg`), alt="")
+          img(src=`@/img/benefits/${benefit.icon}.svg`, alt="")
         .benefits-list__text-block
           h3.benefits-list__title=benefit.title
           p.benefits-list__desc=benefit.desc

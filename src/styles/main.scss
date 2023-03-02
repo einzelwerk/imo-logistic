@@ -23,6 +23,7 @@
 @use './partials/rate/rate-list';
 @use './partials/rate/rate-card';
 @use './partials/rate/rate-offer';
+@use './partials/menu-mobile';
 
 //  Layouts
 @use './components/popups/popup';
@@ -46,6 +47,9 @@
 @use './components/partners';
 @use './components/contact-filling';
 @use './components/shipping-partners';
+@use './components/thanks-request';
+@use './components/not-found';
+
 
 //  Pages
 @use './pages/home';
