@@ -10,6 +10,7 @@
   overflow: auto;
 
   @include mix.p-16;
+  
   @media (max-width: vars.$lg) {
     @include mix.p-14;
 
