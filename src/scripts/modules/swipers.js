@@ -38,8 +38,8 @@ export function initMiniPartnersSwiper() {
     },
   });
 }
-export function initRateSwiper() {
-  const classBlock = classNames.swiper.rateSlider;
+export function initTariffSwiper() {
+  const classBlock = classNames.swiper.tariffSlider;
 
   return new Swiper(`.${classBlock}`, {
     modules: [Pagination, Navigation],
@@ -61,10 +61,10 @@ export function initRateSwiper() {
       [breakpointsMin.md]: {
         slidesPerView: 2,
       },
-      [breakpointsMin.xl]: {
+      [breakpointsMin.xxl]: {
         slidesPerView: 3,
       },
-      [breakpointsMin.xxl]: {
+      [breakpointsMin.xxxl]: {
         slidesPerView: 4,
       },
     },

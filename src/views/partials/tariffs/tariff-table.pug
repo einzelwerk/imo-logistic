@@ -1,0 +1,222 @@
+mixin tariff-table
+  .tariff-table
+    select.tariff-table__select.select-tariff
+      option(value="column-1") Starter* 
+      option(value="column-2") M 
+      option(value="column-3") L 
+      option(value="column-4") XL 
+      option(value="column-5") 2XL
+      option(value="column-6") 3XL
+    table.tariff-table-inner
+      thead
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h3.tariff-table__title.tariff-table__title_big Compare Plans
+              span.tariff-table__desc.tariff-table__desc_big Find one that’s right for you
+          th.tariff-table__item(data-tariff-table-content="column-1") 
+            .tariff-table__title-block 
+              h3.tariff-table__title.tariff-table__title_big Starter* 
+              button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+          th.tariff-table__item(data-tariff-table-content="column-2") 
+            .tariff-table__title-block 
+              h3.tariff-table__title.tariff-table__title_big M 
+              button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+          th.tariff-table__item(data-tariff-table-content="column-3") 
+            .tariff-table__title-block 
+              h3.tariff-table__title.tariff-table__title_big L 
+              button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+          th.tariff-table__item(data-tariff-table-content="column-4") 
+            .tariff-table__title-block 
+              h3.tariff-table__title.tariff-table__title_big XL 
+              button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+          th.tariff-table__item(data-tariff-table-content="column-5") 
+            .tariff-table__title-block 
+              h3.tariff-table__title.tariff-table__title_big 2XL
+              button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+          th.tariff-table__item(data-tariff-table-content="column-6") 
+            .tariff-table__title-block 
+              h3.tariff-table__title.tariff-table__title_big 3XL
+              button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+      tfoot 
+        tr
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title 
+                span Individuelle Lösungen auf Anfrage
+              p.tariff-tavle__desc alle Preise sind netto zzgl. MwSt
+          td.tariff-table__item(data-tariff-table-content="column-1") 
+            button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+          td.tariff-table__item(data-tariff-table-content="column-2") 
+            button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+          td.tariff-table__item(data-tariff-table-content="column-3") 
+            button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+          td.tariff-table__item(data-tariff-table-content="column-4") 
+            button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+          td.tariff-table__item(data-tariff-table-content="column-5") 
+            button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+          td.tariff-table__item(data-tariff-table-content="column-6") 
+            button.tariff-table__btn.btn.btn_small.btn_yellow(type="button") Auswählen
+      tbody 
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title 
+                span Anzahl der Inklusiv-Arbeitswerte fur folgende Leistungen***: 
+                .tooltip
+                  .tooltip__content
+                    .tooltip__content-inner 
+                      strong.tooltip__title Anzahl der Inklusiv-Arbeitswerte für folgende Leistungen
+                      p.tooltip__desc Kommunikation (Telefon, E-Mail, WhatsApp)Warenannahme/EinlagerungManuelle Auftragserfassung- und BearbeitungRetourenbearbeitung
+                      .tooltip__bottom 
+                        span.tooltip__text AW – Sätze je Tarif: 
+                        span.tooltip__price 7,75 €
+                  button.tooltip__btn(type="button")
+                    svg.tooltip__icon
+                      use(xlink:href="./assets/sprite.svg#tooltip")
+              p.tariff-tavle__desc fix, monatlich
+          td.tariff-table__item(data-tariff-table-content="column-1") 20 AW**
+          td.tariff-table__item(data-tariff-table-content="column-2") 40 AW
+          td.tariff-table__item(data-tariff-table-content="column-3") 60 AW 
+          td.tariff-table__item(data-tariff-table-content="column-4") 80 AW 
+          td.tariff-table__item(data-tariff-table-content="column-5") 100 AW 
+          td.tariff-table__item(data-tariff-table-content="column-6") 250 AW 
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              .tariff-table__title Anzahl Pick’s
+              p.tariff-tavle__desc fix, monatlich, im Tarif enthalten
+          td.tariff-table__item(data-tariff-table-content="column-1") 100
+          td.tariff-table__item(data-tariff-table-content="column-2") 500
+          td.tariff-table__item(data-tariff-table-content="column-3") 1000
+          td.tariff-table__item(data-tariff-table-content="column-4") 1500
+          td.tariff-table__item(data-tariff-table-content="column-5") 2000
+          td.tariff-table__item(data-tariff-table-content="column-6") 3000
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              .tariff-table__title Anzahl Pack’s
+              p.tariff-tavle__desc fix, monatlich, im Tarif enthalten
+          td.tariff-table__item(data-tariff-table-content="column-1") 50
+          td.tariff-table__item(data-tariff-table-content="column-2") 100
+          td.tariff-table__item(data-tariff-table-content="column-3") 150
+          td.tariff-table__item(data-tariff-table-content="column-4") 200
+          td.tariff-table__item(data-tariff-table-content="column-5") 250
+          td.tariff-table__item(data-tariff-table-content="column-6") 500
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title Maximale Anzahl der Palettenstellpaltzein der Grund-pauschale enthalten (120x80x160cm)
+              p.tariff-tavle__desc fix, monatlich, im Tarif enthalten
+          td.tariff-table__item(data-tariff-table-content="column-1") 5
+          td.tariff-table__item(data-tariff-table-content="column-2") 15
+          td.tariff-table__item(data-tariff-table-content="column-3") 17
+          td.tariff-table__item(data-tariff-table-content="column-4") 20
+          td.tariff-table__item(data-tariff-table-content="column-5") 25
+          td.tariff-table__item(data-tariff-table-content="column-6") 80
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title Maximale Anzahl der Fachbodenregalein der Grund-pauschale enthalten (20x60x40cm)
+              p.tariff-tavle__desc fix, monatlich, im Tarif enthalten
+          td.tariff-table__item(data-tariff-table-content="column-1") 25
+          td.tariff-table__item(data-tariff-table-content="column-2") 50
+          td.tariff-table__item(data-tariff-table-content="column-3") 100
+          td.tariff-table__item(data-tariff-table-content="column-4") 150
+          td.tariff-table__item(data-tariff-table-content="column-5") 200
+          td.tariff-table__item(data-tariff-table-content="column-6") 300
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title 
+                span Verpackungskosten je Karton: 
+                .tooltip
+                  .tooltip__content
+                    .tooltip__content-inner 
+                      strong.tooltip__title Anzahl der Inklusiv-Arbeitswerte für folgende Leistungen
+                      p.tooltip__desc Kommunikation (Telefon, E-Mail, WhatsApp)Warenannahme/EinlagerungManuelle Auftragserfassung- und BearbeitungRetourenbearbeitung
+                      .tooltip__bottom 
+                        span.tooltip__text AW – Sätze je Tarif: 
+                        span.tooltip__price 7,75 €
+                  button.tooltip__btn(type="button")
+                    svg.tooltip__icon
+                      use(xlink:href="./assets/sprite.svg#tooltip")
+          td.tariff-table__item(data-tariff-table-content="column-1") 2,50 €
+          td.tariff-table__item(data-tariff-table-content="column-2") 2,50 €
+          td.tariff-table__item(data-tariff-table-content="column-3") 2,50 €
+          td.tariff-table__item(data-tariff-table-content="column-4") 2,50 €
+          td.tariff-table__item(data-tariff-table-content="column-5") 2,50 €
+          td.tariff-table__item(data-tariff-table-content="column-6") 2,50 €
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title pro zusatzlichen Pick
+          td.tariff-table__item(data-tariff-table-content="column-1") 0,25 €
+          td.tariff-table__item(data-tariff-table-content="column-2") 0,25 €
+          td.tariff-table__item(data-tariff-table-content="column-3") 0,25 €
+          td.tariff-table__item(data-tariff-table-content="column-4") 0,25 €
+          td.tariff-table__item(data-tariff-table-content="column-5") 0,25 €
+          td.tariff-table__item(data-tariff-table-content="column-6") 0,25 €
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title pro zusatzlichen Pack
+          td.tariff-table__item(data-tariff-table-content="column-1") 0,95 €
+          td.tariff-table__item(data-tariff-table-content="column-2") 0,95 €
+          td.tariff-table__item(data-tariff-table-content="column-3") 0,95 €
+          td.tariff-table__item(data-tariff-table-content="column-4") 0,95 €
+          td.tariff-table__item(data-tariff-table-content="column-5") 0,95 €
+          td.tariff-table__item(data-tariff-table-content="column-6") 0,95 €
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title Versandkosten pro Paket bis 31,5 kg
+          td.tariff-table__item(data-tariff-table-content="column-1") 6,90 €
+          td.tariff-table__item(data-tariff-table-content="column-2") 6,90 €
+          td.tariff-table__item(data-tariff-table-content="column-3") 6,90 €
+          td.tariff-table__item(data-tariff-table-content="column-4") 6,90 €
+          td.tariff-table__item(data-tariff-table-content="column-5") 6,90 €
+          td.tariff-table__item(data-tariff-table-content="column-6") 6,90 €
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title Lagergeld pro zus. Palettestellplatz
+          td.tariff-table__item(data-tariff-table-content="column-1") 7,00 €
+          td.tariff-table__item(data-tariff-table-content="column-2") 7,00 €
+          td.tariff-table__item(data-tariff-table-content="column-3") 7,00 €
+          td.tariff-table__item(data-tariff-table-content="column-4") 7,00 €
+          td.tariff-table__item(data-tariff-table-content="column-5") 7,00 €
+          td.tariff-table__item(data-tariff-table-content="column-6") 7,00 €
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title Lagergeld pro zus. Fachbodenregal
+              p.tariff-tavle__desc monatlich (30x60x30cm)
+          td.tariff-table__item(data-tariff-table-content="column-1") 2,45 €
+          td.tariff-table__item(data-tariff-table-content="column-2") 2,45 €
+          td.tariff-table__item(data-tariff-table-content="column-3") 2,45 €
+          td.tariff-table__item(data-tariff-table-content="column-4") 2,45 €
+          td.tariff-table__item(data-tariff-table-content="column-5") 2,45 €
+          td.tariff-table__item(data-tariff-table-content="column-6") 2,45 €
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title Übertariflicher Arbeitsaufwand
+              p.tariff-tavle__desc je angefangene Stunde
+          td.tariff-table__item(data-tariff-table-content="column-1") 33,00 €
+          td.tariff-table__item(data-tariff-table-content="column-2") 32,00 €
+          td.tariff-table__item(data-tariff-table-content="column-3") 31,00 €
+          td.tariff-table__item(data-tariff-table-content="column-4") 30,00 €
+          td.tariff-table__item(data-tariff-table-content="column-5") 29,00 €
+          td.tariff-table__item(data-tariff-table-content="column-6") 28,00 €
+        tr 
+          th.tariff-table__left
+            .tariff-table__title-block.tariff-table__title-block_left
+              h4.tariff-table__title AW - Sätze je Tarif
+          td.tariff-table__item(data-tariff-table-content="column-1") 8,25 €
+          td.tariff-table__item(data-tariff-table-content="column-2") 8,00 €
+          td.tariff-table__item(data-tariff-table-content="column-3") 7,75 €
+          td.tariff-table__item(data-tariff-table-content="column-4") 7,50 €
+          td.tariff-table__item(data-tariff-table-content="column-5") 7,25 €
+          td.tariff-table__item(data-tariff-table-content="column-6") 7,00 €
+        

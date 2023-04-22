@@ -1,0 +1,17 @@
+include ../advantage-list
+
+mixin tariff-card(tag, tariff, isGray = false)
+  #{tag}.tariff-card(class=isGray ? 'tariff-card_gray' : '')
+    .tariff-card__text-block
+      h3.tariff-card__title
+        span=tariff.title
+        span.tariff-card__title_small=tariff.titleSmall
+      .tariff-card__additionally
+        span.tariff-card__price
+          span=tariff.price
+        span.tariff-card__desc=tariff.desc
+    hr.tariff-card__hr
+    +advantage-list(tariff.benefits, 'tariff-card__advantage-list')
+    .tariff-card__btn-block
+      button.btn.btn_yellow.tariff-card__btn.tariff-card__btn_choose(type="button") Choose
+      button.btn.btn_white.tariff-card__btn.tariff-card__btn_more(type="button") Mehr erfahren

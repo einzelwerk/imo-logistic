@@ -1,7 +1,8 @@
 @use '../utils/variables' as vars;
 @use '../utils/mixins' as mix;
+@use '../utils/functions' as fn;
 
-.rate {
+.tariff {
   padding: clamp(48px, 12.1vw, 120px) 0;
   overflow: hidden;
   color: vars.$white;
@@ -19,13 +20,6 @@
   &__container {
     display: flex;
     flex-direction: column;
-    gap: clamp(47px, 6.05vw, 60px);
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(40px, 6.05vw, 60px);
   }
 
   &__top {
@@ -57,5 +51,25 @@
       padding-right: 18px;
       padding-left: 18px;
     }
+  }
+
+  .tariff-list {
+    margin-top: clamp(40px, 6.05vw, 60px);
+  }
+
+  .tariff-table {
+    margin-top: 40px;
+  }
+
+  .tariff-info {
+    margin-top: fn.cmin(16, 24);
+  }
+
+  .tariff-offer-2 {
+    margin-top: fn.cmin(16, 24);
+  }
+
+  .tariff-offer {
+    margin-top: 40px;
   }
 }

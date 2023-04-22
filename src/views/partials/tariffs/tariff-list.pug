@@ -1,0 +1,16 @@
+include ./tariff-card
+
+mixin tariff-list(tariffList, isGray = false)
+  .tariff-list(class=isGray ? 'tariff-list_gray' : '')
+    .swiper.tariff-list__slider
+      ul.swiper-wrapper
+        each tariff in tariffList
+          li.swiper-slide
+            +tariff-card('div', tariff, isGray)
+      .tariff-list__pagination.swiper-pagination
+      button.tariff-list__btn.tariff-list__btn_prev.swiper-button-prev(type="button")
+        svg.tariff-list__btn-icon
+          use(xlink:href="./assets/sprite.svg#right-arrow")
+      button.tariff-list__btn.tariff-list__btn_next.swiper-button-next(type="button")
+        svg.tariff-list__btn-icon
+          use(xlink:href="./assets/sprite.svg#right-arrow")

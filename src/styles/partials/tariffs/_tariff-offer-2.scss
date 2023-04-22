@@ -1,0 +1,69 @@
+@use '../../utils/variables' as vars;
+@use '../../utils/mixins' as mix;
+@use '../../utils/functions' as fn;
+
+.tariff-offer-2 {
+  display: flex;
+  border: 1px solid vars.$bg-light-divider;
+  border-radius: 16px;
+  @media (max-width: vars.$lg) {
+    flex-direction: column;
+  }
+
+  &__left,
+  &__right {
+    padding: fn.cmin(16, 24);
+    @media (min-width: calc(vars.$lg + 0.02px)) {
+      padding-left: fn.cmin(24, 48);
+    }
+  }
+
+  &__left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 687px;
+    @media (min-width: calc(vars.$lg + 0.02px)) {
+      border-right: 1px solid vars.$bg-light-divider;
+    }
+    @media (max-width: vars.$xxl) {
+      width: unset;
+    }
+    @media (max-width: vars.$lg) {
+      border-bottom: 1px solid vars.$bg-light-divider;
+    }
+  }
+
+  &__strong {
+    @include mix.p-16;
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__desc {
+    color: vars.$text-on-light;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__title {
+    @include mix.h5;
+  }
+
+  &__btn {
+    &-block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: fn.cmin(8, 16);
+    }
+  }
+}

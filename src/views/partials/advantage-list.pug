@@ -6,4 +6,18 @@ mixin advantage-list(advantageList, className)
           const iconName = benefit.isActive ? 'on' : 'off'
         svg.advantage-list__icon
           use(xlink:href=`./assets/sprite.svg#${iconName}`)
-        span.advantage-list__text=benefit.text
+        .advantage-list__text-block
+          span.advantage-list__text=benefit.text
+          if benefit.tooltip 
+            .tooltip
+              .tooltip__content
+                .tooltip__content-inner 
+                  strong.tooltip__title Anzahl der Inklusiv-Arbeitswerte für folgende Leistungen
+                  p.tooltip__desc Kommunikation (Telefon, E-Mail, WhatsApp)Warenannahme/EinlagerungManuelle Auftragserfassung- und BearbeitungRetourenbearbeitung
+                  .tooltip__bottom 
+                    span.tooltip__text AW – Sätze je Tarif: 
+                    span.tooltip__price 7,75 €
+              button.tooltip__btn(type="button")
+                svg.tooltip__icon
+                  use(xlink:href="./assets/sprite.svg#tooltip")
+                

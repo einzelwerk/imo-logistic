@@ -1,0 +1,109 @@
+include ../partials/tariffs/tariff-table
+include ../partials/tariffs/tariff-list
+include ../partials/tariffs/tariff-info
+include ../partials/tariffs/tariff-offer-2
+include ../partials/tariffs/tariff-offer
+
+mixin tariff(isWhite = false)
+  section.tariff(class=isWhite? 'tariff_white' : '')
+    .container.tariff__container
+      .tariff__content
+      .tariff__top
+        h2.tariff__title Unsere Tarife
+        .tariff__btn-wrap
+          button.tariff__btn.btn.btn_big.btn_yellow(type="button" data-popup-open="quiz") Tarifrechner
+          if !isWhite
+            button.tariff__btn.btn.btn_big.btn_white(type="button") Learn more
+      -
+        const tariffList = [
+          {
+            title: 'S',
+            titleSmall: 'tarter*',
+            price: '499€',
+            desc: 'monatlich',
+            benefits: [
+            {tooltip: false, isActive: false, text: 'Set-Up IT (299€)'},
+            {tooltip: false, isActive: false, text: 'Provision/Initial stocking (299€)'},
+            {tooltip: false, isActive: true, text: 'Up to 5 working hours'},
+            {tooltip: true, isActive: true, text: '100 picks'},
+            {tooltip: true, isActive: true, text: '50 packs'},
+            {tooltip: false, isActive: true, text: 'Up to 25 shleves included'},
+            {tooltip: false, isActive: true, text: 'Up to 5 pallet spaces included'},
+            ],
+          },
+          {
+            title: 'M',
+            price: '999€',
+            desc: 'monatlich',
+            benefits: [
+            {tooltip: false, isActive: false, text: 'Set-Up IT (299€)'},
+            {tooltip: false, isActive: false, text: 'Provision/Initial stocking (299€)'},
+            {tooltip: false, isActive: true, text: 'Up to 10 working hours'},
+            {tooltip: true, isActive: true, text: '500 picks'},
+            {tooltip: true, isActive: true, text: '100 packs'},
+            {tooltip: false, isActive: true, text: 'Up to 50 shleves included '},
+            {tooltip: false, isActive: true, text: 'Up to 15 pallet spaces included'},
+            ],
+          },
+          {
+            title: 'L',
+            price: '1499€',
+            desc: 'monatlich',
+            benefits: [
+            {tooltip: false, isActive: true, text: 'Set-Up IT'},
+            {tooltip: false, isActive: true, text: 'Provision/Initial stocking'},
+            {tooltip: false, isActive: true, text: 'Up to 30 working hours'},
+            {tooltip: true, isActive: true, text: '1000 picks'},
+            {tooltip: true, isActive: true, text: '150 packs'},
+            {tooltip: false, isActive: true, text: 'Up to 100 shleves included '},
+            {tooltip: false, isActive: true, text: 'Up to 17 pallet spaces included'},
+            ],
+          },
+          {
+            title: 'XL',
+            price: '1999€',
+            desc: 'monatlich',
+            benefits: [
+            {tooltip: false, isActive: true, text: 'Set-Up IT'},
+            {tooltip: false, isActive: true, text: 'Provision/Initial stocking'},
+            {tooltip: false, isActive: true, text: 'Up to 80 working hours'},
+            {tooltip: true, isActive: true, text: '1500 picks'},
+            {tooltip: true, isActive: true, text: '200 packs'},
+            {tooltip: false, isActive: true, text: 'Up to 150 shleves included '},
+            {tooltip: false, isActive: true, text: 'Up to 20 pallet spaces included'},
+            ],
+          },
+          {
+            title: '2XL',
+            price: '2499€',
+            desc: 'monatlich',
+            benefits: [
+            {tooltip: false, isActive: true, text: 'Set-Up IT'},
+            {tooltip: false, isActive: true, text: 'Provision/Initial stocking'},
+            {tooltip: false, isActive: true, text: 'Up to 80 working hours'},
+            {tooltip: true, isActive: true, text: '2000 picks'},
+            {tooltip: true, isActive: true, text: '250 packs'},
+            {tooltip: false, isActive: true, text: 'Up to 200 shleves included '},
+            {tooltip: false, isActive: true, text: 'Up to 25 pallet spaces included'},
+            ],
+          },
+          {
+            title: '3XL',
+            price: '4999€',
+            desc: 'monatlich',
+            benefits: [
+            {tooltip: false, isActive: true, text: 'Set-Up IT'},
+            {tooltip: false, isActive: true, text: 'Provision/Initial stocking'},
+            {tooltip: false, isActive: true, text: 'Up to 80 working hours'},
+            {tooltip: true, isActive: true, text: '3000 picks'},
+            {tooltip: true, isActive: true, text: '500 packs'},
+            {tooltip: false, isActive: true, text: 'Up to 300 shleves included '},
+            {tooltip: false, isActive: true, text: 'Up to 80 pallet spaces included'},
+            ],
+          },
+        ]
+      +tariff-list(tariffList, isWhite)
+      +tariff-table
+      +tariff-info
+      +tariff-offer-2
+      +tariff-offer

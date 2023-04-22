@@ -1,14 +1,14 @@
 @use '../../utils/variables' as vars;
 @use '../../utils/mixins' as mix;
 
-.rate-list {
+.tariff-list {
   position: relative;
   @media (max-width: vars.$sm) {
     padding: 0 20px;
   }
 
   &_gray {
-    .rate-list {
+    .tariff-list {
       &__btn {
         color: rgba(vars.$headlines, 0.5);
         border-color: rgba(vars.$text-on-light, 0.2);
@@ -122,7 +122,7 @@
     }
 
     &:hover {
-      .rate-list__btn-circle {
+      .tariff-list__btn-circle {
         stroke-dashoffset: 0;
       }
     }

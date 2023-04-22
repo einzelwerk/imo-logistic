@@ -1,0 +1,158 @@
+@use '../../utils/variables' as vars;
+@use '../../utils/mixins' as mix;
+@use '../../utils/functions' as fn;
+
+.tariff-table {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  overflow: auto;
+
+  @include mix.p-16;
+  @media (max-width: vars.$lg) {
+    @include mix.p-14;
+
+    overflow: unset;
+  }
+
+  &__select {
+    @include mix.p-14;
+
+    @media (min-width: calc(vars.$lg + 0.02px)) {
+      display: none;
+    }
+
+    &::before {
+      right: 19px;
+      width: 12px;
+      height: 12px;
+      background: url('@/img/icons/arrow-down-black.svg') no-repeat center /
+        contain;
+    }
+
+    .choices {
+      &__inner {
+        border: 1px solid vars.$bg-light-divider !important;
+        border-radius: 8px !important;
+      }
+
+      &__list {
+        &--dropdown {
+          background: vars.$bg-light !important;
+        }
+      }
+
+      &__item {
+        padding: 14px 16px !important;
+
+        &--choice {
+          &.is-highlighted {
+            background: darken(vars.$bg-light, 20%) !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-inner {
+    border-collapse: collapse;
+  }
+
+  thead {
+    th,
+    td {
+      border-top: none;
+    }
+  }
+
+  tfoot {
+    th,
+    td {
+      border-bottom: none;
+    }
+  }
+
+  td,
+  th {
+    border: 1px solid vars.$bg-light-divider;
+  }
+
+  td:last-child {
+    border-right: none;
+  }
+
+  td {
+    min-width: 160px;
+    padding: fn.cmin(16, 20);
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &__left {
+    border-left: none !important;
+  }
+
+  &__title {
+    &-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 20px;
+      text-align: left;
+
+      &_left {
+        min-width: 380px;
+        padding-left: 0;
+
+        @media (max-width: vars.$lg) {
+          min-width: unset;
+        }
+      }
+    }
+
+    @include mix.p-16-title;
+
+    &_big {
+      @include mix.h5;
+    }
+
+    @media (max-width: vars.$lg) {
+      @include mix.p-14-title;
+    }
+
+    &__desc {
+      @include mix.p-14;
+      @media (max-width: vars.$lg) {
+        @include mix.p-12;
+      }
+
+      color: vars.$text-on-light;
+
+      &_big {
+        @include mix.p-16;
+        @media (max-width: vars.$lg) {
+          @include mix.p-14;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    @media (max-width: vars.$sm) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: vars.$lg) {
+    &__item {
+      &:not(&_active) {
+        display: none;
+      }
+
+      &_active {
+        border-right: none !important;
+      }
+    }
+  }
+}

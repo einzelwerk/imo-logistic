@@ -1,0 +1,18 @@
+include ../email-btns
+
+mixin tariff-offer()
+  .tariff-offer
+    .tariff-offer__content
+      .tariff-offer__text-block
+        h2.tariff-offer__title
+          | Sie möchten eine
+          br
+          | Beratung oder ein individuelles Angebot?
+        p.tariff-offer__desc Schreiben Sie mir eine E-Mail oder rufen Sie direkt an. Ich bin gerne für Sie da.
+      +email-btns('Book consultation', 'tariff-offer__btns')
+    .tariff-offer__img-wrap
+      img.tariff-offer__img(src='@/img/tariffs/tariff-offer.jpg', alt="")
+
+
+
+

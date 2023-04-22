@@ -12,6 +12,7 @@
 @use './partials/buttons';
 @use './partials/inputs';
 @use './partials/acc';
+@use './partials/tooltip';
 @use './partials/advantage-list';
 @use './partials/video-block';
 @use './partials/email-btns';
@@ -20,9 +21,12 @@
 @use './partials/benefits/benefits-list';
 @use './partials/team/team-join';
 @use './partials/team/team-list';
-@use './partials/rate/rate-list';
-@use './partials/rate/rate-card';
-@use './partials/rate/rate-offer';
+@use './partials/tariffs/tariff-list';
+@use './partials/tariffs/tariff-card';
+@use './partials/tariffs/tariff-table';
+@use './partials/tariffs/tariff-offer';
+@use './partials/tariffs/tariff-offer-2';
+@use './partials/tariffs/tariff-info';
 @use './partials/menu-mobile';
 
 //  Layouts
@@ -36,7 +40,7 @@
 @use './components/desc';
 @use './components/acc-img';
 @use './components/benefits';
-@use './components/rate';
+@use './components/tariff';
 @use './components/half-blocks';
 @use './components/reviews';
 @use './components/presentation';

@@ -1,0 +1,73 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mix;
+
+.tippy-box[data-theme~='custom'] {
+  padding: 12px;
+  color: #606060;
+  background-color: vars.$white;
+  border: 1px solid vars.$border-light;
+  border-radius: 8px;
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {
+  border-top-color: vars.$white;
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='bottom']
+  > .tippy-arrow::before {
+  border-bottom-color: vars.$white;
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='left']
+  > .tippy-arrow::before {
+  border-left-color: vars.$white;
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='right']
+  > .tippy-arrow::before {
+  border-right-color: vars.$white;
+}
+
+.tooltip {
+  display: inline-block;
+
+  &__content {
+    display: none;
+
+    &-inner {
+      @include mix.p-12;
+
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: #606060;
+    }
+  }
+
+  &__title {
+    @include mix.p-14;
+
+    color: vars.$bg-dark;
+    font-weight: 450;
+  }
+
+  &__price {
+    font-weight: 500;
+  }
+
+  &__btn {
+    color: vars.$placeholder;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      color: currentcolor;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    transition: color 0.3s ease-in-out;
+  }
+}

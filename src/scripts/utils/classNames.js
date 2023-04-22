@@ -33,10 +33,20 @@ export default {
     partners: 'partners__slider',
     review: 'reviews__slider',
     gallery: 'gallery__slider',
-    rateSlider: 'rate-list__slider',
+    tariffSlider: 'tariff-list__slider',
+  },
+  tooltip: {
+    block: 'tooltip',
+    btn: 'tooltip__btn',
+    content: 'tooltip__content',
+  },
+  tariff: {
+    tableTab: 'tariff-table__item',
+    tableTabActive: 'tariff-table__item_active',
   },
   choices: {
-    block: 'select-lang',
+    lang: 'select-lang',
+    tariff: 'select-tariff',
   },
   acc: {
     block: 'acc',

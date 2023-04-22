@@ -1,6 +1,6 @@
 import { burgerMenu } from './modules/burger-menu';
 import { isVideo } from './modules/video';
-import { initLangChoices } from './modules/choices';
+import { initLangChoices, initTariffChoices } from './modules/choices';
 import { onChangeInputTypeFile } from './modules/inputTypeFile';
 import { headerBlur, headerHide } from './modules/header';
 import { openPopup, closePopup, changeStepsQuizPopup } from './modules/popups';
@@ -13,8 +13,9 @@ import {
   initReviewsSwiper,
   initGallerySwiper,
   initPartnersSwiper,
-  initRateSwiper,
+  initTariffSwiper,
 } from './modules/swipers';
+import { initTooltip } from './modules/tooltip';
 
 import 'normalize.css';
 import '../styles/main.scss';
@@ -36,10 +37,14 @@ initMiniPartnersSwiper();
 initReviewsSwiper();
 initGallerySwiper();
 initPartnersSwiper();
-initRateSwiper();
+initTariffSwiper();
 
 // Choices
 initLangChoices();
+initTariffChoices()
+
+// Tippy
+initTooltip()
 
 // Accordeon
 initAccordeon();

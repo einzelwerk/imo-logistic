@@ -98,12 +98,32 @@
   font-family: Inter, sans-serif;
   line-height: 1.5;
 }
+@mixin p-16-title {
+  font-weight: 450;
+  font-size: 16px;
+  font-family: CircularStd, sans-serif;
+  line-height: 1.5;
+}
 
 @mixin p-14 {
   font-weight: 400;
   font-size: 14px;
   font-family: Inter, sans-serif;
   line-height: 1.43;
+}
+
+@mixin p-14-title {
+  font-weight: 400;
+  font-size: 14px;
+  font-family: CircularStd, sans-serif;
+  line-height: 1.43;
+}
+
+@mixin p-12 {
+  font-weight: 400;
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
 }
 
 @mixin btn-big {
