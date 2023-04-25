@@ -23,17 +23,25 @@
                           <p class="popup-form__desc">Sind Sie an einer Zusammenarbeit interessiert? Schreiben Sie uns, wir werden Ihnen bald antworten!</p>
                         </div>
                         <form class="form" action="#">
-                          <div class="form__field-block">
-                            <label class="visually-hidden" for="#name">Name</label>
-                            <input class="form__field" id="name" type="text" name="name" placeholder="Name">
-                            <div class="form__field-row">
-                              <label class="visually-hidden" for="#email">E-mail-Adresse</label>
-                              <input class="form__field" id="email" type="email" name="email" placeholder="E-mail-Adresse">
-                              <label class="visually-hidden" for="#tel">Telefon</label>
-                              <input class="form__field" id="tel" type="tel" name="tel" placeholder="Telefon">
+                          <div class="form__fields-block">
+                            <div class="form__field-block">
+                              <label class="visually-hidden" for="#name">Name</label>
+                              <input class="form__field" id="name" type="text" name="name" placeholder="Name">
                             </div>
-                            <label class="visually-hidden" for="#message">Nachricht</label>
-                            <textarea class="form__field form__field_textarea" id="message" name="message" placeholder="Nachricht"></textarea>
+                            <div class="form__field-row">
+                              <div class="form__field-block">
+                                <label class="visually-hidden" for="#email">E-mail-Adresse</label>
+                                <input class="form__field" id="email" type="email" name="email" placeholder="E-mail-Adresse">
+                              </div>
+                              <div class="form__field-block">
+                                <label class="visually-hidden" for="#tel">Telefon</label>
+                                <input class="form__field" id="tel" type="tel" name="tel" placeholder="Telefon">
+                              </div>
+                            </div>
+                            <div class="form__field-block">
+                              <label class="visually-hidden" for="#message">Nachricht</label>
+                              <textarea class="form__field form__field_textarea" id="message" name="message" placeholder="Nachricht"></textarea>
+                            </div>
                           </div>
                           <label class="checkbox checkbox__checkbox">
                             <input class="visually-hidden checkbox__flag" type="checkbox" name="rules"><span class="checkbox__custom"></span><span class="checkbox__text"><span class="form__checkbox-text">Hiermit akzeptiere ich die&nbsp;</span><a class="form__checkbox-text form__checkbox-text_link" href="#">Datenschutzbedingungen</a></span>
@@ -702,13 +710,19 @@
                     <p class="contact-filling__desc">Sind Sie an einer Zusammenarbeit interessiert? Schreiben Sie uns, wir werden Ihnen bald antworten!</p>
                   </div>
                   <form class="form contact-filling__form" action="#">
-                    <div class="form__field-block">
-                      <label class="visually-hidden" for="#name">Name</label>
-                      <input class="form__field" id="name" type="text" name="name" placeholder="Name">
-                      <label class="visually-hidden" for="#email">E-mail-Adresse</label>
-                      <input class="form__field" id="email" type="email" name="email" placeholder="E-mail-Adresse">
-                      <label class="visually-hidden" for="#theme">Theme</label>
-                      <input class="form__field" id="theme" type="text" name="theme" placeholder="Theme">
+                    <div class="form__fields-block">
+                      <div class="form__field-block">
+                        <label class="visually-hidden" for="#name">Name</label>
+                        <input class="form__field" id="name" type="text" name="name" placeholder="Name">
+                      </div>
+                      <div class="form__field-block form__field-block_error">
+                        <label class="visually-hidden" for="#email">E-mail-Adresse</label>
+                        <input class="form__field" id="email" type="email" name="email" placeholder="E-mail-Adresse"><span>Error message</span>
+                      </div>
+                      <div class="form__field-block">
+                        <label class="visually-hidden" for="#theme">Theme</label>
+                        <input class="form__field" id="theme" type="text" name="theme" placeholder="Theme">
+                      </div>
                             <label class="attach">
                               <input class="attach__input visually-hidden" type="file" accept="image/*" placeholder="CV/Resume">
                               <svg class="attach__icon">
@@ -743,12 +757,10 @@
             <div class="footer__main"><a class="logo footer__logo" href="./index.html"><img class="logo__img" src="./assets/img/logo-black.png" alt="Logo IMO Logistics"></a>
               <div class="footer__desc">Schreiben Sie mir eine E-Mail oder rufen Sie direkt an.</div>
               <div class="footer__btns">
-                <button class="btn btn_yellow footer__proposal" type="button" data-popup-open="form">IMO Angebote</button>
-                <button class="footer__social" type="button">
+                <button class="btn btn_yellow footer__proposal" type="button" data-popup-open="form">IMO Angebote</button><a class="footer__social btn btn_white" href="#">
                   <svg class="footer__social-icon">
                     <use xlink:href="./assets/sprite.svg#linkedin"></use>
-                  </svg>
-                </button>
+                  </svg></a>
               </div>
             </div>
             <div class="footer__nav-contact">
