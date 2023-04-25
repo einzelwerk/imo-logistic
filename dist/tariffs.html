@@ -23,17 +23,25 @@
                           <p class="popup-form__desc">Sind Sie an einer Zusammenarbeit interessiert? Schreiben Sie uns, wir werden Ihnen bald antworten!</p>
                         </div>
                         <form class="form" action="#">
-                          <div class="form__field-block">
-                            <label class="visually-hidden" for="#name">Name</label>
-                            <input class="form__field" id="name" type="text" name="name" placeholder="Name">
-                            <div class="form__field-row">
-                              <label class="visually-hidden" for="#email">E-mail-Adresse</label>
-                              <input class="form__field" id="email" type="email" name="email" placeholder="E-mail-Adresse">
-                              <label class="visually-hidden" for="#tel">Telefon</label>
-                              <input class="form__field" id="tel" type="tel" name="tel" placeholder="Telefon">
+                          <div class="form__fields-block">
+                            <div class="form__field-block">
+                              <label class="visually-hidden" for="#name">Name</label>
+                              <input class="form__field" id="name" type="text" name="name" placeholder="Name">
                             </div>
-                            <label class="visually-hidden" for="#message">Nachricht</label>
-                            <textarea class="form__field form__field_textarea" id="message" name="message" placeholder="Nachricht"></textarea>
+                            <div class="form__field-row">
+                              <div class="form__field-block">
+                                <label class="visually-hidden" for="#email">E-mail-Adresse</label>
+                                <input class="form__field" id="email" type="email" name="email" placeholder="E-mail-Adresse">
+                              </div>
+                              <div class="form__field-block">
+                                <label class="visually-hidden" for="#tel">Telefon</label>
+                                <input class="form__field" id="tel" type="tel" name="tel" placeholder="Telefon">
+                              </div>
+                            </div>
+                            <div class="form__field-block">
+                              <label class="visually-hidden" for="#message">Nachricht</label>
+                              <textarea class="form__field form__field_textarea" id="message" name="message" placeholder="Nachricht"></textarea>
+                            </div>
                           </div>
                           <label class="checkbox checkbox__checkbox">
                             <input class="visually-hidden checkbox__flag" type="checkbox" name="rules"><span class="checkbox__custom"></span><span class="checkbox__text"><span class="form__checkbox-text">Hiermit akzeptiere ich die&nbsp;</span><a class="form__checkbox-text form__checkbox-text_link" href="#">Datenschutzbedingungen</a></span>
@@ -993,7 +1001,7 @@
                               <th class="tariff-table__left">
                                 <div class="tariff-table__title-block tariff-table__title-block_left">
                                   <h4 class="tariff-table__title"> <span>Individuelle Lösungen auf Anfrage</span></h4>
-                                  <p class="tariff-tavle__desc">alle Preise sind netto zzgl. MwSt</p>
+                                  <p class="tariff-table__desc">alle Preise sind netto zzgl. MwSt</p>
                                 </div>
                               </th>
                               <td class="tariff-table__item" data-tariff-table-content="column-1"> 
@@ -1035,7 +1043,7 @@
                                       </button>
                                     </div>
                                   </h4>
-                                  <p class="tariff-tavle__desc">fix, monatlich</p>
+                                  <p class="tariff-table__desc">fix, monatlich</p>
                                 </div>
                               </th>
                               <td class="tariff-table__item" data-tariff-table-content="column-1">20 AW**</td>
@@ -1049,7 +1057,7 @@
                               <th class="tariff-table__left">
                                 <div class="tariff-table__title-block tariff-table__title-block_left">
                                   <div class="tariff-table__title">Anzahl Pick’s</div>
-                                  <p class="tariff-tavle__desc">fix, monatlich, im Tarif enthalten</p>
+                                  <p class="tariff-table__desc">fix, monatlich, im Tarif enthalten</p>
                                 </div>
                               </th>
                               <td class="tariff-table__item" data-tariff-table-content="column-1">100</td>
@@ -1063,7 +1071,7 @@
                               <th class="tariff-table__left">
                                 <div class="tariff-table__title-block tariff-table__title-block_left">
                                   <div class="tariff-table__title">Anzahl Pack’s</div>
-                                  <p class="tariff-tavle__desc">fix, monatlich, im Tarif enthalten</p>
+                                  <p class="tariff-table__desc">fix, monatlich, im Tarif enthalten</p>
                                 </div>
                               </th>
                               <td class="tariff-table__item" data-tariff-table-content="column-1">50</td>
@@ -1077,7 +1085,7 @@
                               <th class="tariff-table__left">
                                 <div class="tariff-table__title-block tariff-table__title-block_left">
                                   <h4 class="tariff-table__title">Maximale Anzahl der Palettenstellpaltzein der Grund-pauschale enthalten (120x80x160cm)</h4>
-                                  <p class="tariff-tavle__desc">fix, monatlich, im Tarif enthalten</p>
+                                  <p class="tariff-table__desc">fix, monatlich, im Tarif enthalten</p>
                                 </div>
                               </th>
                               <td class="tariff-table__item" data-tariff-table-content="column-1">5</td>
@@ -1091,7 +1099,7 @@
                               <th class="tariff-table__left">
                                 <div class="tariff-table__title-block tariff-table__title-block_left">
                                   <h4 class="tariff-table__title">Maximale Anzahl der Fachbodenregalein der Grund-pauschale enthalten (20x60x40cm)</h4>
-                                  <p class="tariff-tavle__desc">fix, monatlich, im Tarif enthalten</p>
+                                  <p class="tariff-table__desc">fix, monatlich, im Tarif enthalten</p>
                                 </div>
                               </th>
                               <td class="tariff-table__item" data-tariff-table-content="column-1">25</td>
@@ -1184,7 +1192,7 @@
                               <th class="tariff-table__left">
                                 <div class="tariff-table__title-block tariff-table__title-block_left">
                                   <h4 class="tariff-table__title">Lagergeld pro zus. Fachbodenregal</h4>
-                                  <p class="tariff-tavle__desc">monatlich (30x60x30cm)</p>
+                                  <p class="tariff-table__desc">monatlich (30x60x30cm)</p>
                                 </div>
                               </th>
                               <td class="tariff-table__item" data-tariff-table-content="column-1">2,45 €</td>
@@ -1198,7 +1206,7 @@
                               <th class="tariff-table__left">
                                 <div class="tariff-table__title-block tariff-table__title-block_left">
                                   <h4 class="tariff-table__title">Übertariflicher Arbeitsaufwand</h4>
-                                  <p class="tariff-tavle__desc">je angefangene Stunde</p>
+                                  <p class="tariff-table__desc">je angefangene Stunde</p>
                                 </div>
                               </th>
                               <td class="tariff-table__item" data-tariff-table-content="column-1">33,00 €</td>
@@ -1224,7 +1232,7 @@
                           </tbody>
                         </table>
                       </div>
-                      <ul class="tariff-info tariff-info_dark">
+                      <ul class="tariff-info">
                         <li class="tariff-info__item tariff-info__item_big">
                           <h3 class="tariff-info__title">Kommunikation</h3>
                           <ul class="tariff-info__list"> 
@@ -1611,12 +1619,10 @@
             <div class="footer__main"><a class="logo footer__logo" href="./index.html"><img class="logo__img" src="./assets/img/logo-black.png" alt="Logo IMO Logistics"></a>
               <div class="footer__desc">Schreiben Sie mir eine E-Mail oder rufen Sie direkt an.</div>
               <div class="footer__btns">
-                <button class="btn btn_yellow footer__proposal" type="button" data-popup-open="form">IMO Angebote</button>
-                <button class="footer__social" type="button">
+                <button class="btn btn_yellow footer__proposal" type="button" data-popup-open="form">IMO Angebote</button><a class="footer__social btn btn_white" href="#">
                   <svg class="footer__social-icon">
                     <use xlink:href="./assets/sprite.svg#linkedin"></use>
-                  </svg>
-                </button>
+                  </svg></a>
               </div>
             </div>
             <div class="footer__nav-contact">

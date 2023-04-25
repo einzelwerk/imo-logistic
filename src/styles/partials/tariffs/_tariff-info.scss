@@ -2,7 +2,7 @@
 @use '../../utils/mixins' as mix;
 @use '../../utils/functions' as fn;
 
-.tariff-info {
+.tariff-info {  
   @include mix.p-12;
 
   display: grid;

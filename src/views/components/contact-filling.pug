@@ -10,13 +10,17 @@ mixin contact-filling(title, desc, isAttach)
           h2.contact-filling__title=title
           p.contact-filling__desc=desc
         form.form.contact-filling__form(action="#")
-          .form__field-block
-            label.visually-hidden(for="#name") Name
-            input#name.form__field(type="text" name="name" placeholder="Name")
-            label.visually-hidden(for="#email") E-mail-Adresse
-            input#email.form__field(type="email" name="email" placeholder="E-mail-Adresse")
-            label.visually-hidden(for="#theme") Theme
-            input#theme.form__field(type="text" name="theme" placeholder="Theme")
+          .form__fields-block
+            .form__field-block
+              label.visually-hidden(for="#name") Name
+              input#name.form__field(type="text" name="name" placeholder="Name")
+            .form__field-block.form__field-block_error
+              label.visually-hidden(for="#email") E-mail-Adresse
+              input#email.form__field(type="email" name="email" placeholder="E-mail-Adresse")
+              span Error message
+            .form__field-block
+              label.visually-hidden(for="#theme") Theme
+              input#theme.form__field(type="text" name="theme" placeholder="Theme")
             if isAttach
               +attach
             label.visually-hidden(for="#message") Nachricht

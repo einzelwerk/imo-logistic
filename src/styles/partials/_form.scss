@@ -6,7 +6,7 @@
   flex-direction: column;
   gap: 24px;
 
-  &__field {
+  &__fields {
     &-block {
       display: flex;
       flex-flow: row wrap;
@@ -15,6 +15,26 @@
       gap: var(--form-gap);
 
       --form-gap: 20px;
+    }
+  }
+
+  &__field {
+    &-block {
+      width: 100%;
+
+      &_error {
+        input,
+        textarea {
+          border-color: #ff4b4b;
+        }
+
+        span {
+          margin-top: 4px;
+          @include mix.p-12;
+
+          color: #ff4b4b;
+        }
+      }
     }
 
     &-row {

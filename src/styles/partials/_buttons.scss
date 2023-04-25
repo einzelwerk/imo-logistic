@@ -2,6 +2,8 @@
 @use '../utils/variables' as vars;
 
 .btn {
+  @include mix.btn-small;
+
   display: inline-flex;
   gap: 12px;
   align-items: center;
@@ -10,9 +12,10 @@
   padding: 12px 24px;
   white-space: nowrap;
   text-align: center;
-  @include mix.btn-small;
-
   border: 1px solid transparent;
+  transition: color 0.3s ease-in-out,
+  background-color 0.3s ease-in-out,
+  border-color 0.3s ease-in-out;
 
   @media (max-width: vars.$sm) {
     width: 100%;
@@ -47,12 +50,26 @@
     background: vars.$white;
     border-color: vars.$bg-light-divider;
     border-radius: 12px;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: vars.$text-on-dark;
+    }
   }
 
   &_black {
     color: vars.$white;
     background: vars.$headlines;
+    border-color: vars.$headlines;
     border-radius: 12px;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: vars.$text-on-light;
+      border-color: vars.$text-on-light;
+    }
   }
 
   &_light {
@@ -64,6 +81,14 @@
   &_yellow {
     color: vars.$headlines;
     background: vars.$yellow;
+    border-color: vars.$yellow;
     border-radius: 12px;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: #ffc634;
+      border-color: #ffc634;
+    }
   }
 }

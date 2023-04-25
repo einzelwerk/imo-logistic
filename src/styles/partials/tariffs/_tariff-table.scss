@@ -10,7 +10,7 @@
   overflow: auto;
 
   @include mix.p-16;
-  
+
   @media (max-width: vars.$lg) {
     @include mix.p-14;
 
@@ -91,6 +91,11 @@
   }
 
   &__left {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: vars.$white;
     border-left: none !important;
   }
 
@@ -121,20 +126,20 @@
     @media (max-width: vars.$lg) {
       @include mix.p-14-title;
     }
+  }
 
-    &__desc {
-      @include mix.p-14;
+  &__desc {
+    @include mix.p-14;
+
+    color: vars.$text-on-light;
+    @media (max-width: vars.$lg) {
+      @include mix.p-12;
+    }
+
+    &_big {
+      @include mix.p-16;
       @media (max-width: vars.$lg) {
-        @include mix.p-12;
-      }
-
-      color: vars.$text-on-light;
-
-      &_big {
-        @include mix.p-16;
-        @media (max-width: vars.$lg) {
-          @include mix.p-14;
-        }
+        @include mix.p-14;
       }
     }
   }

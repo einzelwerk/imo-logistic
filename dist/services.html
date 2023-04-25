@@ -23,17 +23,25 @@
                           <p class="popup-form__desc">Sind Sie an einer Zusammenarbeit interessiert? Schreiben Sie uns, wir werden Ihnen bald antworten!</p>
                         </div>
                         <form class="form" action="#">
-                          <div class="form__field-block">
-                            <label class="visually-hidden" for="#name">Name</label>
-                            <input class="form__field" id="name" type="text" name="name" placeholder="Name">
-                            <div class="form__field-row">
-                              <label class="visually-hidden" for="#email">E-mail-Adresse</label>
-                              <input class="form__field" id="email" type="email" name="email" placeholder="E-mail-Adresse">
-                              <label class="visually-hidden" for="#tel">Telefon</label>
-                              <input class="form__field" id="tel" type="tel" name="tel" placeholder="Telefon">
+                          <div class="form__fields-block">
+                            <div class="form__field-block">
+                              <label class="visually-hidden" for="#name">Name</label>
+                              <input class="form__field" id="name" type="text" name="name" placeholder="Name">
                             </div>
-                            <label class="visually-hidden" for="#message">Nachricht</label>
-                            <textarea class="form__field form__field_textarea" id="message" name="message" placeholder="Nachricht"></textarea>
+                            <div class="form__field-row">
+                              <div class="form__field-block">
+                                <label class="visually-hidden" for="#email">E-mail-Adresse</label>
+                                <input class="form__field" id="email" type="email" name="email" placeholder="E-mail-Adresse">
+                              </div>
+                              <div class="form__field-block">
+                                <label class="visually-hidden" for="#tel">Telefon</label>
+                                <input class="form__field" id="tel" type="tel" name="tel" placeholder="Telefon">
+                              </div>
+                            </div>
+                            <div class="form__field-block">
+                              <label class="visually-hidden" for="#message">Nachricht</label>
+                              <textarea class="form__field form__field_textarea" id="message" name="message" placeholder="Nachricht"></textarea>
+                            </div>
                           </div>
                           <label class="checkbox checkbox__checkbox">
                             <input class="visually-hidden checkbox__flag" type="checkbox" name="rules"><span class="checkbox__custom"></span><span class="checkbox__text"><span class="form__checkbox-text">Hiermit akzeptiere ich die&nbsp;</span><a class="form__checkbox-text form__checkbox-text_link" href="#">Datenschutzbedingungen</a></span>
@@ -970,361 +978,6 @@
                           </button>
                         </div>
                       </div>
-                      <div class="tariff-table">
-                        <select class="tariff-table__select select-tariff">
-                          <option value="column-1">Starter* </option>
-                          <option value="column-2">M </option>
-                          <option value="column-3">L </option>
-                          <option value="column-4">XL </option>
-                          <option value="column-5">2XL</option>
-                          <option value="column-6">3XL</option>
-                        </select>
-                        <table class="tariff-table-inner">
-                          <thead>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h3 class="tariff-table__title tariff-table__title_big">Compare Plans</h3><span class="tariff-table__desc tariff-table__desc_big">Find one that’s right for you</span>
-                                </div>
-                              </th>
-                              <th class="tariff-table__item" data-tariff-table-content="column-1"> 
-                                <div class="tariff-table__title-block"> 
-                                  <h3 class="tariff-table__title tariff-table__title_big">Starter* </h3>
-                                  <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                                </div>
-                              </th>
-                              <th class="tariff-table__item" data-tariff-table-content="column-2"> 
-                                <div class="tariff-table__title-block"> 
-                                  <h3 class="tariff-table__title tariff-table__title_big">M </h3>
-                                  <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                                </div>
-                              </th>
-                              <th class="tariff-table__item" data-tariff-table-content="column-3"> 
-                                <div class="tariff-table__title-block"> 
-                                  <h3 class="tariff-table__title tariff-table__title_big">L </h3>
-                                  <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                                </div>
-                              </th>
-                              <th class="tariff-table__item" data-tariff-table-content="column-4"> 
-                                <div class="tariff-table__title-block"> 
-                                  <h3 class="tariff-table__title tariff-table__title_big">XL </h3>
-                                  <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                                </div>
-                              </th>
-                              <th class="tariff-table__item" data-tariff-table-content="column-5"> 
-                                <div class="tariff-table__title-block"> 
-                                  <h3 class="tariff-table__title tariff-table__title_big">2XL</h3>
-                                  <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                                </div>
-                              </th>
-                              <th class="tariff-table__item" data-tariff-table-content="column-6"> 
-                                <div class="tariff-table__title-block"> 
-                                  <h3 class="tariff-table__title tariff-table__title_big">3XL</h3>
-                                  <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                                </div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tfoot> 
-                            <tr>
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title"> <span>Individuelle Lösungen auf Anfrage</span></h4>
-                                  <p class="tariff-tavle__desc">alle Preise sind netto zzgl. MwSt</p>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1"> 
-                                <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                              </td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2"> 
-                                <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                              </td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3"> 
-                                <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                              </td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4"> 
-                                <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                              </td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5"> 
-                                <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                              </td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6"> 
-                                <button class="tariff-table__btn btn btn_small btn_yellow" type="button">Auswählen</button>
-                              </td>
-                            </tr>
-                          </tfoot>
-                          <tbody> 
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title"> <span>Anzahl der Inklusiv-Arbeitswerte fur folgende Leistungen***: </span>
-                                    <div class="tooltip">
-                                      <div class="tooltip__content">
-                                        <div class="tooltip__content-inner"> <strong class="tooltip__title">Anzahl der Inklusiv-Arbeitswerte für folgende Leistungen</strong>
-                                          <p class="tooltip__desc">Kommunikation (Telefon, E-Mail, WhatsApp)Warenannahme/EinlagerungManuelle Auftragserfassung- und BearbeitungRetourenbearbeitung</p>
-                                          <div class="tooltip__bottom"> <span class="tooltip__text">AW – Sätze je Tarif: </span><span class="tooltip__price">7,75 €</span></div>
-                                        </div>
-                                      </div>
-                                      <button class="tooltip__btn" type="button">
-                                        <svg class="tooltip__icon">
-                                          <use xlink:href="./assets/sprite.svg#tooltip"></use>
-                                        </svg>
-                                      </button>
-                                    </div>
-                                  </h4>
-                                  <p class="tariff-tavle__desc">fix, monatlich</p>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">20 AW**</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">40 AW</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">60 AW </td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">80 AW </td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">100 AW </td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">250 AW </td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <div class="tariff-table__title">Anzahl Pick’s</div>
-                                  <p class="tariff-tavle__desc">fix, monatlich, im Tarif enthalten</p>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">100</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">500</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">1000</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">1500</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">2000</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">3000</td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <div class="tariff-table__title">Anzahl Pack’s</div>
-                                  <p class="tariff-tavle__desc">fix, monatlich, im Tarif enthalten</p>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">50</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">100</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">150</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">200</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">250</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">500</td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title">Maximale Anzahl der Palettenstellpaltzein der Grund-pauschale enthalten (120x80x160cm)</h4>
-                                  <p class="tariff-tavle__desc">fix, monatlich, im Tarif enthalten</p>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">5</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">15</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">17</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">20</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">25</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">80</td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title">Maximale Anzahl der Fachbodenregalein der Grund-pauschale enthalten (20x60x40cm)</h4>
-                                  <p class="tariff-tavle__desc">fix, monatlich, im Tarif enthalten</p>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">25</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">50</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">100</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">150</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">200</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">300</td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title"> <span>Verpackungskosten je Karton: </span>
-                                    <div class="tooltip">
-                                      <div class="tooltip__content">
-                                        <div class="tooltip__content-inner"> <strong class="tooltip__title">Anzahl der Inklusiv-Arbeitswerte für folgende Leistungen</strong>
-                                          <p class="tooltip__desc">Kommunikation (Telefon, E-Mail, WhatsApp)Warenannahme/EinlagerungManuelle Auftragserfassung- und BearbeitungRetourenbearbeitung</p>
-                                          <div class="tooltip__bottom"> <span class="tooltip__text">AW – Sätze je Tarif: </span><span class="tooltip__price">7,75 €</span></div>
-                                        </div>
-                                      </div>
-                                      <button class="tooltip__btn" type="button">
-                                        <svg class="tooltip__icon">
-                                          <use xlink:href="./assets/sprite.svg#tooltip"></use>
-                                        </svg>
-                                      </button>
-                                    </div>
-                                  </h4>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">2,50 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">2,50 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">2,50 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">2,50 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">2,50 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">2,50 €</td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title">pro zusatzlichen Pick</h4>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">0,25 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">0,25 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">0,25 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">0,25 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">0,25 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">0,25 €</td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title">pro zusatzlichen Pack</h4>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">0,95 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">0,95 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">0,95 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">0,95 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">0,95 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">0,95 €</td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title">Versandkosten pro Paket bis 31,5 kg</h4>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">6,90 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">6,90 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">6,90 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">6,90 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">6,90 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">6,90 €</td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title">Lagergeld pro zus. Palettestellplatz</h4>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">7,00 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">7,00 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">7,00 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">7,00 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">7,00 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">7,00 €</td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title">Lagergeld pro zus. Fachbodenregal</h4>
-                                  <p class="tariff-tavle__desc">monatlich (30x60x30cm)</p>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">2,45 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">2,45 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">2,45 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">2,45 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">2,45 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">2,45 €</td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title">Übertariflicher Arbeitsaufwand</h4>
-                                  <p class="tariff-tavle__desc">je angefangene Stunde</p>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">33,00 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">32,00 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">31,00 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">30,00 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">29,00 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">28,00 €</td>
-                            </tr>
-                            <tr> 
-                              <th class="tariff-table__left">
-                                <div class="tariff-table__title-block tariff-table__title-block_left">
-                                  <h4 class="tariff-table__title">AW - Sätze je Tarif</h4>
-                                </div>
-                              </th>
-                              <td class="tariff-table__item" data-tariff-table-content="column-1">8,25 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-2">8,00 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-3">7,75 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-4">7,50 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-5">7,25 €</td>
-                              <td class="tariff-table__item" data-tariff-table-content="column-6">7,00 €</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <ul class="tariff-info tariff-info_dark">
-                        <li class="tariff-info__item tariff-info__item_big">
-                          <h3 class="tariff-info__title">Kommunikation</h3>
-                          <ul class="tariff-info__list"> 
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Bearbeitung einer einfachen E-Mail</span><span class="tariff-info__count">1 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Bearbeitung einer umfangreichreichen E-Mail ohne Recherche</span><span class="tariff-info__count">1 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Bearbeitung einer umfangreichreichen E-Mail mit Recherche</span><span class="tariff-info__count">3 AW</span></li>
-                          </ul>
-                        </li>
-                        <li class="tariff-info__item tariff-info__item_big">
-                          <h3 class="tariff-info__title">Manuelle Auftragserfassung- und Bearbeitung</h3>
-                          <ul class="tariff-info__list"> 
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Auftrag bis 10 SKU</span><span class="tariff-info__count">2 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Auftrag bis 20 SKU</span><span class="tariff-info__count">3 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Auftrag bis 50 SKU</span><span class="tariff-info__count">4 AW</span></li>
-                          </ul>
-                        </li>
-                        <li class="tariff-info__item">
-                          <h3 class="tariff-info__title">Warenannahme/Einlagerung</h3>
-                          <ul class="tariff-info__list"> 
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Sortenreines Paket</span><span class="tariff-info__count">1 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Gemischtes Paket</span><span class="tariff-info__count">2 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Sortenreine Palette</span><span class="tariff-info__count">1 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Sortenreines Paket</span><span class="tariff-info__count">1 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Gemischtes Paket</span><span class="tariff-info__count">2 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Sortenreine Palette</span><span class="tariff-info__count">1 AW</span></li>
-                          </ul>
-                        </li>
-                        <li class="tariff-info__item">
-                          <h3 class="tariff-info__title">Retourenbearbeitung</h3>
-                          <ul class="tariff-info__list"> 
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">bis 50 SKU </span><span class="tariff-info__count">8 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">50 bis 100 SKU </span><span class="tariff-info__count">16 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">100 bis 250 SKU </span><span class="tariff-info__count">32 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Gemischte Palette bis 5 SKU </span><span class="tariff-info__count">3 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Gemischte Palette 5 bis 10 SKU </span><span class="tariff-info__count">4 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Gemischte Palette 10 bis 20 SKU </span><span class="tariff-info__count">8 AW</span></li>
-                          </ul>
-                        </li>
-                        <li class="tariff-info__item">
-                          <h3 class="tariff-info__title">Inventur</h3>
-                          <ul class="tariff-info__list"> 
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Gemischte Palette bis 5 SKU </span><span class="tariff-info__count">3 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Gemischte Palette 5 bis 10 SKU </span><span class="tariff-info__count">4 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">Gemischte Palette 10 bis 20 SKU </span><span class="tariff-info__count">8 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">250 bis 500 SKU </span><span class="tariff-info__count">64 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">500 bis 1000 SKU </span><span class="tariff-info__count">128 AW</span></li>
-                            <li class="tariff-info__list-item"> <span class="tariff-info__text">>1000 SKU </span><span class="tariff-info__count">auf Anfrage</span></li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <div class="tariff-offer-2">
-                        <div class="tariff-offer-2__left"> 
-                          <div class="tariff-offer-2__strong-block"><strong class="tariff-offer-2__strong">*Nur für Neukunden in den ersten 6 Monaten, danach Übergang in den Tarif M. </strong><strong class="tariff-offer-2__strong">**1 AW (Arbeitswert) entspricht 15 Minuten</strong></div>
-                          <p class="tariff-offer-2__desc">Alle Tarife haben eine Gültigkeit vom 01.02.2023 bis zum 31.07.2023</p>
-                        </div>
-                        <div class="tariff-offer-2__right">
-                          <h3 class="tariff-offer-2__title">Не смогли определиться?</h3>
-                          <div class="tariff-offer-2__btn-block">
-                            <button class="btn btn_big btn_yellow" type="button">Tarifrechner</button>
-                            <button class="btn btn_big btn_white" type="button">Contact us</button>
-                          </div>
-                        </div>
-                      </div>
                       <div class="tariff-offer">
                         <div class="tariff-offer__content">
                           <div class="tariff-offer__text-block">
@@ -1429,12 +1082,10 @@
             <div class="footer__main"><a class="logo footer__logo" href="./index.html"><img class="logo__img" src="./assets/img/logo-black.png" alt="Logo IMO Logistics"></a>
               <div class="footer__desc">Schreiben Sie mir eine E-Mail oder rufen Sie direkt an.</div>
               <div class="footer__btns">
-                <button class="btn btn_yellow footer__proposal" type="button" data-popup-open="form">IMO Angebote</button>
-                <button class="footer__social" type="button">
+                <button class="btn btn_yellow footer__proposal" type="button" data-popup-open="form">IMO Angebote</button><a class="footer__social btn btn_white" href="#">
                   <svg class="footer__social-icon">
                     <use xlink:href="./assets/sprite.svg#linkedin"></use>
-                  </svg>
-                </button>
+                  </svg></a>
               </div>
             </div>
             <div class="footer__nav-contact">

@@ -8,16 +8,20 @@ mixin popup-form(isActive = false)
         h2.popup-form__title Leave us a request
         p.popup-form__desc Sind Sie an einer Zusammenarbeit interessiert? Schreiben Sie uns, wir werden Ihnen bald antworten!
       form.form(action="#")
-        .form__field-block
-          label.visually-hidden(for="#name") Name
-          input#name.form__field(type="text" name="name" placeholder="Name")
+        .form__fields-block
+          .form__field-block
+            label.visually-hidden(for="#name") Name
+            input#name.form__field(type="text" name="name" placeholder="Name")
           .form__field-row
-            label.visually-hidden(for="#email") E-mail-Adresse
-            input#email.form__field(type="email" name="email" placeholder="E-mail-Adresse")
-            label.visually-hidden(for="#tel") Telefon
-            input#tel.form__field(type="tel" name="tel" placeholder="Telefon")
-          label.visually-hidden(for="#message") Nachricht
-          textarea.form__field.form__field_textarea#message(name="message", placeholder="Nachricht")
+            .form__field-block
+              label.visually-hidden(for="#email") E-mail-Adresse
+              input#email.form__field(type="email" name="email" placeholder="E-mail-Adresse")
+            .form__field-block
+              label.visually-hidden(for="#tel") Telefon
+              input#tel.form__field(type="tel" name="tel" placeholder="Telefon")
+          .form__field-block
+            label.visually-hidden(for="#message") Nachricht
+            textarea.form__field.form__field_textarea#message(name="message", placeholder="Nachricht")
         label.checkbox.checkbox__checkbox
           input.visually-hidden.checkbox__flag(type="checkbox" name="rules")
           span.checkbox__custom

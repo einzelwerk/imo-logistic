@@ -6,12 +6,20 @@ textarea {
   @include mix.p-14;
 
   padding: 11px 15px;
-  color: vars.$placeholder;
+  color: vars.$headlines;
   border: 1px solid vars.$bg-light-divider;
   border-radius: 8px;
+  transition: color .3s ease-in-out,
+  background-color .3s ease-in-out;
 
   &::placeholder {
     color: vars.$placeholder;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: vars.$bg-light;
   }
 }
 
