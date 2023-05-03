@@ -1,2 +1,2 @@
-# IMO Logistic - https://grade33.github.io/imo-logistic/tariffs.html
+# IMO Logistic - https://grade33.github.io/imo-logistic/
 

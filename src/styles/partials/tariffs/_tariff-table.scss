@@ -20,6 +20,9 @@
   &__select {
     @include mix.p-14;
 
+    position: relative;
+    z-index: 5;
+
     @media (min-width: calc(vars.$lg + 0.02px)) {
       display: none;
     }
