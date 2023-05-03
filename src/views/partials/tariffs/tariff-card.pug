@@ -13,5 +13,5 @@ mixin tariff-card(tag, tariff, isGray = false)
     hr.tariff-card__hr
     +advantage-list(tariff.benefits, 'tariff-card__advantage-list')
     .tariff-card__btn-block
-      button.btn.btn_yellow.tariff-card__btn.tariff-card__btn_choose(type="button") Choose
-      button.btn.btn_white.tariff-card__btn.tariff-card__btn_more(type="button") Mehr erfahren
+      button.btn.btn_yellow.tariff-card__btn.tariff-card__btn_choose(type="button" data-popup-open="form") Choose
+      a.btn.btn_white.tariff-card__btn.tariff-card__btn_more(href="tariffs.html#tariff-table") Mehr erfahren
